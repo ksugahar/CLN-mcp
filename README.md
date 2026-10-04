@@ -26,9 +26,17 @@ Reproducible Cauer ladder network derivations and finite-element validation note
 
 [3次元A–φ・T–Ω・A–T](docs/06_3d_round_wire.ipynb)と[再計算用コード](validation/validate_3d.py)を追加しました。円柱導体内部、線形材料、s₀=0のR₀/L₁/R₂を3定式化×2メッシュで検証します。回路定数と電界・磁束密度の誤差を別々に示し、端子値への規格化、境界条件、右辺射影、ゲージ項の感度も説明します。Codexの自己レビュー済みで、追加部分のClaudeレビューは復帰後に行います。
 
+## 表面モードとFosterの比較実験
+
+[実行済みの比較ノート](docs/07_surface_hybrid_foster.ipynb)では、解析円形断面、切欠き付き3次元導体、非線形2次元導体を扱います。Fosterの評価帯域とDC条件を別々に変更し、同じ3次元離散系に対してCLNと比較しました。高周波向けの帯域調整が有効でしたが、DC条件を外す追加効果は小さい結果です。
+
+非線形例では、9本の独立CLN基底に残る誤差を、表面ポートを含む55本の基底で低減しました。候補数と独立本数、磁束とジュール損失を分けて示します。3次元のメッシュ間差は約3.5%あり、縮約誤差が小さいことだけで連続体の精度は保証できません。追加結果はCodex自己レビュー済みで、Claudeの独立レビューは未実施です。
+
+保存結果だけの点検は `python validation/surface_hybrid/validate_evidence.py`。FEM再計算の手順はノート末尾にあります。
+
 ## Reproduce
 
-Install `ngsolve`, `numpy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient` and `ipykernel` for Python; symbolic checks require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Open the executed notebooks under `docs/` and rerun their cells.
+Install `ngsolve`, `numpy`, `matplotlib`, `mpmath`, `scipy`, `sympy`, `nbformat`, `nbclient` and `ipykernel` for Python; symbolic checks require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Open the executed notebooks under `docs/` and rerun their cells.
 
 Standalone commands:
 
