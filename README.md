@@ -15,12 +15,16 @@ Reproducible Cauer ladder network derivations and finite-element validation note
 
 ## 定式化と拡張を学ぶ
 
-- [A–φ・T–Ω・A–T、3次元、ゲージと境界条件](docs/02_formulations_gauge_boundary.ipynb)：未知量と物理場を分け、ゲージ変換で場が不変なことを実行確認します。谷本氏の3次元研究資料を公開再現へ繋ぐ検査項目も整理しています。
+- [A–φ・T–Ω・A–T、3次元、ゲージと境界条件](docs/02_formulations_gauge_boundary.ipynb)：未知量と物理場を分け、ゲージ変換で場が不変なことを実行確認します。[3次元の丸線再現](docs/06_3d_round_wire.ipynb)では谷本氏の学生ノートをもとに、3定式化の回路定数・物理場・ゲージ処理を比較します。
 - [非線形FP-CLNと表面モード](docs/03_nonlinear_fp_surface_modes.ipynb)：一定の線形核と更新する非線形源、表面縮約の役割を説明します。小さなモード系で反復収束とモデル精度を区別します。
 - [終端問題・CLN1/CLN2変換・タイル表現](docs/04_termination_conversion_tiles.ipynb)：終端逆算の恒等式、型の命名と回路式の対応、電圧・電流のタイルを扱います。
 - [マルチポート化](docs/05_multiport.ipynb)：相互結合、ポート座標変換、仕事保存、相反性と散逸を2ポートの実行例で説明します。
 
 これらは実行済みの解説ノートです。説明用の最小例と、実際の3次元・非線形CLNの定量検証を混同しないよう、検証範囲を各ノートに記載しています。
+
+## 3次元の実行結果
+
+[3次元A–φ・T–Ω・A–T](docs/06_3d_round_wire.ipynb)と[再計算用コード](validation/validate_3d.py)を追加しました。円柱導体内部、線形材料、s₀=0のR₀/L₁/R₂を3定式化×2メッシュで検証します。回路定数と電界・磁束密度の誤差を別々に示し、端子値への規格化、境界条件、右辺射影、ゲージ項の感度も説明します。Codexの自己レビュー済みで、追加部分のClaudeレビューは復帰後に行います。
 
 ## Reproduce
 
@@ -31,6 +35,7 @@ Standalone commands:
 ```text
 wolframscript -file mathematica/derive_type1_same_circuit.wls type1_results.json
 python validation/type1_ngsolve.py --output type1_fe.json
+python validation/validate_3d.py --output three_dimensional.json
 ```
 
 - `docs/*.ipynb`: primary derivations and executed reproduction entry points.
