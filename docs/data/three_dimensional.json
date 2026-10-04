@@ -6,11 +6,11 @@
     "ngsolve": "6.2.2607"
   },
   "source_sha256": {
-    "validate_3d.py": "2bb4eb2a1ff8c9fa52bb810ca89ab03b11b44ba3fcb0e3d8640024e7fd61e473",
-    "cln3d/CLN_APhi.py": "045613ad34d3a99ff5a1efbc28ea50fcd52ec6912775b7edabfae652411bc774",
-    "cln3d/CLN_T_Omega.py": "ec200106832f3fc7f246f463688b3cd46dd6a8fc9fbc6c1ee7af779a4d5c21d8",
-    "cln3d/CLN_AT.py": "27d1cc2e19a9a6148aa0e2bb045c71483a42a880fbd768c8fce3c1a7ef765ad4",
-    "cln3d/_iccg.py": "73d151007529a1e0140f852b53ca1f75882e3ba1c6709759eb29043173d783e8"
+    "validate_3d.py": "060c00f6a6667f631aa915bcb4255962e4f2ba96d26ff659e817e2026f2fe786",
+    "cln3d/CLN_APhi.py": "29b18e4065fdc7baec60dc07db8e6c1595bf5ca30e134d42855f05eceec3ba2e",
+    "cln3d/CLN_T_Omega.py": "b66b7e9bbe6c636d34edf7a1bdfbaf7c11ae6208ded3a325563695e45f796c78",
+    "cln3d/CLN_AT.py": "62a8dae13f8b829a8984112bf8edd4321728b3c7491433398651c0b539c8a762",
+    "cln3d/_iccg.py": "4872fa59c7730ee0e9eb401708bd04f45d88baefee971b3d04329719c130f9fd"
   },
   "cases": [
     {
@@ -3357,5 +3357,6 @@
         }
       }
     }
-  ]
+  ],
+  "source_hash_format": "UTF-8 without BOM; LF newlines"
 }
