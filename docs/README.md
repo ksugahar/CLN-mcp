@@ -12,6 +12,7 @@
 | 8 | [Type1の導出とFEM再現](type1_same_circuit.ipynb) | 同じ4要素になる証明、別々のA/T有限要素解、再現結果 | Python + Wolfram + NGSolve |
 | 9 | [3次元丸線の再現](06_3d_round_wire.ipynb) | A–φ/T–Ω/A–Tの初段、物理場と回路定数の収束、ゲージ感度と端子規格化 | 図表の再検査: Python + numpy + matplotlib、FEM再計算: NGSolve + scipy + radia |
 | 10 | [表面補足とFosterの比較実験](07_surface_hybrid_foster.ipynb) | DC条件と評価帯域の分離、3次元同一離散系の比較、非線形2次元の表面ポート補足、基底の独立本数とジュール損失 | 図表: Python + numpy + matplotlib、再計算: NGSolve + scipy + mpmath |
+| 11 | [3D表面補足・POD・Foster](08_3d_surface_pod_foster.ipynb) | バルク2状態、境界ポートQR/POD、実際の励振の場POD、結合行列とFoster端子等価回路 | 図表: Python + numpy + matplotlib、FEM再計算: NGSolve + scipy |
 
 全ノートは実行済みです。グラフと数値はノート内に保存されているため、GitHubで閲覧できます。入門2本は解析解を使い、FEMやWolframなしで再実行できます。
 

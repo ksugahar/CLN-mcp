@@ -32,6 +32,8 @@ Reproducible Cauer ladder network derivations and finite-element validation note
 
 非線形例では、9本の独立CLN基底に残る誤差を、表面ポートを含む55本の基底で低減しました。候補数と独立本数、磁束とジュール損失を分けて示します。3次元のメッシュ間差は約3.5%あり、縮約誤差が小さいことだけで連続体の精度は保証できません。追加結果はCodex自己レビュー済みで、Claudeの独立レビューは未実施です。
 
+[3Dの表面補足・POD・Foster](docs/08_3d_surface_pod_foster.ipynb)も比較しました。今回の仮想境界ポート補足は十分には効かず、実際の励振の場を使うPODが有効でした。結合行列からFoster端子等価回路を作ることと、場に対応するCLNの段構成を導くことを区別します。
+
 保存結果だけの点検は `python validation/surface_hybrid/validate_evidence.py`。FEM再計算の手順はノート末尾にあります。
 
 ## Reproduce
