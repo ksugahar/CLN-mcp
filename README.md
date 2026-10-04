@@ -13,9 +13,18 @@ Reproducible Cauer ladder network derivations and finite-element validation note
 | [Type2: A and T give the same circuit](docs/type2_same_circuit.ipynb) | Circular wire, positive real shift, R0 / L1 / R2 / L3; symbolic boundary and normalization proof; energy vs Cauer |
 | [Type1: derivation and NGSolve reproduction](docs/type1_same_circuit.ipynb) | Circular wire, positive real shift, L-1 / R0 / L1 / R2; symbolic proof, A/T finite elements, mesh convergence and radia-ngsolve runtime reproduction |
 
+## 定式化と拡張を学ぶ
+
+- [A–φ・T–Ω・A–T、3次元、ゲージと境界条件](docs/02_formulations_gauge_boundary.ipynb)：未知量と物理場を分け、ゲージ変換で場が不変なことを実行確認します。谷本氏の3次元研究資料を公開再現へ繋ぐ検査項目も整理しています。
+- [非線形FP-CLNと表面モード](docs/03_nonlinear_fp_surface_modes.ipynb)：一定の線形核と更新する非線形源、表面縮約の役割を説明します。小さなモード系で反復収束とモデル精度を区別します。
+- [終端問題・CLN1/CLN2変換・タイル表現](docs/04_termination_conversion_tiles.ipynb)：終端逆算の恒等式、型の命名と回路式の対応、電圧・電流のタイルを扱います。
+- [マルチポート化](docs/05_multiport.ipynb)：相互結合、ポート座標変換、仕事保存、相反性と散逸を2ポートの実行例で説明します。
+
+これらは実行済みの解説ノートです。説明用の最小例と、実際の3次元・非線形CLNの定量検証を混同しないよう、検証範囲を各ノートに記載しています。
+
 ## Reproduce
 
-Install `ngsolve`, `numpy`, `matplotlib`, `mpmath`, `nbformat`, `nbclient` and `ipykernel` for Python; symbolic checks require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Open the executed notebooks under `docs/` and rerun their cells.
+Install `ngsolve`, `numpy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient` and `ipykernel` for Python; symbolic checks require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Open the executed notebooks under `docs/` and rerun their cells.
 
 Standalone commands:
 
