@@ -8,7 +8,17 @@ h=read('higher_stages');assert len(h['cases'])==24
 w=read('round_wire_three_stages');assert all(w['checks'].values())
 assert w['R_normalized']==h['oracle_R_normalized'] and w['L_normalized']==h['oracle_L_normalized']
 for name,digest in h['source_sha256_lf'].items():assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
+failures=[(v['formulation'],v['order'],v['bonus_intorder'],v['maxh']) for v in h['cases'] if v['status']!='pass']
+assert failures==[('CLN_T_Omega',1,4,.003)],failures
+quad8=[v for v in h['cases'] if (v['formulation'],v['order'],v['bonus_intorder'],v['maxh'])==('CLN_T_Omega',1,8,.003)][0]
+assert quad8['status']=='pass'  # means solve completed, not coefficient accuracy
 for formulation in ['CLN_APhi','CLN_T_Omega','CLN_AT']:
+    p_errors=[]
+    for order in [1,2,3,4]:
+        v=[v for v in h['cases'] if v['formulation']==formulation and v['order']==order and v['maxh']==.003 and v['bonus_intorder']==8][0]
+        assert v['status']=='pass'
+        p_errors.append(max(v['R_relative_error'][-1],v['L_relative_error'][-1]))
+    assert all(b<a for a,b in zip(p_errors[:-1],p_errors[1:])),(formulation,p_errors)
     fine=[v for v in h['cases'] if v['formulation']==formulation and v['order']==3 and v['maxh']==.0015][0]
     assert fine['status']=='pass' and max(fine['R_relative_error']+fine['L_relative_error'])<.002
     for order in [2,3]:
@@ -40,6 +50,23 @@ for size in ['coarse','fine']:
         assert all(np.isfinite(v[k]) and v[k]>=0 for k in ['rod_linkage_relative_error','joule_relative_error','field_energy_rms'])
     assert all(max(v.values())<1e-5 for v in d['same_basis_modal_checks'].values())
 mesh=read('mesh_reference');assert len(mesh['meshes'])==3
+for filename in ['mesh_reference','mesh_reference_order2']:
+    v=read(filename);assert v['complete'] and len(v['meshes'])==3
+    assert v['runtime']['ngsolve'] and v['runtime']['netgen']
+    assert v['frequency_hz']==[1000.,10000.,100000.,1000000.]
+    for name,digest in v['source_sha256_lf'].items():assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
+    assert all(row['original_residual_max']<1e-10 and row['penalty_invariance_max']<1e-10 for row in v['meshes'])
+p2=read('mesh_reference_order2');assert p2['FE_order']==2
+assert [v['maxh'] for v in p2['meshes']]==[.004,.003,.0025]
+def susceptibility(v):return v['static_H']*(np.asarray(v['reference_real'])+1j*np.asarray(v['reference_imag']))
+pair=[max(abs(susceptibility(a)/susceptibility(b)-1)) for a,b in zip(p2['meshes'][:-1],p2['meshes'][1:])]
+assert pair[1]<pair[0] and pair[1]<.0015  # four sampled frequencies, no continuum certificate
+fine=read('nonlinear_matched_fine')
+bulk=fine['runs']['protected bulk2 baseline 2 amplitude 1.0'];enriched=fine['runs']['protected bulk2 + auxiliary surface 9 amplitude 1.0']
+assert bulk['rank']==2 and enriched['rank']==9
+assert enriched['rod_linkage_relative_error']>bulk['rod_linkage_relative_error']
+assert enriched['joule_relative_error']<bulk['joule_relative_error']
+
 assert mesh['frequency_hz']==[1000.,10000.,100000.,1000000.]
 baseline=read('same_excitation_3d_fine');coarse=mesh['meshes'][0]
 a=np.asarray(coarse['reference_real'])+1j*np.asarray(coarse['reference_imag'])

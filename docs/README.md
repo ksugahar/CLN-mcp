@@ -26,3 +26,5 @@ The comparison experiments use a linear internal-conductor reaction transfer in 
 These additions received reciprocal Codex and Claude Opus 5.5 review. See [reviewed revisions, corrections and limits](REVIEW_STATUS.md) and each notebook for its evidence.
 
 [Research follow-up](10_research_followup.ipynb): three-stage refinement, same-grid Foster fits, and matched-rank nonlinear held-out amplitudes.
+
+Notebook 10 also records the original two-mode bulk control and second-order full-model mesh refinement at four representative frequencies. These tests distinguish adding modes from reallocating a fixed rank, and intermesh agreement from certified continuum accuracy.

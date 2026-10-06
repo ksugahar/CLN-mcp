@@ -70,7 +70,7 @@ def run(h):
             if after < before*1e-26:break
             w/=np.sqrt(after);vectors.append(w.copy());w=factor.solve(m@w)
         return np.column_stack(vectors)
-    bases={};basis_audit=[]
+    bases={'protected bulk2 baseline 2':bulk};basis_audit=[{'label':'protected bulk2 baseline 2','requested_rank':2,'rank':2}]
     for n in [9,19]:
         single,_=g['cln_basis'](g['surface_K']('exact'),2*(n-1))
         for name,q in [('single CLN',single),('stabilized actual-source Krylov',stable_span(n)),('multipoint actual source',multipoint[:,:n]),('protected bulk2 + auxiliary surface',np.column_stack([bulk,np.linalg.solve(chol.T,extra[:,:n-2])])),('nonlinear training POD',pod[:,:n])]:
@@ -89,7 +89,11 @@ def run(h):
         for name,q in bases.items():
             label=f'{name} amplitude {amplitude}';start=time.perf_counter()
             try:
-                lt,j,states,it=simulate(input_,q);metric=g['metrics'](lt,ref,j,jref)
+                lt,j,states,it=simulate(input_,q)
+                if name=='protected bulk2 baseline 2':
+                    original,_,_,joriginal=g['run_cln'](g['surface_K']('exact'),2)
+                    assert np.max(abs(lt-original))/np.max(abs(original))<1e-9 and abs(j/joriginal-1)<1e-9
+                metric=g['metrics'](lt,ref,j,jref)
                 diff=states[:,nstep:]-refstates[:,nstep:];field=float(np.sqrt(np.sum(diff*(energy@diff))/np.sum(refstates[:,nstep:]*(energy@refstates[:,nstep:]))))
                 metric.update(rank=q.shape[1],field_energy_rms=field,max_iterations=it,seconds=time.perf_counter()-start)
                 out['runs'][label]=metric
@@ -107,4 +111,3 @@ def run(h):
 if __name__=='__main__':
     a=argparse.ArgumentParser(description=__doc__);a.add_argument('--h-over-a',type=float,default=.3);a.add_argument('--output',required=True);args=a.parse_args()
     Path(args.output).write_text(json.dumps(run(args.h_over_a),indent=2),encoding='utf-8')
-

@@ -1,0 +1,90 @@
+{
+  "scope": "Sparse full mixed A-phi reference; physical susceptibility and normalized reaction; internal 3D model",
+  "frequency_hz": [
+    1000.0,
+    10000.0,
+    100000.0,
+    1000000.0
+  ],
+  "FE_order": 2,
+  "meshes": [
+    {
+      "maxh": 0.004,
+      "ne": 434,
+      "free_A": 3192,
+      "static_H": 7.767617269542013e-05,
+      "kernel_defect": 2.4012746869837514e-18,
+      "load_defect": 6.540788240719104e-16,
+      "original_residual_max": 2.918576459707324e-14,
+      "penalty_invariance_max": 5.568248086469663e-16,
+      "reference_real": [
+        0.09934283402256146,
+        3.672846584669648,
+        7.016557873345054,
+        7.805903476618028
+      ],
+      "reference_imag": [
+        0.776340491021829,
+        3.081049464815119,
+        1.2290043099701047,
+        0.278340661482548
+      ],
+      "seconds": 11.318007800000487
+    },
+    {
+      "maxh": 0.003,
+      "ne": 1640,
+      "free_A": 13827,
+      "static_H": 7.791118316298598e-05,
+      "kernel_defect": 1.362492734654712e-18,
+      "load_defect": 5.26280481169266e-16,
+      "original_residual_max": 5.928344118464136e-14,
+      "penalty_invariance_max": 9.095096935891541e-16,
+      "reference_real": [
+        0.09944124951972716,
+        3.667005907862636,
+        7.032948024802579,
+        7.957260441293315
+      ],
+      "reference_imag": [
+        0.776298550619214,
+        3.0792817743713674,
+        1.2866860754574259,
+        0.357913283079952
+      ],
+      "seconds": 188.3412945
+    },
+    {
+      "maxh": 0.0025,
+      "ne": 2063,
+      "free_A": 16983,
+      "static_H": 7.793896017097882e-05,
+      "kernel_defect": 1.1889697027193935e-18,
+      "load_defect": 7.754709356608828e-16,
+      "original_residual_max": 9.522059922350308e-14,
+      "penalty_invariance_max": 2.6931444721866844e-15,
+      "reference_real": [
+        0.09946751615971643,
+        3.666496277869586,
+        7.032345332340352,
+        7.962539222378505
+      ],
+      "reference_imag": [
+        0.7762906489437073,
+        3.078420532664234,
+        1.28915790622902,
+        0.3654536380815805
+      ],
+      "seconds": 290.3161703000005
+    }
+  ],
+  "runtime": {
+    "python": "3.12.10",
+    "ngsolve": "6.2.2607",
+    "netgen": "6.2.2607"
+  },
+  "source_sha256_lf": {
+    "validation/surface_hybrid/mesh_reference.py": "ab6464076713ac7385d81b59bb362bb24c95cd0d091f888d643f2d52d93f4021"
+  },
+  "complete": true
+}

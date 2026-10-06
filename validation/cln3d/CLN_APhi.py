@@ -56,7 +56,7 @@ def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000, bonus_i
     r, h, sigma, mu = R_WIRE, H_WIRE, SIGMA, MU
     import warnings
     if stages != 1:
-        warnings.warn('Only R0/L1/R2 (one stage) is validated; higher-stage coefficients are unverified', RuntimeWarning)
+        warnings.warn('The baseline validates one stage; additional three-stage round-wire settings are recorded in docs/data/higher_stages.json. Other settings require separate verification', RuntimeWarning)
     # Match quadrature across coupled scalar/vector forms on curved elements.
     dx = dx(bonus_intorder=bonus_intorder)
     mesh = make_mesh(maxh, curve)

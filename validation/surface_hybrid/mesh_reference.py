@@ -1,5 +1,6 @@
 """Sparse mixed A-phi reference for mesh uncertainty; no dense mode truncation."""
-import argparse,json,math,time
+import argparse,hashlib,json,math,platform,time
+import ngsolve,netgen
 from pathlib import Path
 import numpy as np
 import scipy.sparse as sp
@@ -10,10 +11,10 @@ A=.01;HEIGHT=.015;MU=4e-7*math.pi;SIGMA=1e6;TAU=MU*SIGMA*A*A
 
 def csr(b):return sp.csr_matrix(b.mat.CSR()).copy()
 
-def run(h,freq):
+def run(h,freq,order=1):
     shape=Box((-A,-A,0),(A,A,HEIGHT))-Box((.002,.002,HEIGHT/2),(.012,.012,HEIGHT+.002))
     shape.faces.name='surface';shape.faces.Min(Z).name='in';shape.faces.Max(Z).name='out'
-    mesh=Mesh(OCCGeometry(shape).GenerateMesh(maxh=h));va=HCurl(mesh,order=1,nograds=False,dirichlet='surface|in|out');vp=H1(mesh,order=2,dirichlet='in|out')
+    mesh=Mesh(OCCGeometry(shape).GenerateMesh(maxh=h));va=HCurl(mesh,order=order,nograds=False,dirichlet='surface|in|out');vp=H1(mesh,order=order+1,dirichlet='in|out')
     fa=np.fromiter(va.FreeDofs(),bool,va.ndof);fp=np.fromiter(vp.FreeDofs(),bool,vp.ndof)
     ua,wa=va.TnT();up,wp=vp.TnT();kp=BilinearForm(vp);kp+=SIGMA*grad(up)*grad(wp)*dx;kp.Assemble();ks=csr(kp)[fp][:,fp].tocsc();lu=sla.splu(ks)
     gf=GridFunction(vp);gf.Set(HEIGHT,definedon=mesh.Boundaries('in'));lift=gf.vec.CreateVector();lift.data=kp.mat*gf.vec;b=-lift.FV().NumPy()[fp].copy();gf.vec.FV().NumPy()[fp]=lu.solve(b)
@@ -40,11 +41,24 @@ def run(h,freq):
     return {'maxh':h,'ne':mesh.ne,'free_A':int(fa.sum()),'static_H':h0,'kernel_defect':kernel_defect,'load_defect':load_defect,'original_residual_max':max(residuals),'penalty_invariance_max':max(check),'reference_real':z.real.tolist(),'reference_imag':z.imag.tolist()}
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',required=True);a=p.parse_args();SetNumThreads(4)
-    freq=np.asarray([1e3,1e4,1e5,1e6]);out={'scope':'Sparse full mixed A-phi reference; physical susceptibility and normalized reaction; internal 3D model','frequency_hz':freq.tolist(),'meshes':[]}
-    for h in [.003,.002,.0015]:
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',required=True)
+    p.add_argument('--order',type=int,choices=[1,2],default=1)
+    p.add_argument('--maxh',type=float,nargs='+',help='Mesh sizes; defaults depend on FE order')
+    a=p.parse_args();SetNumThreads(4)
+    hs=a.maxh if a.maxh is not None else ([.003,.002,.0015] if a.order==1 else [.004,.003,.0025])
+    if any(not np.isfinite(h) or h<=0 for h in hs):p.error('maxh must be finite and positive')
+    source=Path(__file__);root=source.resolve().parents[2]
+    identity=lambda:{source.relative_to(root).as_posix():hashlib.sha256(source.read_text(encoding='utf-8-sig').encode()).hexdigest()}
+    versions=identity();freq=np.asarray([1e3,1e4,1e5,1e6])
+    out={'scope':'Sparse full mixed A-phi reference; physical susceptibility and normalized reaction; internal 3D model',
+         'frequency_hz':freq.tolist(),'FE_order':a.order,'meshes':[],
+         'runtime':{'python':platform.python_version(),'ngsolve':ngsolve.__version__,'netgen':netgen.__version__},
+         'source_sha256_lf':versions,'complete':False}
+    for h in hs:
         t=time.perf_counter()
-        with TaskManager():v=run(h,freq)
-        v['seconds']=time.perf_counter()-t;out['meshes'].append(v);Path(a.output).write_text(json.dumps(out,indent=2),encoding='utf-8');print(h,v['ne'],v['static_H'],v['original_residual_max'],v['seconds'],flush=True)
-
-
+        with TaskManager():v=run(h,freq,a.order)
+        v['seconds']=time.perf_counter()-t;out['meshes'].append(v)
+        Path(a.output).write_text(json.dumps(out,indent=2),encoding='utf-8')
+        print(h,v['ne'],v['static_H'],v['original_residual_max'],v['seconds'],flush=True)
+    assert identity()==versions,'Source changed during mesh reference run'
+    out['complete']=True;Path(a.output).write_text(json.dumps(out,indent=2),encoding='utf-8')

@@ -7,6 +7,11 @@
   "training_amplitude": 600000.0,
   "basis_audit": [
     {
+      "label": "protected bulk2 baseline 2",
+      "requested_rank": 2,
+      "rank": 2
+    },
+    {
       "label": "single CLN 9",
       "requested_rank": 9,
       "rank": 9
@@ -1279,6 +1284,20 @@
     }
   },
   "runs": {
+    "protected bulk2 baseline 2 amplitude 1.0": {
+      "max_rel_err": 0.00015224949841193255,
+      "rod_linkage_relative_error": 0.002325777667205045,
+      "input_cycle_work": 27.49075173475761,
+      "input_cycle_work_reference": 27.748947571214643,
+      "cycle_work_relative_error": 0.009304707351311347,
+      "joule_cycle": 27.49986684954354,
+      "joule_reference": 27.76020997918919,
+      "joule_relative_error": 0.009378283876124171,
+      "rank": 2,
+      "field_energy_rms": 0.027950632036247973,
+      "max_iterations": 8,
+      "seconds": 2.0270831000016187
+    },
     "single CLN 9 amplitude 1.0": {
       "max_rel_err": 2.6489881275134706e-05,
       "rod_linkage_relative_error": 0.00040466191954161967,
@@ -1291,7 +1310,7 @@
       "rank": 9,
       "field_energy_rms": 0.01221918417160027,
       "max_iterations": 26,
-      "seconds": 1.401295000000573
+      "seconds": 1.8701627000009466
     },
     "stabilized actual-source Krylov 9 amplitude 1.0": {
       "max_rel_err": 2.6489881275134706e-05,
@@ -1305,7 +1324,7 @@
       "rank": 9,
       "field_energy_rms": 0.012219184171600252,
       "max_iterations": 26,
-      "seconds": 1.2850871999999072
+      "seconds": 1.7563592000005883
     },
     "multipoint actual source 9 amplitude 1.0": {
       "max_rel_err": 2.67152262959372e-05,
@@ -1319,7 +1338,7 @@
       "rank": 9,
       "field_energy_rms": 0.012199547731186526,
       "max_iterations": 24,
-      "seconds": 1.6425626999998713
+      "seconds": 1.9635357999995904
     },
     "protected bulk2 + auxiliary surface 9 amplitude 1.0": {
       "max_rel_err": 0.0001533439424955892,
@@ -1333,7 +1352,7 @@
       "rank": 9,
       "field_energy_rms": 0.027853056093217414,
       "max_iterations": 11,
-      "seconds": 1.2004421000001457
+      "seconds": 1.5405693000011524
     },
     "nonlinear training POD 9 amplitude 1.0": {
       "max_rel_err": 1.069940110588852e-06,
@@ -1347,7 +1366,7 @@
       "rank": 9,
       "field_energy_rms": 0.001299451511066345,
       "max_iterations": 56,
-      "seconds": 1.6630962999997791
+      "seconds": 2.4572460999988834
     },
     "stabilized actual-source Krylov 19 amplitude 1.0": {
       "max_rel_err": 2.708739434372419e-05,
@@ -1361,7 +1380,7 @@
       "rank": 19,
       "field_energy_rms": 0.011645169328401222,
       "max_iterations": 56,
-      "seconds": 1.7526800000005096
+      "seconds": 2.7017107000010583
     },
     "protected bulk2 + auxiliary surface 19 amplitude 1.0": {
       "max_rel_err": 0.00012748790885735428,
@@ -1375,7 +1394,7 @@
       "rank": 19,
       "field_energy_rms": 0.02600967824039873,
       "max_iterations": 22,
-      "seconds": 1.2440200999999433
+      "seconds": 1.877941099999589
     },
     "nonlinear training POD 19 amplitude 1.0": {
       "max_rel_err": 2.5025494233835015e-08,
@@ -1389,7 +1408,21 @@
       "rank": 19,
       "field_energy_rms": 0.00012504976702672573,
       "max_iterations": 74,
-      "seconds": 1.963463999999476
+      "seconds": 2.767029700000421
+    },
+    "protected bulk2 baseline 2 amplitude 0.5": {
+      "max_rel_err": 0.00015285859970579717,
+      "rod_linkage_relative_error": 0.0021206076518959782,
+      "input_cycle_work": 8.136184558590436,
+      "input_cycle_work_reference": 8.216376256718945,
+      "cycle_work_relative_error": 0.009759983674424854,
+      "joule_cycle": 8.138536304928284,
+      "joule_reference": 8.219028762401338,
+      "joule_relative_error": 0.009793426912103569,
+      "rank": 2,
+      "field_energy_rms": 0.04630669083981905,
+      "max_iterations": 8,
+      "seconds": 1.8595472999986669
     },
     "single CLN 9 amplitude 0.5": {
       "max_rel_err": 2.610272452030251e-05,
@@ -1403,7 +1436,7 @@
       "rank": 9,
       "field_energy_rms": 0.019539464597228853,
       "max_iterations": 27,
-      "seconds": 1.6940593999997873
+      "seconds": 2.467005500000596
     },
     "stabilized actual-source Krylov 9 amplitude 0.5": {
       "max_rel_err": 2.6102724520373298e-05,
@@ -1417,7 +1450,7 @@
       "rank": 9,
       "field_energy_rms": 0.019539464597228863,
       "max_iterations": 27,
-      "seconds": 1.7719293000000107
+      "seconds": 2.7618137999998
     },
     "multipoint actual source 9 amplitude 0.5": {
       "max_rel_err": 2.6357503317593046e-05,
@@ -1431,7 +1464,7 @@
       "rank": 9,
       "field_energy_rms": 0.019508149689721452,
       "max_iterations": 26,
-      "seconds": 1.726380699999936
+      "seconds": 2.6446221000005607
     },
     "protected bulk2 + auxiliary surface 9 amplitude 0.5": {
       "max_rel_err": 0.00015363391216189444,
@@ -1445,7 +1478,7 @@
       "rank": 9,
       "field_energy_rms": 0.04621438570279361,
       "max_iterations": 11,
-      "seconds": 1.0753795000000537
+      "seconds": 1.4825466999991477
     },
     "nonlinear training POD 9 amplitude 0.5": {
       "max_rel_err": 9.084275777691706e-07,
@@ -1459,7 +1492,7 @@
       "rank": 9,
       "field_energy_rms": 0.002403351447130407,
       "max_iterations": 44,
-      "seconds": 2.042779600000358
+      "seconds": 3.3539835999999923
     },
     "stabilized actual-source Krylov 19 amplitude 0.5": {
       "max_rel_err": 2.6444441052211252e-05,
@@ -1473,7 +1506,7 @@
       "rank": 19,
       "field_energy_rms": 0.01879076416654519,
       "max_iterations": 49,
-      "seconds": 2.1502942999995867
+      "seconds": 3.155410800000027
     },
     "protected bulk2 + auxiliary surface 19 amplitude 0.5": {
       "max_rel_err": 0.0001276593172277188,
@@ -1487,7 +1520,7 @@
       "rank": 19,
       "field_energy_rms": 0.04320201832690005,
       "max_iterations": 21,
-      "seconds": 1.5354715000003125
+      "seconds": 2.388868200001525
     },
     "nonlinear training POD 19 amplitude 0.5": {
       "max_rel_err": 4.0132697168702856e-08,
@@ -1501,7 +1534,21 @@
       "rank": 19,
       "field_energy_rms": 0.00048317262856242436,
       "max_iterations": 91,
-      "seconds": 2.943960600000537
+      "seconds": 4.211886799999775
+    },
+    "protected bulk2 baseline 2 amplitude 1.5": {
+      "max_rel_err": 0.00014028588923584235,
+      "rod_linkage_relative_error": 0.002323327471667787,
+      "input_cycle_work": 53.45121908467763,
+      "input_cycle_work_reference": 53.90292253565741,
+      "cycle_work_relative_error": 0.00837994360474557,
+      "joule_cycle": 53.471382058446665,
+      "joule_reference": 53.92924747410844,
+      "joule_relative_error": 0.008490113196584118,
+      "rank": 2,
+      "field_energy_rms": 0.020824043481801627,
+      "max_iterations": 10,
+      "seconds": 2.042199800000162
     },
     "single CLN 9 amplitude 1.5": {
       "max_rel_err": 2.4543682841238037e-05,
@@ -1515,7 +1562,7 @@
       "rank": 9,
       "field_energy_rms": 0.009230307544920012,
       "max_iterations": 24,
-      "seconds": 1.4568843000006382
+      "seconds": 1.4652286000000458
     },
     "stabilized actual-source Krylov 9 amplitude 1.5": {
       "max_rel_err": 2.4543682841238037e-05,
@@ -1529,7 +1576,7 @@
       "rank": 9,
       "field_energy_rms": 0.009230307544919967,
       "max_iterations": 24,
-      "seconds": 1.3470721000003323
+      "seconds": 1.519271299999673
     },
     "multipoint actual source 9 amplitude 1.5": {
       "max_rel_err": 2.473566697619672e-05,
@@ -1543,7 +1590,7 @@
       "rank": 9,
       "field_energy_rms": 0.00921468354032012,
       "max_iterations": 24,
-      "seconds": 1.1164246999996976
+      "seconds": 1.6463753000007273
     },
     "protected bulk2 + auxiliary surface 9 amplitude 1.5": {
       "max_rel_err": 0.00014140638899635648,
@@ -1557,7 +1604,7 @@
       "rank": 9,
       "field_energy_rms": 0.02072659690268926,
       "max_iterations": 12,
-      "seconds": 0.9578540000002249
+      "seconds": 1.537130500000785
     },
     "nonlinear training POD 9 amplitude 1.5": {
       "max_rel_err": 1.0447730771694686e-06,
@@ -1571,7 +1618,7 @@
       "rank": 9,
       "field_energy_rms": 0.0011188772323908833,
       "max_iterations": 49,
-      "seconds": 1.3694216000003507
+      "seconds": 2.025816699999268
     },
     "stabilized actual-source Krylov 19 amplitude 1.5": {
       "max_rel_err": 2.516786108956096e-05,
@@ -1585,7 +1632,7 @@
       "rank": 19,
       "field_energy_rms": 0.008745077923911809,
       "max_iterations": 42,
-      "seconds": 1.5335197000003973
+      "seconds": 2.040908400000262
     },
     "protected bulk2 + auxiliary surface 19 amplitude 1.5": {
       "max_rel_err": 0.0001163208528954842,
@@ -1599,7 +1646,7 @@
       "rank": 19,
       "field_energy_rms": 0.01934848964353222,
       "max_iterations": 23,
-      "seconds": 1.2280821000003925
+      "seconds": 1.5896453999994264
     },
     "nonlinear training POD 19 amplitude 1.5": {
       "max_rel_err": 2.4998576693011637e-08,
@@ -1613,7 +1660,7 @@
       "rank": 19,
       "field_energy_rms": 0.00018145348358272872,
       "max_iterations": 69,
-      "seconds": 1.6976560000002792
+      "seconds": 2.318119300000035
     }
   },
   "same_basis_modal_checks": {
@@ -1770,7 +1817,7 @@
     3.25766348678865e-16
   ],
   "source_sha256_lf": {
-    "validation/surface_hybrid/compare_nonlinear_bases.py": "d10cd6fa71783f95b20fe8735bb245dc42b3294f0f407d77a88d1480ec01c5f5",
+    "validation/surface_hybrid/compare_nonlinear_bases.py": "4f2cf024cbdfbb4c3b3efcfa63561386f1c71f4dfa22f25975fe3feb96614d1e",
     "validation/surface_hybrid/fp_cln_surface.py": "dbf0295fe352639a6c8f3617e87bd434d66b9c92a06ab46e43943aa513d48628",
     "validation/surface_hybrid/fixed_point.py": "90d579908947ee139a2ef8782db36bc1548ea6edd46f090d1ff305807ba82fee"
   }
