@@ -60,7 +60,11 @@ p2=read('mesh_reference_order2');assert p2['FE_order']==2
 assert [v['maxh'] for v in p2['meshes']]==[.004,.003,.0025]
 def susceptibility(v):return v['static_H']*(np.asarray(v['reference_real'])+1j*np.asarray(v['reference_imag']))
 pair=[max(abs(susceptibility(a)/susceptibility(b)-1)) for a,b in zip(p2['meshes'][:-1],p2['meshes'][1:])]
-assert pair[1]<pair[0] and pair[1]<.0015  # four sampled frequencies, no continuum certificate
+assert pair[1]<pair[0] and pair[1]<.0015  # sampled intermesh changes only
+assert 1.25<p2['meshes'][-1]['ne']/p2['meshes'][-2]['ne']<1.27
+assert 2.98<mesh['meshes'][-1]['ne']/mesh['meshes'][-2]['ne']<3.00
+cross=max(abs(susceptibility(mesh['meshes'][-1])/susceptibility(p2['meshes'][-1])-1))
+assert .017<cross<.019  # report the cross-order gap, not a continuum certificate
 fine=read('nonlinear_matched_fine')
 bulk=fine['runs']['protected bulk2 baseline 2 amplitude 1.0'];enriched=fine['runs']['protected bulk2 + auxiliary surface 9 amplitude 1.0']
 assert bulk['rank']==2 and enriched['rank']==9

@@ -2,9 +2,9 @@
   "scope": "Higher stages and matched-count research; full run outputs, no commercial benchmark sources",
   "source_sha256_lf": {
     "validation/validate_higher_stages.py": "f8523b3c65a2b7e785389404f01ffd2ad0bb9850dfaae5fc73e0d281ac8a0b36",
-    "validation/validate_research.py": "ad0a6185f05a9238d1cda884b4679cca6bb33bf8fbc7fc06d169c2602e965fd1",
+    "validation/validate_research.py": "62144dedb0ae1bddbfe546868657ba2080b85faebdff2488bb4dfd7b3dfcc4f4",
     "validation/surface_hybrid/compare_information_budget.py": "fc7a92078259e89def31e6e2020c1ab2558b53a1746fd00139b20e3e06e53ff9",
-    "validation/surface_hybrid/compare_nonlinear_bases.py": "4f2cf024cbdfbb4c3b3efcfa63561386f1c71f4dfa22f25975fe3feb96614d1e",
+    "validation/surface_hybrid/compare_nonlinear_bases.py": "54f4f91967bd5941e3b5da2cab71234bce98e539940f3e441f8b81ff8488c7a1",
     "validation/surface_hybrid/fp_cln_surface.py": "dbf0295fe352639a6c8f3617e87bd434d66b9c92a06ab46e43943aa513d48628",
     "validation/surface_hybrid/fixed_point.py": "90d579908947ee139a2ef8782db36bc1548ea6edd46f090d1ff305807ba82fee",
     "validation/surface_hybrid/compare_3d.py": "54554d5fef11b049b99114a27111943be7838290af9c305f1a133049b7da06b1",

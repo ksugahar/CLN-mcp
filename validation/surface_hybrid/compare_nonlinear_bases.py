@@ -85,6 +85,7 @@ def run(h):
     for amplitude in [1.,.5,1.5]:
         input_=amplitude*baseinput
         ref,jref,refstates,itref=(train,jtrain,snap,trainits) if amplitude==1 else simulate(input_)
+        # metrics and original run_cln read this module-global input; keep amplitude aligned.
         g['uu']=input_;out['reference'][str(amplitude)]={'trace':ref.tolist(),'joule':jref,'max_iterations':itref}
         for name,q in bases.items():
             label=f'{name} amplitude {amplitude}';start=time.perf_counter()
