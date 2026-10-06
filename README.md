@@ -49,6 +49,6 @@ python validation/surface_hybrid/validate_same_excitation_3d.py
 
 This release focuses on documentation and reproduction; the broader MCP application is not distributed here. Four-element continuum results do not prove arbitrary stages or general 3D mixed formulations. A finite shifted ladder is a local approximation, not an exact response at all frequencies. Positive shifted elements alone do not establish passivity in physical s.
 
-Type2's underlying derivation received an independent Claude Opus 5.5 review. Type1 was checked by Codex using Wolfram, independent Bessel evaluation, and separate FE formulations. The later 3D, surface/POD, and conversion additions have Codex self-review; independent Claude review is pending.
+Type2's underlying derivation received an independent Claude Opus 5.5 review. Type1 was checked by Codex using Wolfram, independent Bessel evaluation, and separate FE formulations. The later 3D, surface/POD, and conversion additions received reciprocal Codex and Claude Opus 5.5 review. See [reviewed revisions, corrections and limits](docs/REVIEW_STATUS.md). Stored JSON `review` fields record producer-time status; the linked review note gives the current verdict.
 
 BSD-3-Clause license.
