@@ -1,4 +1,5 @@
-"""Surface-port enrichment versus field POD on a common 3D diffusion pencil.
+"""Historical virtual-port experiment, superseded for common-excitation comparisons.
+Surface-port enrichment versus field POD on a common 3D diffusion pencil.
 
 No physical surface-enriched Cauer ladder is inferred. The coupled Galerkin
 system is compared with its *terminal-equivalent* positive Foster diagonalization.
@@ -33,7 +34,7 @@ def run(maxh):
         direct=np.linalg.solve(k+u[idx]*m,f)
         direct_defects.append(np.linalg.norm(direct-full[:,idx])/np.linalg.norm(direct))
     assert max(direct_defects)<1e-8
-    out={'scope':'Linear 3D notched internal conductor; same discrete pencil; boundary-trace virtual ports; no analytic skin/exterior correction',
+    out={'status':'historical; virtual-port excitation; superseded for same-source comparisons by same_excitation_3d_*','scope':'Linear 3D notched internal conductor; same discrete pencil; boundary-trace virtual ports; no analytic skin/exterior correction',
          'mesh':meta,'frequency_hz':freq.tolist(),'reference_real':exact.real.tolist(),
          'reference_imag':exact.imag.tolist(),'tau':TAU,'bulk_states':2,
          'bulk_meaning':'two magnetic field states / four Type1 R-L energy elements, not two surface-coupled circuit sections',

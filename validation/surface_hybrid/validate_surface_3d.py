@@ -31,9 +31,9 @@ for name in ['surface_3d_coarse','surface_3d_fine']:
     # Assertions describe this recorded case, not a universal ranking of methods.
     assert d['runs']['physical-port POD 4']['high_band_max']<d['runs']['ordinary CLN 4']['high_band_max']
     assert d['runs']['bulk2 + surface POD 4']['high_band_max']>d['runs']['ordinary CLN 4']['high_band_max']
-    print(name+': stored Foster reconstruction, ranks, coupling and errors passed')
+    print('HISTORICAL virtual-port evidence: ', name+': stored Foster reconstruction, ranks, coupling and errors passed')
 manifest=json.loads((DATA/'surface_3d_sources.json').read_text())
 for path,expected in manifest['source_sha256_lf'].items():
     content=(ROOT/path).read_text(encoding='utf-8-sig').replace('\r\n','\n')
     assert hashlib.sha256(content.encode()).hexdigest()==expected,path
-print('Surface/POD source integrity passed')
+print('HISTORICAL virtual-port evidence: ', 'Surface/POD source integrity passed')

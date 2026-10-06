@@ -51,6 +51,11 @@ def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000):
                          specialcf)
 
     r, h, sigma, mu = R_WIRE, H_WIRE, SIGMA, MU
+    import warnings
+    if stages != 1:
+        warnings.warn('Only R0/L1/R2 (one stage) is validated; higher-stage coefficients are unverified', RuntimeWarning)
+    # Match quadrature across coupled scalar/vector forms on curved elements.
+    dx = dx(bonus_intorder=4)
     mesh = make_mesh(maxh, curve)
     print(f"mesh: nv={mesh.nv} nedge={mesh.nedge} nface={mesh.nface} ne={mesh.ne}")
 
@@ -70,7 +75,7 @@ def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000):
     a = BilinearForm(fesT)
     a += 1 / sigma * curl(T) * curl(W) * dx
     f = LinearForm(fesT)
-    f += -Cross(Es, W.Trace()) * n * ds("conductorBND")
+    f += -Cross(Es, W.Trace()) * n * ds("conductorBND", bonus_intorder=4)
     a.Assemble()
     f.Assemble()
     gfT, info = solve_iccg(a, f, fesT, kernel=kerT, label="T stage 0", **solve_kw)
@@ -161,11 +166,11 @@ def main(argv=None):
     p.add_argument("--curve", type=int, default=3, help="geometry curving order (default 3)")
     p.add_argument("--tol", type=float, default=1e-10, help="ICCG relative tolerance")
     p.add_argument("--maxiter", type=int, default=10000, help="ICCG iteration limit")
-    p.add_argument("--quick", action="store_true", help="coarse smoke run (maxh 3e-3, 1 stage)")
+    p.add_argument("--quick", action="store_true", help="coarse smoke run (maxh 3e-3; higher stages unverified)")
     p.add_argument("--output", default=None, help="JSON output path")
     args = p.parse_args(argv)
     if args.quick:
-        args.maxh, args.stages = 3e-3, 1
+        args.maxh = 3e-3
     from ngsolve import TaskManager
     with TaskManager():
         data = run(args.maxh, args.order, args.stages, args.curve, args.tol, args.maxiter)

@@ -4,6 +4,9 @@ Z(u)=D + L_tail*u + sum r_j*u/(u+p_j), positive p_j,r_j,D,L_tail.
 The DC-constrained variant fixes D=0 and L_tail+sum r_j/p_j=1.
 Only fitted input/output behavior is asserted; fitted poles need not be the
 physical eigenvalues, and a field reconstruction is not inferred from a fit.
+The target is assumed normalized to unit static slope. In DC-constrained
+mode, DC_slope_error measures constraint roundoff, not agreement with an
+independently measured DC slope.
 """
 import math,time
 import numpy as np

@@ -20,6 +20,7 @@ def coefficients(d):
 
 
 def validate():
+    ngsolve.SetNumThreads(4)
     modules=[CLN_APhi, CLN_T_Omega, CLN_AT]
     cases=[]
     for m in modules:
@@ -34,7 +35,7 @@ def validate():
             for info in d['solves']:
                 assert info['converged']
                 assert info['explicit_residual'] <= 1e-7
-                assert info['original_rhs_residual'] <= 1.001e-4
+                assert info['original_rhs_residual'] <= 1.1e-7
             profiles=d['field_profiles']
             rho=np.asarray(profiles['rho'])
             zeros=np.zeros_like(rho)

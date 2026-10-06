@@ -52,6 +52,11 @@ def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000):
                          LinearForm, curl, dx, grad)
 
     r, h, sigma, mu = R_WIRE, H_WIRE, SIGMA, MU
+    import warnings
+    if stages != 1:
+        warnings.warn('Only R0/L1/R2 (one stage) is validated; higher-stage coefficients are unverified', RuntimeWarning)
+    # Match quadrature across coupled scalar/vector forms on curved elements.
+    dx = dx(bonus_intorder=4)
     mesh = make_mesh(maxh, curve)
     print(f"mesh: nv={mesh.nv} nedge={mesh.nedge} nface={mesh.nface} ne={mesh.ne}")
 

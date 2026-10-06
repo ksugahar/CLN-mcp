@@ -22,7 +22,7 @@ Start with [What is CLN?](docs/00_what_is_cln.ipynb), then follow the [notebook 
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.
 
-[Surface enrichment and Foster comparisons](docs/07_surface_hybrid_foster.ipynb) separates Foster training-band allocation from DC constraints and tests nonlinear 2D enrichment. High-band fitting is effective here; freeing DC adds little. Candidate counts and independent ranks, linkage, and conductor Joule loss are reported separately.
+[Surface enrichment and Foster comparisons](docs/07_surface_hybrid_foster.ipynb) separates Foster training-band allocation from DC constraints and tests nonlinear 2D enrichment. High-band fitting is effective with more offline full-model information here; freeing DC adds little. Candidate counts and independent ranks, linkage, and conductor Joule loss are reported separately.
 
 [Common-excitation CLN, boundary response, and POD](docs/08_3d_surface_pod_foster.ipynb) compares single/multipoint CLN, CLN2 plus boundary-response enrichment, and POD at matched state counts. **CLN and POD use the same physical excitation.** They differ in shifts, frequency information, and basis construction; offline costs are not matched. Boundary-response POD is not exterior Steklov modes. Foster terminal equivalence is not the derivation of a physical mixed Cauer ladder.
 
@@ -30,12 +30,14 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 ## Reproduce
 
-Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub.
+Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The current reciprocal-review reruns use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
 
 ```text
 wolframscript -file mathematica/derive_type1_same_circuit.wls type1_results.json
 python validation/type1_ngsolve.py --output type1_fe.json
 python validation/validate_3d.py --output three_dimensional.json
+python tools/policy_lint.py
+python validation/validate_foster_cauer.py
 python validation/surface_hybrid/validate_evidence.py
 python validation/surface_hybrid/validate_same_excitation_3d.py
 ```

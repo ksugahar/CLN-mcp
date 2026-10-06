@@ -21050,5 +21050,6 @@
   },
   "holdout_points": 285,
   "review": "Codex self-review; independent Claude review pending",
-  "total_seconds": 2.19035740000254
+  "total_seconds": 2.19035740000254,
+  "status": "historical; virtual-port excitation; superseded for same-source comparisons by same_excitation_3d_*"
 }

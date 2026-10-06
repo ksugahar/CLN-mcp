@@ -2,9 +2,10 @@
   "scope": "3D boundary-port enrichment and field POD; stored results against the same discrete reference.",
   "source_sha256_lf": {
     "validation/surface_hybrid/surface_3d_model.py": "84d6de72a88f0b081f65a47091e6a66a5fad72639da2093b3ffb0c6a5a292ea5",
-    "validation/surface_hybrid/compare_surface_3d.py": "a077569bea2f9b806255c7ff243d119cfd7bf8a8880c4bb10307e65cab4d6382",
-    "validation/surface_hybrid/validate_surface_3d.py": "b16cc4f40ed71de8550f92d4d276af6258ed9082586f6206a6e54f7aa0e8e6db",
+    "validation/surface_hybrid/compare_surface_3d.py": "f1d200eaddd79916702597bd06ea2c0de78ad684042ce80ae4404cf04555f56b",
+    "validation/surface_hybrid/validate_surface_3d.py": "bdf2291022068439f41e6d559070c727a14831ef92d99cc2954b206bba935b14",
     "validation/surface_hybrid/compare_3d.py": "54554d5fef11b049b99114a27111943be7838290af9c305f1a133049b7da06b1",
-    "validation/surface_hybrid/positive_foster.py": "9c90f13d34b8acfcfa1893cc6676b723d36b4a44cafb7f97a5cf3203dc6260af"
-  }
+    "validation/surface_hybrid/positive_foster.py": "4a3d860728bbe1e891ec1b2c84206f6a0f9b4d5fc7c605aa8dcbde5de9ff677b"
+  },
+  "status": "historical; virtual-port experiment; not common-excitation evidence"
 }

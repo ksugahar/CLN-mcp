@@ -60,7 +60,7 @@ def run(maxh):
     out['field_pod']={'training_frequency_hz':trainfreq.tolist(),'snapshot_columns':snapshots.shape[1],
       'weighting':'complex field normalized in K+u0*M energy, then real/imaginary columns with equal frequency weights',
       'relative_singular_values':(svpod/svpod[0]).tolist(),'offline_seconds':time.perf_counter()-t,
-      'cost_caveat':'training uses full-system spectral solves and a full eigensystem; this benchmark is not a sparse industrial cost estimate'}
+      'cost_caveat':'offline_seconds is partial and excludes the full eigensystem; training uses full-system spectral solves and a full eigensystem; this benchmark is not a sparse industrial cost estimate'}
     # Observe actual-source residual snapshots at the boundary. No virtual
     # port-response snapshots are generated (static dual norms use solves).
     # Boundary-selected directions are full-field
@@ -102,11 +102,11 @@ def run(maxh):
         mag=np.real(np.sum(y.conj()*(kq@y),axis=0))
         # Common passivity/energy identity; this is not independent accuracy proof.
         assert np.max(abs(z.real-(abs(u)**2)*diss)/abs(z))<1e-8
-        out['runs'][label]={'rank':rank,'construction_seconds':construction_seconds,'poles':poles.tolist(),
+        out['runs'][label]={'rank':rank,'construction_seconds':None if 'POD' in label else construction_seconds,'basis_processing_seconds_partial':construction_seconds if 'POD' in label else None,'timing_scope':'POD total construction cost unavailable: full eigensystem cost excluded' if 'POD' in label else 'stage generation only','poles':poles.tolist(),
           'residues':residues.tolist(),'relative_error':error.tolist(),'field_energy_relative_error':field_error.tolist(),
           'joule_relative_error':abs(diss/ref_diss-1).tolist(),'magnetic_energy_relative_error':abs(mag/ref_mag-1).tolist(),
           'high_band_max':float(error[high].max()),'holdout_high_band_max':float(error[high & holdout].max()),'transition_max':float(error[transition].max()),
-          'field_high_band_max':float(field_error[high].max()),'joule_high_band_max':float(abs(diss[high]/ref_diss[high]-1).max()),
+          'field_high_band_max':float(field_error[high].max()),'holdout_field_high_band_max':float(field_error[high & holdout].max()),'holdout_joule_high_band_max':float(abs(diss[high & holdout]/ref_diss[high & holdout]-1).max()),'joule_high_band_max':float(abs(diss[high]/ref_diss[high]-1).max()),
           'DC_slope_error':abs(float(np.sum(residues/poles))-1),'coupled_vs_foster':equiv,'positive_energy_pencil':True,
           'bulk_enrichment_coupling_ratio':None if coupling_ratio is None else float(coupling_ratio),
           'coupling_basis_caveat':'computed before rank SVD in the energy-normalized bulk/enrichment input basis'}

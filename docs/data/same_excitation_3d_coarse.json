@@ -2156,7 +2156,9 @@
       "coupled_vs_foster": 9.818386817387773e-16,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "holdout_field_high_band_max": 0.3961120361044076,
+      "holdout_joule_high_band_max": 0.02743480810843346
     },
     "ordinary CLN 4": {
       "rank": 4,
@@ -3394,7 +3396,9 @@
       "coupled_vs_foster": 2.1773238686489863e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "holdout_field_high_band_max": 0.15074948699756838,
+      "holdout_joule_high_band_max": 0.002629311952354385
     },
     "multipoint CLN 4": {
       "rank": 4,
@@ -4638,11 +4642,13 @@
         7.895683520871487,
         78.95683520871486,
         789.5683520871487
-      ]
+      ],
+      "holdout_field_high_band_max": 0.03617777540408263,
+      "holdout_joule_high_band_max": 0.0003806478151306969
     },
     "bulk2 + boundary-response POD 4": {
       "rank": 4,
-      "construction_seconds": 0.007828500005416572,
+      "construction_seconds": null,
       "poles": [
         6.372736907461803,
         28.423770368286153,
@@ -5876,11 +5882,15 @@
       "coupled_vs_foster": 9.435469181251475e-16,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": 0.05730553834813545,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.007828500005416572,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 0.026650732800320834,
+      "holdout_joule_high_band_max": 0.00022401535273430806
     },
     "bulk2 + field-residual POD 4": {
       "rank": 4,
-      "construction_seconds": 0.005446199997095391,
+      "construction_seconds": null,
       "poles": [
         6.373253716964201,
         28.853049402100204,
@@ -7114,11 +7124,15 @@
       "coupled_vs_foster": 1.333785275983301e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": 0.060657251480786205,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.005446199997095391,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 0.023751065488877864,
+      "holdout_joule_high_band_max": 0.00026766907612474355
     },
     "field POD 4": {
       "rank": 4,
-      "construction_seconds": 0.005446199997095391,
+      "construction_seconds": null,
       "poles": [
         6.377565017207975,
         30.001392546607832,
@@ -8352,7 +8366,11 @@
       "coupled_vs_foster": 6.821053033571669e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.005446199997095391,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 0.016933667221335408,
+      "holdout_joule_high_band_max": 0.00040150270323380255
     },
     "ordinary CLN 8": {
       "rank": 8,
@@ -9598,7 +9616,9 @@
       "coupled_vs_foster": 4.111376729984501e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "holdout_field_high_band_max": 0.01811303127649361,
+      "holdout_joule_high_band_max": 3.685829162858312e-05
     },
     "multipoint CLN 8": {
       "rank": 8,
@@ -10850,11 +10870,13 @@
         7.895683520871487,
         78.95683520871486,
         789.5683520871487
-      ]
+      ],
+      "holdout_field_high_band_max": 0.0009825412373577326,
+      "holdout_joule_high_band_max": 2.2466396809583955e-07
     },
     "bulk2 + boundary-response POD 8": {
       "rank": 8,
-      "construction_seconds": 0.007828500005416572,
+      "construction_seconds": null,
       "poles": [
         6.366962941275143,
         12.25723005361482,
@@ -12096,11 +12118,15 @@
       "coupled_vs_foster": 5.441681773522242e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": 0.03432955418958465,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.007828500005416572,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 0.0004978012113057112,
+      "holdout_joule_high_band_max": 9.587068061644999e-08
     },
     "bulk2 + field-residual POD 8": {
       "rank": 8,
-      "construction_seconds": 0.005446199997095391,
+      "construction_seconds": null,
       "poles": [
         6.366976856124461,
         12.329939685385906,
@@ -13342,11 +13368,15 @@
       "coupled_vs_foster": 1.2144764787064417e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": 0.04511138129988256,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.005446199997095391,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 0.00040817295438129344,
+      "holdout_joule_high_band_max": 1.3527842124272382e-07
     },
     "field POD 8": {
       "rank": 8,
-      "construction_seconds": 0.005446199997095391,
+      "construction_seconds": null,
       "poles": [
         6.366973381634064,
         12.324651942524557,
@@ -14588,7 +14618,11 @@
       "coupled_vs_foster": 5.037799113072157e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.005446199997095391,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 0.0004079729926658646,
+      "holdout_joule_high_band_max": 9.876541606779199e-08
     },
     "ordinary CLN 12": {
       "rank": 12,
@@ -15842,7 +15876,9 @@
       "coupled_vs_foster": 3.301288306030831e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "holdout_field_high_band_max": 0.002693798030070731,
+      "holdout_joule_high_band_max": 9.313738722482867e-07
     },
     "multipoint CLN 12": {
       "rank": 12,
@@ -17102,11 +17138,13 @@
         7.895683520871487,
         78.95683520871486,
         789.5683520871487
-      ]
+      ],
+      "holdout_field_high_band_max": 3.152678101695875e-05,
+      "holdout_joule_high_band_max": 2.0000046063728405e-10
     },
     "bulk2 + boundary-response POD 12": {
       "rank": 12,
-      "construction_seconds": 0.007828500005416572,
+      "construction_seconds": null,
       "poles": [
         6.366917261930326,
         11.925242081019533,
@@ -18356,11 +18394,15 @@
       "coupled_vs_foster": 2.4786457994730825e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": 0.02399539428004083,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.007828500005416572,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 1.0432120781172205e-05,
+      "holdout_joule_high_band_max": 9.933609490531126e-12
     },
     "bulk2 + field-residual POD 12": {
       "rank": 12,
-      "construction_seconds": 0.005446199997095391,
+      "construction_seconds": null,
       "poles": [
         6.366917305198878,
         11.926555517593702,
@@ -19610,11 +19652,15 @@
       "coupled_vs_foster": 7.483782528592113e-16,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": 0.0370760471113379,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.005446199997095391,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 4.185574399945512e-06,
+      "holdout_joule_high_band_max": 2.0270674028211033e-11
     },
     "field POD 12": {
       "rank": 12,
-      "construction_seconds": 0.005446199997095391,
+      "construction_seconds": null,
       "poles": [
         6.3669173043100935,
         11.926558137601418,
@@ -20864,7 +20910,11 @@
       "coupled_vs_foster": 9.670787924691496e-15,
       "positive_energy_pencil": true,
       "bulk_enrichment_coupling_ratio": null,
-      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis"
+      "coupling_basis_caveat": "computed before rank SVD in the energy-normalized bulk/enrichment input basis",
+      "basis_processing_seconds_partial": 0.005446199997095391,
+      "timing_scope": "POD total construction cost unavailable: full eigensystem cost excluded",
+      "holdout_field_high_band_max": 4.156049319981889e-06,
+      "holdout_joule_high_band_max": 1.6181056494701807e-11
     }
   },
   "common_source_checks": {
@@ -20972,7 +21022,7 @@
       6.047801016933798e-17
     ],
     "offline_seconds": 0.005446199997095391,
-    "cost_caveat": "training uses full-system spectral solves and a full eigensystem; this benchmark is not a sparse industrial cost estimate"
+    "cost_caveat": "offline_seconds is partial and excludes the full eigensystem; total POD construction cost is unavailable. No offline-cost ranking."
   },
   "boundary_selection": {
     "observation_functionals": 12,

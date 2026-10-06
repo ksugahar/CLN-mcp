@@ -4,7 +4,7 @@
 differential reluctivity between nu_i and nu0, so the FP split converges for nu_FP > nu0/2, i.e. mu_r^FP ~ 2,
 for this stated constitutive law. FP iterations are Anderson-accelerated.
 Air outside: linear, static -> condensed exactly onto the rod surface (Schur complement S of an air
-annulus to r = b with the exact Fourier DtN on r = b), or replaced by K Steklov surface modes.
+annulus to r = b with the exact Fourier DtN on r = b), the recorded nonlinear experiment uses only the full discrete surface operator. Truncated-Steklov helpers are unvalidated.
 Fixed-point split (FP-CLN): nu(B) -> constant nu_FP on the left; the residual
     g(A) = ((nu(|grad A|^2) - nu_FP) grad A, grad v)_rod
 goes to the right as a controlled source.  Backward Euler in time, FP iteration at every step.

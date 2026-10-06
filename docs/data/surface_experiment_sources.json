@@ -4,9 +4,9 @@
     "validation/surface_hybrid/compare_3d.py": "54554d5fef11b049b99114a27111943be7838290af9c305f1a133049b7da06b1",
     "validation/surface_hybrid/compare_circle.py": "cb1d2624ed4eb38c14d85d735185bfd379ca9affe3cbac86673680a53e0c5bd1",
     "validation/surface_hybrid/fixed_point.py": "90d579908947ee139a2ef8782db36bc1548ea6edd46f090d1ff305807ba82fee",
-    "validation/surface_hybrid/fp_cln_surface.py": "7b24e0edc4ad7bbff9d0c0e2a8e861120263d260183b0171b479ef2bcdef77a4",
+    "validation/surface_hybrid/fp_cln_surface.py": "dbf0295fe352639a6c8f3617e87bd434d66b9c92a06ab46e43943aa513d48628",
     "validation/surface_hybrid/ladder_eval.py": "fc431aba383eb33bfb5fa9e6c5c7632afc0ad74dcc1d3919b9cc0503fb34eaa6",
-    "validation/surface_hybrid/positive_foster.py": "9c90f13d34b8acfcfa1893cc6676b723d36b4a44cafb7f97a5cf3203dc6260af",
+    "validation/surface_hybrid/positive_foster.py": "4a3d860728bbe1e891ec1b2c84206f6a0f9b4d5fc7c605aa8dcbde5de9ff677b",
     "validation/surface_hybrid/surface_modes_rod.py": "b9e11cde2a84886110829c92ba6ae0a777fa4b35c54b271e3231e85c61c38388",
     "validation/surface_hybrid/validate_evidence.py": "e103eb05d2bd52ba6496e7b7ebca151d1f50424eab1dde27fbe53662fc27c81b"
   }
