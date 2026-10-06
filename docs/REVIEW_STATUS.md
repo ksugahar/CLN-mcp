@@ -71,14 +71,19 @@ motion, winding resistance, shifted/Type2 TEAM 28 and general 3D nonlinear CLN.
 The separate legacy-pointer review remains a development change outside this
 public addition. Remote publication and its workflow result are separate checks.
 
-## General 3D terminal CLN: candidate review pending
+## General 3D terminal CLN: scientific review accepted
 
 Independent Claude Opus 5.5 design review accepted the terminal mixed blocks,
 physical Type2 recurrence and positive-shift normalization on 7 October 2026.
 An independent pilot check extracted the first four A–phi elements from full
 assembled matrices using contour Taylor coefficients and continued-fraction
 division. It confirmed the elements and contact order four for that pilot.
-This is not acceptance of the final eight-element numerical candidate.
+The eight-element numerical candidate then received independent scientific
+acceptance at **`c18840af58cf83c672fadfba292c9aaaf1020117`** on 7 October
+2026, following review at `7a9a8e160504bacf05918acc88d302bcace10858`.
+The required resolution-scope correction and all four disclosure/validator
+findings were closed with no new findings. Codex implemented the corrections;
+Claude Opus 5.5 independently reviewed the exact revision.
 
 Codex implemented the non-symmetric notched conductor, its one-volt terminal
 port, eight-element ladders, same-mesh full references and h/p comparisons.
@@ -100,5 +105,10 @@ support only same-mesh reduction comparisons. The highest sampled frequency
 passing that screen on any study mesh is 10 kHz; passage is not an accuracy
 bound and still needs refinement evidence. There is no air, external return path or general nonlinear claim.
 
-The numerical candidate awaits reciprocal review. No new publication or remote
-CI outcome is asserted here.
+The independent checker confirmed the full terminal response, shallow
+elements and contact order eight from original assembled matrices. All eight
+CI validation commands passed on the exact-revision clean checkout, the
+q7/q8 corruption controls were rejected, and the executed notebook had no
+error outputs. This status-only update changes no code, data or execution
+outputs. Scientific acceptance does not assert a new publication or remote
+CI outcome.
