@@ -30,7 +30,7 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 [Research follow-up](docs/10_research_followup.ipynb) verifies three-stage round-wire elements against independent Bessel-series coefficients, compares matched-count reaction-transfer fits on the POD training grid, and tests nonlinear bases against both matched-rank models and the preserved two-mode bulk control. It also separates first- and second-order full-model mesh changes from reduction errors. These added results have explicit discretization and information-budget limits.
 
-[TEAM 28 force](docs/11_team28_force.ipynb) derives a six-state, twelve-element Type1 CLN from magnetic-energy and Joule-loss norms using the actual winding excitation. It compares reconstructed lift with newly computed full FEM at 25 heights, checks a 1 mN reduction gate and a 0.6 mm equilibrium gate against the published 11.3 mm, and records mesh/outer-air sensitivity separately. The scope is axisymmetric Model A at fixed height and 50 Hz. See [physical field recursion and implementation checks](docs/CLN_FIELD_RECURSION.md).
+[TEAM 28 force](docs/11_team28_force.ipynb) derives a six-state, twelve-element Type1 CLN from magnetic-energy and Joule-loss norms using the actual winding excitation. It compares reconstructed lift with newly computed full FEM at 25 heights, checks a 1 mN reduction gate and a 0.6 mm equilibrium gate against the published 11.3 mm, and records fresh local root refinement and mesh/outer-air sensitivity separately. The scope is axisymmetric Model A at fixed height and 50 Hz. See [physical field recursion and implementation checks](docs/CLN_FIELD_RECURSION.md).
 
 ## Reproduce
 
@@ -46,6 +46,7 @@ python validation/surface_hybrid/validate_evidence.py
 python validation/surface_hybrid/validate_same_excitation_3d.py
 wolframscript -file mathematica/derive_energy_recursion.wls docs/data/energy_recursion.json
 python validation/team28_cln.py --output docs/data/team28_cln.json
+python validation/team28_refine_equilibrium.py --output docs/data/team28_equilibrium.json
 python validation/validate_team28.py
 ```
 

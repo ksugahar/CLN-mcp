@@ -25,11 +25,21 @@ starts with a shunt `s L_0`, continues through series `R_0` and shunt `s L_1`,
 and terminates at the last series resistance in this example.
 
 [The Wolfram proof](../mathematica/derive_energy_recursion.wls) constructs the
-elements from a two-state SPD system and proves exact impedance equality.
+elements for an exhausted two-state SPD system (`n=N=2`) and proves exact
+impedance equality. `K=I` and a source along an axis are without loss of
+generality by congruence and rotation. That symbolic part does not establish
+the general truncated `n<N` case or semidefinite `M`. The script separately
+checks two exact rational truncated instances with non-identity `K` and
+semidefinite `M`, proving ladder/Galerkin equality and `2n` matched moments of
+`Z/s` for those instances. These checks are not a general theorem.
 [TEAM 28](11_team28_force.ipynb) additionally checks the field volume integrals,
 energy orthogonality, circuit/field impedance and electrical loss balance in FEM.
 Its six magnetic states contain twelve physical elements; these counts are not
 interchangeable. This example does not demonstrate shifted or Type2 recursion.
+
+For prescribed coil current, the induced impedance tends to zero as `s` tends
+to zero. The first shunt `s L_0` therefore gives the magnetic-first Type1 form;
+excluded winding resistance would be a separate series element.
 
 Both CLN and snapshot/POD methods can use the actual physical excitation.
 Their distinguishing features are the field recursion, normalization, sampling

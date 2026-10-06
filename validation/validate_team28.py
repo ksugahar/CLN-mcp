@@ -93,6 +93,41 @@ def main():
                                   'peak_phasor_force_average'}
     assert all(value is True for value in proof['checks'].values())
     assert hashlib.sha256((ROOT/'mathematica/derive_energy_recursion.wls').read_text().encode()).hexdigest() == proof['source_sha256']
+    assert len(proof['truncated_instances']) == 2
+    for case in proof['truncated_instances']:
+        k=sy.diag(*case['K_diagonal']); m=sy.diag(*case['M_diagonal'])
+        f=sy.Matrix(case['source']); s=sy.Symbol('s'); count=case['states']
+        assert count < len(f) and 0 in case['M_diagonal'] and all(v>=0 for v in case['M_diagonal'])
+        assert all(v is True for v in case['checks'].values())
+        a=k.inv()*f; e=sy.zeros(len(f),1); modes=[]; elements=[]
+        for _ in range(count):
+            l=(a.T*k*a)[0]; e=e+a/l; r=1/(e.T*m*e)[0]
+            modes.append(a); elements.extend([l,r]); a=a-r*k.inv()*m*e
+        assert all(v > 0 for v in elements)
+        assert elements == [sy.sympify(v.replace('^','**')) for v in case['elements_LR']]
+        q=sy.Matrix.hstack(*modes); fr=q.T*f
+        gal=s*(fr.T*(q.T*(k+s*m)*q).inv()*fr)[0]
+        full=s*(f.T*(k+s*m).inv()*f)[0]
+        assert sy.cancel(z_type1(elements,0,s)-gal) == 0
+        error=sy.series(sy.cancel(full-gal),s,0,2*count+2).removeO()
+        assert all(error.coeff(s,j)==0 for j in range(2*count+1))
+        assert error.coeff(s,2*count+1)!=0 and case['first_error_power']==2*count+1
+    root=json.loads((ROOT/'docs/data/team28_equilibrium.json').read_text(encoding='utf-8'))
+    assert root['complete'] and 0 < root['bracket_width_mm'] < .002
+    assert abs(root['weight_N']-weight)<1e-14
+    assert abs(root['bracket_width_mm']-(root['bracket'][1]['height_mm']-root['bracket'][0]['height_mm'])) < 1e-14
+    for row in root['fresh_heights']+root['bracket']:
+        check_row(row,6,50,20)
+    for kind in ['full','cln']:
+        height=equilibrium(root['bracket'],kind+'_upward_force_N',weight)
+        assert abs(height-root[kind+'_equilibrium_height_mm']) < 1e-12
+        assert abs(height-11.3)<.6 and abs(abs(height-11.3)-root[kind+'_reference_gap_mm'])<1e-12
+        assert abs(height-data[kind+'_equilibrium_height_mm']-root[kind+'_grid_interpolation_shift_mm'])<1e-12
+        assert abs(root['fresh_heights'][-1][kind+'_upward_force_N']-weight)<root['peak_force_balance_tolerance_N']
+    assert set(root['source_sha256_lf'])=={'validation/team28_refine_equilibrium.py','validation/team28_cln.py',
+                                        'validation/surface_hybrid/ladder_eval.py','docs/data/team28_cln.json'}
+    for name,digest in root['source_sha256_lf'].items():
+        assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
     print('PASS TEAM 28: 25 forces, 1 mN / 0.6 mm gates, physical elements, power, settings probes and source hashes')
 
 

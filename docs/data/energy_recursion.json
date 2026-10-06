@@ -1,5 +1,5 @@
 {
-	"scope":"Exact SPD two-state Type1 proof; not a TEAM 28 force solution",
+	"scope":"Exact exhausted n=N=2 SPD Type1 proof: K=I and f along an axis are without loss of generality by congruence and rotation. The symbolic part does not prove general truncated n<N or PSD M; exact truncated instances are recorded separately; not a TEAM 28 force solution",
 	"assumptions":"l > 0 && a > 0 && b > 0 && c > 0 && a*c > b^2",
 	"elements_LR":[
 		"l",
@@ -17,6 +17,94 @@
 		"termination":true,
 		"peak_phasor_force_average":true
 	},
+	"truncated_instances_scope":"Two exact rational truncated cases with PSD M and non-identity K; no general theorem",
+	"truncated_instances":[
+		{
+			"K_diagonal":[
+				2,
+				3,
+				5,
+				7,
+				11
+			],
+			"M_diagonal":[
+				1,
+				2,
+				3,
+				0,
+				0
+			],
+			"source":[
+				1,
+				1,
+				1,
+				1,
+				1
+			],
+			"states":2,
+			"full_dimension":5,
+			"first_error_power":5,
+			"elements_LR":[
+				"2927\/2310",
+				"8567329\/3160157",
+				"527041474\/1684363681",
+				"32422323844\/5021489473"
+			],
+			"checks":{
+				"ladder_equals_galerkin":true,
+				"positive_elements":true,
+				"magnetic_orthogonality":true,
+				"electric_orthogonality":true,
+				"nonzero_remaining_field":true,
+				"moment_contact":true
+			}
+		},
+		{
+			"K_diagonal":[
+				2,
+				3,
+				5,
+				7,
+				11,
+				13
+			],
+			"M_diagonal":[
+				1,
+				2,
+				3,
+				4,
+				0,
+				0
+			],
+			"source":[
+				1,
+				1,
+				1,
+				1,
+				1,
+				1
+			],
+			"states":3,
+			"full_dimension":6,
+			"first_error_power":7,
+			"elements_LR":[
+				"40361\/30030",
+				"1629010321\/607682933",
+				"298098152717\/1389116439997",
+				"54549997325209\/15653196798437",
+				"54108818278028914\/29809462432019413",
+				"26835603657232063922\/54336834011597137"
+			],
+			"checks":{
+				"ladder_equals_galerkin":true,
+				"positive_elements":true,
+				"magnetic_orthogonality":true,
+				"electric_orthogonality":true,
+				"nonzero_remaining_field":true,
+				"moment_contact":true
+			}
+		}
+	],
 	"wolfram_version":"14.2.1 for Microsoft Windows (64-bit) (March 17, 2025)",
-	"source_sha256":"e09f65045a076a8a686efc6a0e0bb30abc335e13a6462047bc1f90daed9b6aef"
+	"source_sha256":"b0e21af194b03a481821e01d55bde3c5c4118fa69d004e746e173bcdaa084038"
 }
