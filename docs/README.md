@@ -24,3 +24,5 @@ The formulation, nonlinear introduction, termination, and multiport notebooks us
 The comparison experiments use a linear internal-conductor reaction transfer in 3D and a nonlinear 2D full discrete/time-discrete reference. They do not establish general 3D nonlinear performance or universal Foster superiority. Exact terminal conversion does not reconstruct missing physical field modes.
 
 These additions received reciprocal Codex and Claude Opus 5.5 review. See [reviewed revisions, corrections and limits](REVIEW_STATUS.md) and each notebook for its evidence.
+
+[Research follow-up](10_research_followup.ipynb): three-stage refinement, same-grid Foster fits, and matched-rank nonlinear held-out amplitudes.

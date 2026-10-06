@@ -1,0 +1,16 @@
+{
+  "scope": "Higher stages and matched-count research; full run outputs, no commercial benchmark sources",
+  "source_sha256_lf": {
+    "validation/validate_higher_stages.py": "f8523b3c65a2b7e785389404f01ffd2ad0bb9850dfaae5fc73e0d281ac8a0b36",
+    "validation/validate_research.py": "19075e3b0143338702d5e8d3f7b6d29fc3a41abb41bf2ae00fb61ef2594aa3ba",
+    "validation/surface_hybrid/compare_information_budget.py": "fc7a92078259e89def31e6e2020c1ab2558b53a1746fd00139b20e3e06e53ff9",
+    "validation/surface_hybrid/compare_nonlinear_bases.py": "d10cd6fa71783f95b20fe8735bb245dc42b3294f0f407d77a88d1480ec01c5f5",
+    "validation/surface_hybrid/fp_cln_surface.py": "dbf0295fe352639a6c8f3617e87bd434d66b9c92a06ab46e43943aa513d48628",
+    "validation/surface_hybrid/fixed_point.py": "90d579908947ee139a2ef8782db36bc1548ea6edd46f090d1ff305807ba82fee",
+    "validation/surface_hybrid/compare_3d.py": "54554d5fef11b049b99114a27111943be7838290af9c305f1a133049b7da06b1",
+    "validation/surface_hybrid/positive_foster.py": "4a3d860728bbe1e891ec1b2c84206f6a0f9b4d5fc7c605aa8dcbde5de9ff677b",
+    "validation/surface_hybrid/ladder_eval.py": "fc431aba383eb33bfb5fa9e6c5c7632afc0ad74dcc1d3919b9cc0503fb34eaa6",
+    "mathematica/derive_round_wire_three_stages.wls": "d43d9bfd9fecab19b86e25191c81c9464c13aaaa911da6aa9e9d4fc346ed1504",
+    "validation/surface_hybrid/mesh_reference.py": "33d0a49b8f63a5ed7f068910452657fc9d95fb1736b7838639ee360fbd605d2e"
+  }
+}

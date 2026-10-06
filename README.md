@@ -28,6 +28,8 @@ Start with [What is CLN?](docs/00_what_is_cln.ipynb), then follow the [notebook 
 
 The notched-3D full responses differ by about 3.46% between meshes. Small reduction error against one discrete model is not established continuum/device accuracy. No universal Foster/CLN ranking is claimed.
 
+[Research follow-up](docs/10_research_followup.ipynb) verifies three-stage round-wire elements against independent Bessel-series coefficients, compares matched-count terminal fits on the POD training grid, and tests nonlinear bases at held-out amplitudes. These added results have explicit discretization and information-budget limits.
+
 ## Reproduce
 
 Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The current reciprocal-review reruns use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.

@@ -47,16 +47,18 @@ def make_mesh(maxh, curve):
     return Mesh(geo.GenerateMesh(maxh=maxh)).Curve(curve)
 
 
-def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000):
+def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000, bonus_intorder=4):
     from ngsolve import (BilinearForm, GridFunction, H1, HCurl, Integrate,
                          LinearForm, curl, dx, grad)
 
+    if isinstance(bonus_intorder, bool) or not isinstance(bonus_intorder, int) or bonus_intorder < 0:
+        raise ValueError("bonus_intorder must be a nonnegative integer")
     r, h, sigma, mu = R_WIRE, H_WIRE, SIGMA, MU
     import warnings
     if stages != 1:
         warnings.warn('Only R0/L1/R2 (one stage) is validated; higher-stage coefficients are unverified', RuntimeWarning)
     # Match quadrature across coupled scalar/vector forms on curved elements.
-    dx = dx(bonus_intorder=4)
+    dx = dx(bonus_intorder=bonus_intorder)
     mesh = make_mesh(maxh, curve)
     print(f"mesh: nv={mesh.nv} nedge={mesh.nedge} nface={mesh.nface} ne={mesh.ne}")
 
@@ -149,7 +151,7 @@ def run(maxh=1e-3, order=1, stages=1, curve=3, tol=1e-10, maxiter=10000):
         "script": "CLN_APhi",
         "formulation": "A-phi",
         "params": {"maxh": maxh, "order": order, "stages": stages, "curve": curve,
-                   "tol": tol, "maxiter": maxiter,
+                   "tol": tol, "maxiter": maxiter, "bonus_intorder": bonus_intorder,
                    "shift_phi": SHIFT_PHI, "shift_A": SHIFT_A,
                    "r": r, "h": h, "sigma": sigma, "mu": mu},
         "mesh": {"nv": mesh.nv, "ne": mesh.ne, "ndof_A": fesA.ndof, "ndof_phi": fesPhi.ndof},
@@ -168,6 +170,7 @@ def main(argv=None):
     p.add_argument("--order", type=int, default=1, help="FE order (default 1)")
     p.add_argument("--stages", type=int, default=1, help="number of CLN stages (default 1)")
     p.add_argument("--curve", type=int, default=3, help="geometry curving order (default 3)")
+    p.add_argument("--bonus-intorder", type=int, default=4, help="extra volume/boundary quadrature order")
     p.add_argument("--tol", type=float, default=1e-10, help="ICCG relative tolerance")
     p.add_argument("--maxiter", type=int, default=10000, help="ICCG iteration limit")
     p.add_argument("--quick", action="store_true", help="coarse smoke run (maxh 3e-3)")
@@ -177,7 +180,7 @@ def main(argv=None):
         args.maxh = 3e-3
     from ngsolve import TaskManager
     with TaskManager():
-        data = run(args.maxh, args.order, args.stages, args.curve, args.tol, args.maxiter)
+        data = run(args.maxh, args.order, args.stages, args.curve, args.tol, args.maxiter, args.bonus_intorder)
     write_json(args.output or f"Aphi_order{args.order}.json", data)
 
 

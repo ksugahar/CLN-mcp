@@ -15,3 +15,4 @@ jobs:
       - run: python validation/validate_foster_cauer.py
       - run: python validation/surface_hybrid/validate_evidence.py
       - run: python validation/surface_hybrid/validate_same_excitation_3d.py
+      - run: python validation/validate_research.py
