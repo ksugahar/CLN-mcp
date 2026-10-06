@@ -1,8 +1,8 @@
 {
   "scope": "Same physical source for CLN and frequency snapshots; boundary functionals observe, not excite. Boundary-selection POD is NOT exterior Steklov modes.",
   "source_sha256_lf": {
-    "validation/surface_hybrid/compare_same_excitation_3d.py": "c7cc3a861b384276746ec688e2524fff26197d6b44596e106bf43ab2bb289717",
-    "validation/surface_hybrid/validate_same_excitation_3d.py": "0f12ac9bd601f13ab2a4dd352a63fe6628ee38716887f1d91687fc9f8478f17a",
+    "validation/surface_hybrid/compare_same_excitation_3d.py": "93e779cb74dd8c0da1d086cdb9318a81389686bacf0ae4e9c22c18ad3064e902",
+    "validation/surface_hybrid/validate_same_excitation_3d.py": "d95039cff0ff06e456e74ad2873f176f3e079335a4f332979691d38daf0a92b7",
     "validation/surface_hybrid/surface_3d_model.py": "84d6de72a88f0b081f65a47091e6a66a5fad72639da2093b3ffb0c6a5a292ea5",
     "validation/surface_hybrid/compare_3d.py": "54554d5fef11b049b99114a27111943be7838290af9c305f1a133049b7da06b1",
     "validation/surface_hybrid/positive_foster.py": "4a3d860728bbe1e891ec1b2c84206f6a0f9b4d5fc7c605aa8dcbde5de9ff677b"

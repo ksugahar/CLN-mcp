@@ -19,8 +19,16 @@ def coefficients(d):
     return [d['R_all'][0]['R'], d['Ln'][0], d['R_all'][1]['R']]
 
 
+def source_hashes():
+    root=Path(__file__).parent
+    return {str(p.relative_to(root)).replace('\\','/'):hashlib.sha256(p.read_text(encoding='utf-8-sig').encode('utf-8')).hexdigest()
+             for p in [root/'validate_3d.py',*(root/'cln3d'/name for name in
+                       ['CLN_APhi.py','CLN_T_Omega.py','CLN_AT.py','_iccg.py'])]}
+
+
 def validate():
     ngsolve.SetNumThreads(4)
+    sources=source_hashes()
     modules=[CLN_APhi, CLN_T_Omega, CLN_AT]
     cases=[]
     for m in modules:
@@ -54,10 +62,7 @@ def validate():
         print('field errors', m.__name__, [v['field_relative_rms'] for v in pair])
         assert max(pair[1]['field_relative_rms'].values()) < .1
         assert pair[1]['field_relative_rms']['E2'] < pair[0]['field_relative_rms']['E2']
-    root=Path(__file__).parent
-    sources={str(p.relative_to(root)).replace('\\','/'):hashlib.sha256(p.read_text(encoding='utf-8-sig').encode('utf-8')).hexdigest()
-             for p in [root/'validate_3d.py',*(root/'cln3d'/name for name in
-                       ['CLN_APhi.py','CLN_T_Omega.py','CLN_AT.py','_iccg.py'])]}
+    assert sources == source_hashes(), 'Sources changed during validation; discard this run'
     return {'scope':'3D cylinder, internal energy, s0=0, order=1, R0/L1/R2',
             'review':'Codex self-review; independent Claude review pending',
             'runtime':{'python':platform.python_version(),'ngsolve':ngsolve.__version__},

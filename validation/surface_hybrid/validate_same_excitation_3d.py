@@ -21,6 +21,14 @@ for size in ['coarse','fine']:
         error=abs(z/target-1)
         assert np.allclose(error,v['relative_error'],atol=1e-12,rtol=1e-6)
         assert np.isclose(error[(freq>=1e3)&holdout].max(),v['holdout_high_band_max'],atol=1e-12,rtol=1e-6)
+        for metric, series in [('holdout_field_high_band_max','field_energy_relative_error'),
+                               ('holdout_joule_high_band_max','joule_relative_error')]:
+            assert np.isclose(np.asarray(v[series])[(freq>=1e3)&holdout].max(),
+                              v[metric],atol=1e-12,rtol=1e-6),(label,metric)
+        if 'POD' in label:
+            assert v['construction_seconds'] is None,label
+            assert v['basis_processing_seconds_partial'] >= 0,label
+            assert 'full eigensystem cost excluded' in v['timing_scope'],label
         assert v['coupled_vs_foster']<1e-8
         for key in ['field_energy_relative_error','joule_relative_error','magnetic_energy_relative_error']:
             a=np.asarray(v[key]);assert a.shape==u.shape and np.all(np.isfinite(a)) and np.all(a>=0)
