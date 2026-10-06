@@ -113,10 +113,12 @@ error outputs. This status-only update changes no code, data or execution
 outputs. Scientific acceptance does not assert a new publication or remote
 CI outcome.
 
-## General 3D CLN with surrounding air — candidate under review
+## General 3D CLN with surrounding air — scientific review accepted
 
 The surrounding-air design was independently accepted on 7 October 2026.
-The numerical implementation and its evidence are pending reciprocal review.
+Independent Claude Opus 5.5 numerical review gave **SCIENTIFIC ACCEPT** at
+`3ab2b33999e59ea8d9818cde5b1ff8cd6db14efa` on 7 October 2026, with no P1/P2
+findings and three informational P3 notes. Codex implemented the candidate.
 The source-break port models an ideal terminal drive and perfectly conducting
 return enclosure; it excludes shell loss, lead capacitance and displacement
 current. Air conductivity is exactly zero. A global gradient gauge is checked
@@ -125,5 +127,17 @@ energy. Regional energy splits, coaxial analytic errors, geometry errors,
 marked conductor/air refinement and same-mesh reduction errors are reported
 separately in notebook 13. The A–T control shares the global magnetic operator
 and DC lift; T–Omega is not implemented for this air topology. Passing a
-skin-depth screen is not a continuum accuracy certificate. No numerical
-peer acceptance or publication is asserted by this candidate status.
+skin-depth screen is not a continuum accuracy certificate. The reviewer independently reconstructed the full response and continued
+fraction from the original exported matrices, confirmed Z(s0)=Rhat0 and
+R0–L3 within 1.1e-10, and checked the coax oracle and executed Wolfram proof.
+All nine validation gates passed on the exact-SHA clean checkout.
+
+The informational notes retain the non-monotone deep coax elements and up to
+8.3% notched full-response mesh change at 100 kHz; neither is a convergence
+or continuum accuracy claim. The A–T magnetic orthogonality defect of
+2.70e-9 has only a 3.7-fold margin to its 1e-8 gate. The conditioning audit
+uses lower-bound estimates, not certified forward-error bounds.
+
+This status-only update changes no producer code, numerical data, notebook
+code cells or execution outputs. Scientific acceptance is limited to the
+stated tests and does not assert publication or a remote CI outcome.
