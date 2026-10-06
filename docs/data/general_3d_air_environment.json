@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "validation/cln3d/general_shape_air_environment.py": "85fb8e81e880b771526b8cb7836179cf23f4a9754a6555662c88945bb24ddfb5"
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.5.2",
+    "scipy": "1.17.1",
+    "ngsolve": "6.2.2607",
+    "netgen": "6.2.2607",
+    "mpmath": "1.3.0",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "declared_ngsolve_threads": 4,
+    "float64_epsilon": 2.220446049250313e-16,
+    "longdouble_epsilon": 2.220446049250313e-16
+  },
+  "scope": "Runtime used for native enclosure reproduction; SuperLU as provided by SciPy. Platform-dependent longdouble precision is explicit."
+}

@@ -34,6 +34,8 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 [General 3D terminal CLN](docs/12_general_3d_cln.ipynb) constructs energy-normalized Type2 field modes in a non-symmetric notched conductor with a non-trivial scalar potential. It compares two- through eight-element ladders at zero and positive real expansion points, full A–phi/A–T/T–Omega terminal responses, and h/p refinement. The T forms use a free scalar terminal-current mode and side-only tangential constraints. Shared DC lifts and the shared zero-shift R2 of the two T forms are disclosed. Deep R4-L7 elements are not cross-validated. Both 100 kHz and 1 MHz fail the skin-depth resolution screen on every study mesh and support only same-mesh reduction comparisons; passing the screen does not establish FE accuracy. The interior magnetic boundary excludes air and return-path inductance. Independent Claude Opus 5.5 numerical review gave scientific acceptance at `c18840a` on 7 October 2026; see the reviewed scope and limits in [REVIEW_STATUS](docs/REVIEW_STATUS.md).
 
+[General 3D CLN with surrounding air](docs/13_general_3d_air.ipynb) extends the terminal field recursion to a perfectly conducting enclosure, using a source-break port and exactly zero conductivity in air. Total magnetic energy determines the ladder elements; conductor and air contributions are reported separately. A coaxial Bessel oracle checks the return-path inductance, and region-marked refinement distinguishes FE error from same-mesh reduction error. A–phi is primary and A–T is a shared-operator cross-check; T–Omega is excluded until its air circulation topology is handled explicitly. The implementation is undergoing numerical reciprocal review.
+
 ## Reproduce
 
 Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The current reciprocal-review reruns use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
@@ -53,6 +55,12 @@ python validation/validate_team28.py
 python validation/cln3d/general_shape.py --maxh .006 .004 .003 .002 --modes 4 --with-t --output docs/data/general_3d_cln_p1.json --export docs/data/general_3d_cln_matrices.json
 python validation/cln3d/general_shape.py --order 2 --maxh .004 .003 --modes 4 --with-t --output docs/data/general_3d_cln_p2.json
 python validation/validate_general_3d.py
+wolframscript -file mathematica/derive_coax_enclosure.wls docs/data/general_3d_air_oracle.json
+python validation/cln3d/general_shape_air_environment.py --output docs/data/general_3d_air_environment.json
+python validation/cln3d/general_shape_air_feasible_study.py --output docs/data/general_3d_air.json --export docs/data/general_3d_air_matrices.json
+python validation/cln3d/coax_field_oracle.py --output docs/data/general_3d_air_fields.json
+python validation/cln3d/general_shape_air_shell.py --study docs/data/general_3d_air.json --output docs/data/general_3d_air_shell.json
+python validation/validate_general_3d_air.py
 ```
 
 - `docs/*.ipynb`: derivations and executed examples.
@@ -62,6 +70,6 @@ python validation/validate_general_3d.py
 
 This release focuses on documentation and reproduction; the broader MCP application is not distributed here. Four-element continuum results do not prove arbitrary stages or general 3D mixed formulations. A finite shifted ladder is a local approximation, not an exact response at all frequencies. Positive shifted elements alone do not establish passivity in physical s.
 
-Type2's underlying derivation received an independent Claude Opus 5.5 review. Type1 was checked by Codex using Wolfram, independent Bessel evaluation, and separate FE formulations. The later 3D, surface/POD, and conversion additions received reciprocal Codex and Claude Opus 5.5 review. TEAM 28 received two independent Claude Opus 5.5 review rounds, including native force/root and exact-proof reproduction. See [reviewed revisions, corrections and limits](docs/REVIEW_STATUS.md). Stored JSON `review` fields record producer-time status; the linked review note gives the current verdict.
+Type2's underlying derivation received an independent Claude Opus 5.5 review. Type1 was checked by Codex using Wolfram, independent Bessel evaluation, and separate FE formulations. The earlier 3D, surface/POD, and conversion additions received reciprocal Codex and Claude Opus 5.5 review. TEAM 28 received two independent Claude Opus 5.5 review rounds, including native force/root and exact-proof reproduction. See [reviewed revisions, corrections and limits](docs/REVIEW_STATUS.md). Stored JSON `review` fields record producer-time status; the linked review note gives the current verdict.
 
 BSD-3-Clause license.

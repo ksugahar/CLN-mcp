@@ -110,3 +110,35 @@ later-stage disagreement should first be separated into truncation and full
 FE-space/port discrepancies. Adding modes need not produce a simple physical
 R–L ladder; test the coupled energies and port response before asserting that
 representation. The current notched benchmark contains no surface enrichment.
+
+## Surrounding air and an explicit return
+
+For an enclosure example, conductivity and Joule norms remain conductor-only,
+while the magnetic inverse and energy extend over conductor plus air. An
+inductive forcing A[x] is restricted to the conductor before assembly; its
+magnetic response is solved globally. Thus ell=ell_conductor+ell_air in every
+recursion step. An external series inductance generally changes all shifted
+Cauer elements, not only the first inductance.
+
+Zero air conductivity adds gradient null directions to the global magnetic
+operator. Include the complete global gradient map, verify the scalar
+restriction identities and original-equation residuals, and check physical
+fields under gauge-weight changes. A tiny artificial air conductivity changes
+the physical problem and is not a gauge fix. The return geometry and source
+break are part of the impedance definition; a conductor bonded to the same
+perfect return on both terminals would short the intended voltage drive.
+
+The surrounding-air A–T comparison uses conductor currents and the shared
+global A inverse. A single-valued T–Omega air scalar cannot supply nonzero
+circulation around the conductor; a cut or normalized topological source is
+needed before claiming an equivalent T–Omega model.
+
+A large external series inductance can make high-order impedance coefficients
+sensitive to cancellation when an admittance series is inverted. Compute
+Taylor coefficients directly from a unit-current constrained full system,
+with work-conjugate voltage as output, and compare with an independently
+constructed reduced system. This is a verification method, not a replacement
+of the field recursion. NumPy longdouble is platform-dependent; record its
+epsilon rather than assume it provides more precision than float64.
+
+See notebook 13 for the candidate implementation and its review status.

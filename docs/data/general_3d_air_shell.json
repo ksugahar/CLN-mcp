@@ -1,0 +1,303 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "validation/cln3d/general_shape_air.py": "c53988486d845abd9f0ce888c832182371884a0848073dc098202823aec6023e",
+    "validation/cln3d/general_shape_air_t.py": "fb115130551457ed41969513a197ed04be078f82f5a649bc7e0676e217b7bf37",
+    "validation/cln3d/coax_oracle.py": "2345e0f936be6a9e236b90105c00ec6a08ab7186c8c50388b4b6f33514ca5f44",
+    "validation/cln3d/general_shape_air_controls.py": "1f68aece9b434db73c2d59fc8bbff2aa20c4668e0180d2d1ccbb93fe5683e09a",
+    "validation/cln3d/general_shape_air_study.py": "81a9caee146e60b1592593d1be35a10f129a3a029452a29a4825543b997f7775",
+    "validation/cln3d/impedance_taylor.py": "4ec29262d732f4f4781d2403f898d0950592573a4e9e6f4272a25e9374fd7536",
+    "validation/cln3d/general_shape_air_feasible_study.py": "346146c2a17849cbaa2fc4c29a3b9666c308f7db359338fc1dd9ec1952b2ae65",
+    "validation/cln3d/general_shape_air_shell.py": "58d8133660ee9651a9499c03a716dfe0231a246f9119e92326f6d64d8afadc2c"
+  },
+  "cases": [
+    {
+      "scope": "Near-wall interior sample at a 0.1% radius/half-width offset (inside the quadratic boundary approximation) of K_shell=H cross n; longitudinal return current, averaged over 16 heights. This is a trace approximation, not a meshed finite-conductivity return.",
+      "offset_m": 1.5e-05,
+      "entering_conductor_current": 5235.733251789559,
+      "return_currents": [
+        -5186.701469208265,
+        -5181.635391395369,
+        -5180.830087241432,
+        -5184.573348531398,
+        -5192.793824943149,
+        -5200.40647624857,
+        -5187.935141323318,
+        -5181.476364752822,
+        -5179.4982091236225,
+        -5182.583082698498,
+        -5183.3108954731815,
+        -5185.902045549293,
+        -5179.4024435842475,
+        -5177.093968344541,
+        -5179.4880856641375,
+        -5186.342597687335
+      ],
+      "relative_mean_balance": 0.009809497511438559,
+      "relative_max_balance": 0.011199822570215012,
+      "tag": "coax_p2_base",
+      "mesh_sha256": "583560a6dc3ed3219f60d542be92c9895be632780168a545eacee5700d2e8de4",
+      "mesh": {
+        "maxh": 0.006,
+        "order": 2,
+        "bonus_intorder": 6,
+        "ne": 3323,
+        "free_A": 30012,
+        "free_phi": 4609,
+        "sigma": 1000000.0,
+        "sigma_air": 0.0,
+        "mu": 1.2566370614359173e-06,
+        "volume": 1.0602237176636124e-05,
+        "effective_global_maxh": 0.006,
+        "geometry": "coax",
+        "curvaturesafety": 3,
+        "interior_control": false,
+        "airh": 0.008,
+        "enclosure": 0.015,
+        "geometry_order": 2,
+        "refine_region": null,
+        "refine_steps": 0,
+        "conductor_volume": 1.1780399848215089e-06,
+        "air_volume": 9.424197191813622e-06,
+        "boundary_names": [
+          "surface",
+          "out",
+          "in",
+          "outer",
+          "outer",
+          "outer"
+        ],
+        "boundary_area": {
+          "in": 7.853366618321317e-05,
+          "out": 7.85336661832132e-05,
+          "surface": 0.0004712274970303861,
+          "outer": 0.002670210393393452
+        },
+        "mesh_sha256": "583560a6dc3ed3219f60d542be92c9895be632780168a545eacee5700d2e8de4",
+        "region_element_counts": {
+          "conductor": 878,
+          "air": 2445
+        },
+        "region_max_chord_m": {
+          "conductor": 0.004391731788958955,
+          "air": 0.007957985995911875
+        },
+        "minimum_sampled_jacobian_determinant": 1.708379785813466e-09,
+        "conductor_volume_error": 4.8604030695953426e-05,
+        "contact_area_error": 7.830622502413842e-05,
+        "conductor_perimeter_error": 2.419369056838594e-05,
+        "phi_departure_l2_relative": 2.2683222825960686e-06,
+        "dc_transverse_current_fraction": 1.1838808753175767e-09
+      },
+      "ampere_midplane": {
+        "sampling": "256-point circle or 128 midpoint samples per rectangle side at mid-height; FE sampling diagnostic, not an exact trace",
+        "loops": [
+          {
+            "loop_fraction": 0.72,
+            "H_circulation": 5260.044933592433,
+            "relative_current_defect": 0.0046434149017358095
+          },
+          {
+            "loop_fraction": 0.9,
+            "H_circulation": 5242.399301273723,
+            "relative_current_defect": 0.001273183556837143
+          }
+        ]
+      }
+    },
+    {
+      "scope": "Near-wall interior sample at a 0.1% radius/half-width offset (inside the quadratic boundary approximation) of K_shell=H cross n; longitudinal return current, averaged over 16 heights. This is a trace approximation, not a meshed finite-conductivity return. The air-refined extra cohort is a DC-only field diagnostic, not a dynamic CLN cohort.",
+      "offset_m": 1.5e-05,
+      "entering_conductor_current": 5235.7532277818655,
+      "return_currents": [
+        -5231.996535978926,
+        -5221.543581785296,
+        -5219.124690325958,
+        -5217.0026356058925,
+        -5219.594313607981,
+        -5235.108679158836,
+        -5223.375539357538,
+        -5219.1152781653045,
+        -5218.756468966639,
+        -5222.709874649665,
+        -5232.309300076461,
+        -5228.876761967484,
+        -5225.453508319408,
+        -5225.030846235497,
+        -5226.049602177451,
+        -5234.4173939580405
+      ],
+      "relative_mean_balance": 0.0020482563194419434,
+      "relative_max_balance": 0.0035812597271542845,
+      "tag": "coax_p2_A1_DC",
+      "mesh_sha256": "26e39706e1e31959f022c7b8d79c4f1aabf53862fa0b80e8cffcfb30c3d900f4",
+      "mesh": {
+        "maxh": 0.006,
+        "order": 2,
+        "bonus_intorder": 6,
+        "ne": 11478,
+        "free_A": 106797,
+        "free_phi": 7295,
+        "sigma": 1000000.0,
+        "sigma_air": 0.0,
+        "mu": 1.2566370614359173e-06,
+        "volume": 1.0602482059350836e-05,
+        "effective_global_maxh": 0.006,
+        "geometry": "coax",
+        "curvaturesafety": 3,
+        "interior_control": false,
+        "airh": 0.008,
+        "enclosure": 0.015,
+        "geometry_order": 2,
+        "refine_region": "air",
+        "refine_steps": 1,
+        "conductor_volume": 1.1780444786818117e-06,
+        "air_volume": 9.424437580667974e-06,
+        "boundary_names": [
+          "surface",
+          "out",
+          "in",
+          "outer",
+          "outer",
+          "outer"
+        ],
+        "boundary_area": {
+          "in": 7.853366618321314e-05,
+          "out": 7.85336661832132e-05,
+          "surface": 0.0004712283890866138,
+          "outer": 0.0026702291335149488
+        },
+        "mesh_sha256": "26e39706e1e31959f022c7b8d79c4f1aabf53862fa0b80e8cffcfb30c3d900f4",
+        "region_element_counts": {
+          "conductor": 1455,
+          "air": 10023
+        },
+        "region_max_chord_m": {
+          "conductor": 0.00421223298086638,
+          "air": 0.006282916164943704
+        },
+        "minimum_sampled_jacobian_determinant": 3.1839476230752297e-10,
+        "conductor_volume_error": 4.4789523598542935e-05,
+        "contact_area_error": 7.830622502458251e-05,
+        "conductor_perimeter_error": 2.2300688459875317e-05,
+        "phi_departure_l2_relative": 1.4170190853721361e-06,
+        "dc_transverse_current_fraction": 9.060250986396111e-10
+      },
+      "ampere_midplane": {
+        "sampling": "256-point circle or 128 midpoint samples per rectangle side at mid-height; FE sampling diagnostic, not an exact trace",
+        "loops": [
+          {
+            "loop_fraction": 0.72,
+            "H_circulation": 5233.110365056513,
+            "relative_current_defect": 0.0005047722095321561
+          },
+          {
+            "loop_fraction": 0.9,
+            "H_circulation": 5239.984992362763,
+            "relative_current_defect": 0.0008082437037792989
+          }
+        ]
+      }
+    },
+    {
+      "scope": "Near-wall interior sample at a 0.1% radius/half-width offset (inside the quadratic boundary approximation) of K_shell=H cross n; longitudinal return current, averaged over 16 heights. This is a trace approximation, not a meshed finite-conductivity return.",
+      "offset_m": 2e-05,
+      "entering_conductor_current": 23505.899615053357,
+      "return_currents": [
+        -23219.23558418575,
+        -23307.181253398314,
+        -23405.825796237583,
+        -23461.58847089337,
+        -23536.715461647593,
+        -23713.34399524409,
+        -23946.457088251133,
+        -24314.176931920993,
+        -23795.882823799882,
+        -23616.297026288812,
+        -23413.3875242923,
+        -23366.656261053493,
+        -23440.598760105055,
+        -23536.91375668543,
+        -23578.671689425133,
+        -23683.29504437752
+      ],
+      "relative_mean_balance": 0.003301920069242792,
+      "relative_max_balance": 0.03438614688671637,
+      "tag": "notched_p1_base",
+      "mesh_sha256": "4838e7463a2fee5c327bd404f64c762117e40b723efdaa72cd579ea6243fa353",
+      "mesh": {
+        "maxh": 0.006,
+        "order": 1,
+        "bonus_intorder": 6,
+        "ne": 695,
+        "free_A": 1172,
+        "free_phi": 177,
+        "sigma": 1000000.0,
+        "sigma_air": 0.0,
+        "mu": 1.2566370614359173e-06,
+        "volume": 2.400000000000047e-05,
+        "effective_global_maxh": 0.006,
+        "geometry": "notched",
+        "curvaturesafety": 2,
+        "interior_control": false,
+        "airh": 0.008,
+        "enclosure": 0.02,
+        "geometry_order": 2,
+        "refine_region": null,
+        "refine_steps": 0,
+        "conductor_volume": 5.519999999999471e-06,
+        "air_volume": 1.8479999999998237e-05,
+        "boundary_names": [
+          "surface",
+          "surface",
+          "out",
+          "surface",
+          "in",
+          "surface",
+          "surface",
+          "surface",
+          "surface",
+          "outer",
+          "outer",
+          "outer",
+          "outer",
+          "outer",
+          "outer"
+        ],
+        "boundary_area": {
+          "in": 0.0003999999999999985,
+          "out": 0.0003359999999999987,
+          "surface": 0.001263999999999995,
+          "outer": 0.004863999999999978
+        },
+        "mesh_sha256": "4838e7463a2fee5c327bd404f64c762117e40b723efdaa72cd579ea6243fa353",
+        "region_element_counts": {
+          "conductor": 136,
+          "air": 559
+        },
+        "region_max_chord_m": {
+          "conductor": 0.012,
+          "air": 0.012
+        },
+        "minimum_sampled_jacobian_determinant": 7.683149335487333e-08,
+        "phi_departure_l2_relative": 0.07144060634592618,
+        "dc_transverse_current_fraction": 0.014026899073936047
+      },
+      "ampere_midplane": {
+        "sampling": "256-point circle or 128 midpoint samples per rectangle side at mid-height; FE sampling diagnostic, not an exact trace",
+        "loops": [
+          {
+            "loop_fraction": 0.72,
+            "H_circulation": 23289.854015687226,
+            "relative_current_defect": 0.009191122352440129
+          },
+          {
+            "loop_fraction": 0.9,
+            "H_circulation": 23952.44955683514,
+            "relative_current_defect": 0.018997355944454508
+          }
+        ]
+      }
+    }
+  ]
+}

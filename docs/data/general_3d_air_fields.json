@@ -1,0 +1,37 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "validation/cln3d/coax_field_oracle.py": "6079c5086b0a47796a90ff497da7cc0d7daaa4ed172b059e02edfd44060fa277"
+  },
+  "scope": "Exact axially invariant MQS coax; unit current, no half factor; radial Bessel field integrals, not FE data",
+  "cases": [
+    {
+      "hz": 1000,
+      "unit_current_joule": 0.00019102468326497572,
+      "unit_current_magnetic_conductor": 7.499239125296458e-10,
+      "unit_current_magnetic_air": 3.2958368660043293e-09,
+      "power_identity_defect": 6.2934556084710705e-52
+    },
+    {
+      "hz": 10000,
+      "unit_current_joule": 0.00019479990220530293,
+      "unit_current_magnetic_conductor": 7.425213879444238e-10,
+      "unit_current_magnetic_air": 3.2958368660043293e-09,
+      "power_identity_defect": 8.090095305116375e-52
+    },
+    {
+      "hz": 100000,
+      "unit_current_joule": 0.00035177127560991615,
+      "unit_current_magnetic_conductor": 4.673649399916045e-10,
+      "unit_current_magnetic_air": 3.2958368660043293e-09,
+      "power_identity_defect": 2.699950923319722e-52
+    },
+    {
+      "hz": 1000000,
+      "unit_current_joule": 0.0009982177995534927,
+      "unit_current_magnetic_conductor": 1.5067006269748467e-10,
+      "unit_current_magnetic_air": 3.2958368660043293e-09,
+      "power_identity_defect": 8.419338037474115e-52
+    }
+  ]
+}

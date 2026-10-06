@@ -1,0 +1,44 @@
+{
+	"sourceSHA256":"02c7edfb92b63485ca55563aef7438655eb8c37db19729deeddf4f4bd0796b09",
+	"checks":{
+		"DCResistance":true,
+		"DCInductance":true,
+		"AirInductance":true,
+		"NoAirLimit":true
+	},
+	"cases":[
+		{
+			"s0":0.0,
+			"Rhat":[
+				1.909859317102744e-4,
+				1.667311863884393e-2,
+				0.19210066434473536,
+				1.0012536666072847
+			],
+			"L":[
+				4.045836866004329e-9,
+				2.8691755026635134e-8,
+				9.703783577651889e-8,
+				2.3062166041028208e-7
+			],
+			"passed":true
+		},
+		{
+			"s0":6.2831853071795864e4,
+			"Rhat":[
+				4.417402222984344e-4,
+				2.231468356870118e-2,
+				0.21808357615864293,
+				1.07353914496699
+			],
+			"L":[
+				3.941867359093852e-9,
+				3.38272233554198e-8,
+				1.0592215863071045e-7,
+				2.4306580585900337e-7
+			],
+			"passed":true
+		}
+	],
+	"scope":"Exact MQS coax, perfectly conducting enclosure and ideal source-break port; no capacitance or shell loss"
+}

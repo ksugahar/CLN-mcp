@@ -112,3 +112,18 @@ q7/q8 corruption controls were rejected, and the executed notebook had no
 error outputs. This status-only update changes no code, data or execution
 outputs. Scientific acceptance does not assert a new publication or remote
 CI outcome.
+
+## General 3D CLN with surrounding air — candidate under review
+
+The surrounding-air design was independently accepted on 7 October 2026.
+The numerical implementation and its evidence are pending reciprocal review.
+The source-break port models an ideal terminal drive and perfectly conducting
+return enclosure; it excludes shell loss, lead capacitance and displacement
+current. Air conductivity is exactly zero. A global gradient gauge is checked
+against the original equations, and all ladder inductances use total magnetic
+energy. Regional energy splits, coaxial analytic errors, geometry errors,
+marked conductor/air refinement and same-mesh reduction errors are reported
+separately in notebook 13. The A–T control shares the global magnetic operator
+and DC lift; T–Omega is not implemented for this air topology. Passing a
+skin-depth screen is not a continuum accuracy certificate. No numerical
+peer acceptance or publication is asserted by this candidate status.
