@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "source_sha256_lf": {
+    "validation/cln3d/general_shape.py": "57a8d483649346a14432623620b8931a60e6ae0791f1d75d092d8b1f47f11527",
+    "validation/cln3d/general_shape_t.py": "36bf3f8717613e3be38ece5e157f544302968e104dd951f5c0962b1293425f99",
+    "validation/cln3d/general_shape_checks.py": "7d6a4f4f2735143b742875aa1c0ba352a0f81a030087b7454d03c8003f3e5078",
+    "validation/cln3d/_iccg.py": "1ac18b2ebe8d4895174819263574c891e5fc8327e314cca74ee4d2c61b56b7d3"
+  },
+  "maxh": 0.006,
+  "order": 1,
+  "seconds": 1.695302600001014,
+  "scope": "Coarse quadrature 6/8 and fixed-shift ICCG vs sparse LU only; no all-mesh ICCG claim",
+  "quadrature_element_relative_changes": {
+    "A-phi": [
+      4.773959005888173e-14,
+      3.452793606584237e-14
+    ],
+    "A-T": [
+      6.106226635438361e-14,
+      6.183942247162122e-14
+    ],
+    "T-Omega": [
+      6.439293542825908e-14,
+      8.393286066166183e-14
+    ]
+  },
+  "iccg_phi": {
+    "label": "notched DC phi",
+    "solver": "sparsesolv ICCG",
+    "gauge_null_defect": null,
+    "gauge_scale": null,
+    "ndof_free": 131,
+    "shift": 1.0,
+    "shift_used": 1.0,
+    "tol": 1e-10,
+    "maxiter": 10000,
+    "rhs_norm": 20227.221059920215,
+    "rhs_kernel_fraction": null,
+    "original_rhs_residual": 3.338631729757625e-11,
+    "gauge_weight": null,
+    "converged": true,
+    "solver_flag": true,
+    "iterations": 21,
+    "solver_residual": 3.3386695624157964e-11,
+    "explicit_residual": 3.338633210788599e-11,
+    "residual_bound": 1.0000000000000001e-07
+  },
+  "iccg_A": {
+    "label": "notched DC A",
+    "solver": "sparsesolv ICCG",
+    "gauge_null_defect": 8.801972718903307e-18,
+    "gauge_scale": 486199321.14334977,
+    "ndof_free": 122,
+    "shift": 1.1,
+    "shift_used": 1.1,
+    "tol": 1e-10,
+    "maxiter": 10000,
+    "rhs_norm": 4610.059873618881,
+    "rhs_kernel_fraction": 1.7404774232829518e-15,
+    "original_rhs_residual": 2.513782570765002e-11,
+    "gauge_weight": 1.0,
+    "converged": true,
+    "solver_flag": true,
+    "iterations": 15,
+    "solver_residual": 2.9157868292875306e-11,
+    "explicit_residual": 2.5137829134004995e-11,
+    "residual_bound": 1.0000000000000001e-07
+  },
+  "iccg_LU_dc_field_relative": 1.5697571923127502e-10,
+  "iccg_LU_magnetic_field_relative": 9.853781019129006e-12
+}

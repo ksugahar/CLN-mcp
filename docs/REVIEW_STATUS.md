@@ -70,3 +70,30 @@ Type1-explanation findings. The tested scope excludes Model B, coupled transient
 motion, winding resistance, shifted/Type2 TEAM 28 and general 3D nonlinear CLN.
 The separate legacy-pointer review remains a development change outside this
 public addition. Remote publication and its workflow result are separate checks.
+
+## General 3D terminal CLN: candidate review pending
+
+Independent Claude Opus 5.5 design review accepted the terminal mixed blocks,
+physical Type2 recurrence and positive-shift normalization on 7 October 2026.
+An independent pilot check extracted the first four A–phi elements from full
+assembled matrices using contour Taylor coefficients and continued-fraction
+division. It confirmed the elements and contact order four for that pilot.
+This is not acceptance of the final eight-element numerical candidate.
+
+Codex implemented the non-symmetric notched conductor, its one-volt terminal
+port, eight-element ladders, same-mesh full references and h/p comparisons.
+A–T and T–Omega use a free scalar current lift and zero-port curl(T)
+corrections. The DC current lift is shared; T–Omega additionally shares the
+A-derived magnetic port lift. Matching the first zero-shift elements is
+therefore a built-in control. Later elements and full-model gaps require
+refinement; no exact continuum agreement or bracketing is claimed.
+
+The positive-shift resistor coefficients use inverse Joule-plus-s0-magnetic
+norms. Both physical energy integrals are retained. CI reconstructs the
+small assembled example and checks contact order twice the retained electric
+mode count, while refined FE data remain stored native evidence. The 1 MHz
+study has unresolved skin layers and supports only same-mesh reduction
+comparisons. There is no air, external return path or general nonlinear claim.
+
+The numerical candidate awaits reciprocal review. No new publication or remote
+CI outcome is asserted here.

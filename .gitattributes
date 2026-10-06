@@ -1,2 +1,4 @@
 mathematica/derive_energy_recursion.wls text eol=lf
 docs/data/*.json text eol=lf
+validation/cln3d/general_shape*.py text eol=lf
+validation/validate_general_3d.py text eol=lf

@@ -68,3 +68,43 @@ In TEAM 28 the regular axisymmetric variable is `w=A_theta/r`. Finite `w` on
 the axis gives `A_theta=r w`, `B_r=-r d_z w`, and `B_z=2w+r d_r w` without
 singular integration weights. The finite outer-air boundary has `w=0`; axis
 regularity does not mean imposing `w=0` there.
+
+## General 3D voltage port and Type2
+
+[The notched-conductor experiment](12_general_3d_cln.ipynb) uses a one-volt
+harmonic scalar lift `e0=-grad(phi0)`, side insulation and equipotential end
+contacts. Its total terminal current is `I=G0-s*f.T*a`; a reaction transfer
+alone omits the DC conduction port. The magnetic boundary `n x A=0` encloses
+the conductor, with no exterior return-path energy.
+
+For admissible currents, let `r(u,v)=integral(u.v/sigma)` and
+`ell(u,v)=integral(B[u].B[v]/mu)`. Define `F_s0` by the same continuity-constrained
+field problem at real `s0`. The resistor-first physical recurrence is
+
+```text
+j0 = F_s0(e0)
+Rhat[2k] = 1 / (r(jk,jk) + s0*ell(jk,jk))
+xk = x_previous + Rhat[2k]*jk
+L[2k+1] = ell(xk,xk)
+j_next = jk - F_s0(A[xk])/L[2k+1]
+```
+
+At zero shift, the resistor norm is pure Joule loss. At positive shift the
+magnetic term is essential; store both physical integrals rather than call
+the composite norm pure loss. The electric modes are orthogonal in
+`r+s0*ell`, while the accumulated magnetic modes are orthogonal in `ell`.
+An `m`-electric-mode ladder ending on its `qL` branch (`q=s-s0`) has contact
+order `2m` in the tested discrete examples. This statement is checked through
+the full-model Taylor coefficients, not solely at `s=s0`.
+
+The T-port construction is `J=I*j_dc+curl(T)` with a free scalar `I` and
+tangential `T=0` only on the insulating side, including contact rims. The
+correction currents have zero net terminal flux; imposing tangential `T=0`
+everywhere would remove the current port. Shared lifts must be disclosed:
+agreement forced by a common lift is not independent convergence evidence.
+
+Surface enrichment can supplement insufficient current distributions, but
+later-stage disagreement should first be separated into truncation and full
+FE-space/port discrepancies. Adding modes need not produce a simple physical
+R–L ladder; test the coupled energies and port response before asserting that
+representation. The current notched benchmark contains no surface enrichment.

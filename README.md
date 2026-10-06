@@ -32,6 +32,8 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 [TEAM 28 force](docs/11_team28_force.ipynb) derives a six-state, twelve-element Type1 CLN from magnetic-energy and Joule-loss norms using the actual winding excitation. It compares reconstructed lift with newly computed full FEM at 25 heights, checks a 1 mN reduction gate and a 0.6 mm equilibrium gate against the published 11.3 mm, and records fresh local root refinement and mesh/outer-air sensitivity separately. The scope is axisymmetric Model A at fixed height and 50 Hz. See [physical field recursion and implementation checks](docs/CLN_FIELD_RECURSION.md).
 
+[General 3D terminal CLN](docs/12_general_3d_cln.ipynb) constructs energy-normalized Type2 field modes in a non-symmetric notched conductor with a non-trivial scalar potential. It compares two- through eight-element ladders at zero and positive real expansion points, full A–phi/A–T/T–Omega terminal responses, and h/p refinement. The T forms use a free scalar terminal-current mode and side-only tangential constraints. Shared DC lifts, later element differences and the under-resolved 1 MHz comparison are disclosed. The interior magnetic boundary excludes air and return-path inductance. Design review is accepted; reciprocal numerical review of this addition is pending.
+
 ## Reproduce
 
 Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The current reciprocal-review reruns use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
@@ -48,6 +50,9 @@ wolframscript -file mathematica/derive_energy_recursion.wls docs/data/energy_rec
 python validation/team28_cln.py --output docs/data/team28_cln.json
 python validation/team28_refine_equilibrium.py --output docs/data/team28_equilibrium.json
 python validation/validate_team28.py
+python validation/cln3d/general_shape.py --maxh .006 .004 .003 .002 --modes 4 --with-t --output docs/data/general_3d_cln_p1.json --export docs/data/general_3d_cln_matrices.json
+python validation/cln3d/general_shape.py --order 2 --maxh .004 .003 --modes 4 --with-t --output docs/data/general_3d_cln_p2.json
+python validation/validate_general_3d.py
 ```
 
 - `docs/*.ipynb`: derivations and executed examples.
