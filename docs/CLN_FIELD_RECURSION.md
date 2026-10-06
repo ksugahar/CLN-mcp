@@ -102,6 +102,8 @@ tangential `T=0` only on the insulating side, including contact rims. The
 correction currents have zero net terminal flux; imposing tangential `T=0`
 everywhere would remove the current port. Shared lifts must be disclosed:
 agreement forced by a common lift is not independent convergence evidence.
+In the notched example, both T forms also share zero-shift R2 because the
+common lift and current space give the same first correction load.
 
 Surface enrichment can supplement insufficient current distributions, but
 later-stage disagreement should first be separated into truncation and full

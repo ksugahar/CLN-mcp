@@ -34,7 +34,15 @@ def series(R,L,b,s0,count,tau):
     return inv_series(coefficients)
 
 
-def check_run(run):
+def check_coefficients(actual, reference):
+    """Check each dimensionless Taylor coefficient, including the small tail."""
+    actual, reference = np.asarray(actual), np.asarray(reference)
+    assert actual.shape == reference.shape
+    scale = np.maximum(abs(reference), 1e-14*np.max(abs(reference)))
+    assert np.max(abs(actual-reference)/scale) < 1e-7
+
+
+def check_run(run, independent_full=None):
     n=run["modes"]
     assert n>=2 and len(run["Rhat"])==len(run["L"])==n
     assert abs(run["Rhat"][0]/run["moments"]["full_Z_coefficients"][0]-1)<1e-8
@@ -53,7 +61,7 @@ def check_run(run):
     m=run["moments"]
     assert m["contact_order"]==2*n
     regenerated=series(r,l,b,run["s0"],2*n+1,m["TAU"])
-    full=np.array(m["full_Z_coefficients"])
+    full=np.array(m["full_Z_coefficients"]) if independent_full is None else independent_full
     assert np.max(abs(regenerated[:-1]-full[:-1]))/np.max(abs(full[:-1]))<1e-8
     coefficient_scale=np.maximum(abs(full[:-1]),1e-14*np.max(abs(full[:-1])))
     assert np.max(abs(regenerated[:-1]-full[:-1])/coefficient_scale)<1e-7
@@ -128,7 +136,8 @@ def check_small(data):
             ee,aa=response(u,run["s0"]);y.append(port@ee)
         full=inv_series(y)
         saved=np.array(run["moments"]["full_Z_coefficients"])
-        assert np.max(abs(full-saved))/np.max(abs(saved))<1e-8
+        check_coefficients(saved, full)
+        check_run(run, independent_full=full)
     for name,matrices in data["cross_formulations"].items():
         r,rg,b=map(lambda v:np.array(v),[dense(matrices["R"]),dense(matrices["Rg"]),matrices["b"]])
         if name=="A-T":
@@ -149,7 +158,8 @@ def check_small(data):
                 j-=a@(l@x)/lk
             full=series(rg,l,b,run["s0"],2*run["modes"]+1,run["moments"]["TAU"])
             saved=np.array(run["moments"]["full_Z_coefficients"])
-            assert np.max(abs(full-saved))/np.max(abs(saved))<1e-7
+            check_coefficients(saved, full)
+            check_run(run, independent_full=full)
 
 
 def main():
@@ -173,7 +183,7 @@ def main():
                     for row in run["frequency"]:
                         assert row["full_field_energy_defect"]<1e-9
                         assert row["terminal_reactions"]["relative_defect"]<1e-8
-                        if row["hz"]==1e6: assert not row["mesh_resolution_screen"]
+                        if row["hz"] in (1e5,1e6): assert not row["mesh_resolution_screen"]
                 for runs in case["cross_formulations"].values():
                     for run in runs:
                         assert run["modes"]==4

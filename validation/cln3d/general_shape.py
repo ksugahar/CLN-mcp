@@ -366,7 +366,7 @@ def main():
                   source_sha256=identities, complete=False, cases=[],
                   runtime=dict(python=platform.python_version(), ngsolve=ngsolve.__version__, netgen=netgen.__version__),
                   solver="Explicit sparse LU for all subproblems; diagonal equilibration for mixed systems",
-                  limitations="Intermesh differences are not exact errors. 1 MHz is an under-resolved same-mesh comparison.")
+                  limitations="Intermesh differences are not exact errors. Both 100 kHz and 1 MHz fail the delta >= 2h/p screen on every study mesh and support only same-mesh reduction comparisons; screen passage is not an FE accuracy bound.")
     for h in args.maxh:
         start = time.perf_counter()
         with ngsolve.TaskManager():

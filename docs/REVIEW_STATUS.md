@@ -85,15 +85,20 @@ port, eight-element ladders, same-mesh full references and h/p comparisons.
 A–T and T–Omega use a free scalar current lift and zero-port curl(T)
 corrections. The DC current lift is shared; T–Omega additionally shares the
 A-derived magnetic port lift. Matching the first zero-shift elements is
-therefore a built-in control. Later elements and full-model gaps require
-refinement; no exact continuum agreement or bracketing is claimed.
+therefore a built-in control. The two T forms also share zero-shift R2 by
+construction: their common current space and magnetic lift give the same
+first correction load. This is not independent cross-form evidence. Deep
+R4-L7 elements are not cross-validated; their gaps and full-model gaps require
+refinement. No exact continuum agreement or bracketing is claimed.
 
 The positive-shift resistor coefficients use inverse Joule-plus-s0-magnetic
 norms. Both physical energy integrals are retained. CI reconstructs the
 small assembled example and checks contact order twice the retained electric
-mode count, while refined FE data remain stored native evidence. The 1 MHz
-study has unresolved skin layers and supports only same-mesh reduction
-comparisons. There is no air, external return path or general nonlinear claim.
+mode count, while refined FE data remain stored native evidence. Both 100 kHz
+and 1 MHz fail the delta >= 2h/p resolution screen on every study mesh and
+support only same-mesh reduction comparisons. The highest sampled frequency
+passing that screen on any study mesh is 10 kHz; passage is not an accuracy
+bound and still needs refinement evidence. There is no air, external return path or general nonlinear claim.
 
 The numerical candidate awaits reciprocal review. No new publication or remote
 CI outcome is asserted here.
