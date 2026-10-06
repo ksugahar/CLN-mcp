@@ -33,3 +33,40 @@ The follow-up research received independent **Claude Opus 5.5** review at `0b5ba
 The three review rounds closed ten disclosure/reproducibility items and a blocking overstatement of mesh convergence. All six lightweight documentation/validation commands passed for the final scientific revision in both reviewers' environments. These validate stored evidence and source identities; they do not run native FE or Wolfram computations in CI. Native results were genuinely regenerated when their producer sources changed. Independent numerical reruns are scoped in notebook 10.
 
 Codex also reviewed a separate immutable legacy-pointer replacement, preserving text-retrieval names and distinguishing executable scripts from pointers. That development change is not included in this public research revision. TEAM 28 remains a separate implementation and review campaign; this verdict contains no TEAM 28, full 3D nonlinear or Model B claim. Remote publication and its CI result remain separate checks.
+
+## TEAM 28: physical CLN and force
+
+Codex implemented the TEAM 28 addition. Independent **Claude Opus 5.5** review
+accepted its method and numerics at `834eaace2dc9aaae30d1e47d168028dcdd7d6982`;
+the correction review gave scientific acceptance at
+**`345041da92087a799d47d5eed74de659b91d8c96`** on 7 October 2026. This final
+update changes status text only, preserving numerical sources, data, notebook
+code and outputs.
+
+- Axisymmetric Model A uses the actual prescribed winding current and a regular
+  `w=A_theta/r` formulation. Six magnetic states give twelve physical Type1
+  elements at zero expansion point, derived from magnetic-energy and Joule-loss
+  norms. Energy orthogonality, field-volume element values, circuit/field
+  equality and power balance are checked. No Arnoldi basis is relabelled CLN.
+- Full and reconstructed CLN forces use the conjugate peak-phasor Lorentz
+  average. All 25 heights pass the 1 mN same-mesh reduction gate. Only the
+  official stationary height of 11.3 mm is an external measured reference.
+- Fresh root refinement gives about **11.11 mm**, a gap of about **0.188 mm**,
+  passing the 0.6 mm gate. The original 1 mm-grid interpolant is about 11.13 mm.
+  Their difference, remeshing fluctuations and the remaining coarse settings
+  probes are disclosed; no continuum or infinite-domain bound is established.
+- The reviewer reproduced three native sweep samples and all five native root
+  refinement samples bit-identically. The revised Wolfram output also reproduced
+  byte-identically. The symbolic exhausted two-state proof and two exact rational
+  truncated examples have separate scopes; the examples do not prove a general
+  theorem for arbitrary semidefinite systems or stage counts.
+- Seven lightweight validators passed independently. CI checks stored evidence,
+  circuit reconstruction, independent symbolic instances and source identities;
+  it does not run native FEM or Wolfram. Canonical LF evidence bytes are required
+  for existing protected baseline hashes.
+
+The two rounds closed the interpolation-precision, proof-scope, citation and
+Type1-explanation findings. The tested scope excludes Model B, coupled transient
+motion, winding resistance, shifted/Type2 TEAM 28 and general 3D nonlinear CLN.
+The separate legacy-pointer review remains a development change outside this
+public addition. Remote publication and its workflow result are separate checks.
