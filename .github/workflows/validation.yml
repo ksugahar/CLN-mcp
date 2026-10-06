@@ -16,3 +16,4 @@ jobs:
       - run: python validation/surface_hybrid/validate_evidence.py
       - run: python validation/surface_hybrid/validate_same_excitation_3d.py
       - run: python validation/validate_research.py
+      - run: python validation/validate_team28.py

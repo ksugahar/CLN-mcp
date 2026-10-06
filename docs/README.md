@@ -28,3 +28,5 @@ These additions received reciprocal Codex and Claude Opus 5.5 review. See [revie
 [Research follow-up](10_research_followup.ipynb): three-stage refinement, same-grid Foster fits, and matched-rank nonlinear held-out amplitudes.
 
 Notebook 10 also records the original two-mode bulk control and second-order full-model mesh refinement at four representative frequencies. These tests distinguish adding modes from reallocating a fixed rank, and intermesh agreement from certified continuum accuracy.
+
+[TEAM 28 force](11_team28_force.ipynb): actual coil-driven Type1 energy recursion, physical L/R elements, conjugate phasor lift, 25-height same-mesh full-FEM comparison, static equilibrium and settings probes. Reading needs numpy/matplotlib/sympy; native recomputation needs NGSolve/scipy. [Implementation knowledge](CLN_FIELD_RECURSION.md) explains energy normalization, saved-field storage, boundary design and diagnostic limits.

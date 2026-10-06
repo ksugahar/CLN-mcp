@@ -1,0 +1,22 @@
+{
+	"scope":"Exact SPD two-state Type1 proof; not a TEAM 28 force solution",
+	"assumptions":"l > 0 && a > 0 && b > 0 && c > 0 && a*c > b^2",
+	"elements_LR":[
+		"l",
+		"l\/a",
+		"(b^2*l)\/a^2",
+		"(b^2*l)\/(a*(-b^2 + a*c))"
+	],
+	"field_impedance":"(l*s*(1 + c*s))\/(1 + s*(a + c - b^2*s + a*c*s))",
+	"checks":{
+		"ladder_equals_field":true,
+		"magnetic_energy_orthogonality":true,
+		"electric_loss_orthogonality":true,
+		"positive_elements":true,
+		"expected_elements":true,
+		"termination":true,
+		"peak_phasor_force_average":true
+	},
+	"wolfram_version":"14.2.1 for Microsoft Windows (64-bit) (March 17, 2025)",
+	"source_sha256":"e09f65045a076a8a686efc6a0e0bb30abc335e13a6462047bc1f90daed9b6aef"
+}
