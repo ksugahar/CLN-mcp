@@ -159,3 +159,29 @@ is about 2.25e-13. These pass the existing gates without changed numerical
 outputs. Deep elements, protected-DC identities and coarse FE errors retain
 the stated limits. This status/wording-only update changes no code, data or
 execution outputs and does not assert publication or remote CI success.
+
+## Air cohomology T–Omega — candidate review pending
+
+Codex implemented a curl-constrained physical T–Omega current pencil with
+Radia absolute air cohomology, a free linked terminal-current channel and a
+natural scalar magnetic correction. Air conductivity is zero and total
+magnetic energy enters the Type2 recursion. Nine native cohorts and six
+same-mesh A–T controls are stored; the small original-matrix NumPy checker
+reconstructs the admissible field space, topology rank, current period,
+physical stage fields, full responses and coefficients q0 through q8.
+Four Taylor corruption controls (q7/q8, both shifts) are rejected.
+
+Different cotree representatives preserve all eight elements. On the
+order-1 notched meshes (244, 695, 1748 tetrahedra), full-response differences
+and R2/L3 differences decrease. The finest full T–Omega/A–phi gaps remain
+9.2% at 100 kHz and 14.5% at 1 MHz; shifted T–Omega/A–T R2/L3 gaps remain
+19.3%/33.6%, with deep gaps up to 181%. These are not cross-validated
+physical elements or established continuum accuracy. HCurl orders 0 and 1
+share the curl-current dimension here; the comparison enriches magnetic
+scalar fields. The coax 12-to-8 mm maxh pair does not increase the mesh
+count and is explicitly not a refinement claim. Larger native cases are
+stored evidence; original-matrix independent CI reconstruction is limited
+to the small notched cohort. See notebook 15 for reproduction and references.
+
+Independent scientific review and publication are pending. C2 (a conducting
+washer with a loop-current channel and coil-driven Type1 CLN) is not included.

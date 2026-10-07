@@ -162,3 +162,19 @@ construction. Report unprotected controls and dynamic response convergence
 rather than treating that identity as independent accuracy evidence. The
 physical Type2 recursion and total-energy normalization remain unchanged;
 see notebook 14 for the numerical candidate and its review status.
+
+## Air circulation and saved matrix ownership
+
+The air around a terminal conductor has a linked magnetic circulation even
+when the conductor is simply connected. A single-valued scalar gradient alone
+cannot supply this period. Notebook 15 retains Radia's absolute cohomology
+channel as the actual free terminal-current lift, then eliminates global
+scalar gradients by total magnetic-energy minimization with a natural
+zero-normal-flux enclosure condition. A changed cohomology representative
+requires a matching scalar correction. It does not change the physical field.
+
+Sparse CSR arrays returned by NGSolve can borrow storage from the native
+matrix. A retained SciPy matrix must own a copy if the native matrix may go
+out of scope. Copying a GridFunction's current vector and copying sparse matrix
+storage solve different ownership problems. Both matter for reproducible
+saved field stages and independent exported checks.
