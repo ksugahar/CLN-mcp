@@ -141,3 +141,7 @@ uses lower-bound estimates, not certified forward-error bounds.
 This status-only update changes no producer code, numerical data, notebook
 code cells or execution outputs. Scientific acceptance is limited to the
 stated tests and does not assert publication or a remote CI outcome.
+
+## Surface modes in the physical CLN — numerical review pending
+
+The B2 design was independently accepted. Notebook 14 implements physical quotient air condensation and nested trace-space restriction; omitted trace modes are clamped. Fixed-current compliance increases from below as the space expands. The DC port trace is protected, so its exact L1 is a construction control, not an independent convergence result. Source-matched full-rank controls, dynamic Z and energy/element convergence are separate tests. No numerical peer acceptance or publication is claimed yet.

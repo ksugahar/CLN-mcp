@@ -142,3 +142,23 @@ of the field recursion. NumPy longdouble is platform-dependent; record its
 epsilon rather than assume it provides more precision than float64.
 
 See notebook 13 for the candidate implementation and its review status.
+
+## Surface trace restriction inside the field recursion
+
+Air can be eliminated through a physical harmonic extension on the gradient
+quotient. Its interface DtN is symmetric and nonnegative; its trace kernel
+must remain explicit. A Schur complement of a gauge-penalised matrix is an
+algebraic reproduction control, not automatically the physical air energy.
+
+For stable truncation, restrict the admissible tangential trace to a nested
+Steklov space and clamp omitted coefficients. At fixed current load, magnetic
+compliance then approaches the full value from below. Split energies, driven
+impedance and individual Cauer elements need not be monotone. Replacing the
+DtN by a low-rank matrix on unrestricted traces can instead create zero-cost
+physical directions; test coercivity and source coupling.
+
+A protected actual DC port trace makes the first inductance exact by
+construction. Report unprotected controls and dynamic response convergence
+rather than treating that identity as independent accuracy evidence. The
+physical Type2 recursion and total-energy normalization remain unchanged;
+see notebook 14 for the numerical candidate and its review status.

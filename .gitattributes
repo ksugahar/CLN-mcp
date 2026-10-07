@@ -8,3 +8,5 @@ validation/validate_general_3d_air.py text eol=lf
 validation/cln3d/coax_field_oracle.py text eol=lf
 validation/cln3d/impedance_taylor.py text eol=lf
 validation/general_3d_air_matrix_check.py text eol=lf
+validation/cln3d/surface_*.py text eol=lf
+validation/validate_surface_air.py text eol=lf

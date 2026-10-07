@@ -19,3 +19,4 @@ jobs:
       - run: python validation/validate_team28.py
       - run: python validation/validate_general_3d.py
       - run: python validation/validate_general_3d_air.py
+      - run: python validation/validate_surface_air.py
