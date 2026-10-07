@@ -38,7 +38,7 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 [Surface modes inside the physical CLN](docs/14_surface_modes_cln.ipynb): exact physical air condensation, nested Steklov trace spaces, total-energy Type2 recursion and matched-mesh K-convergence. Protected DC traces, fixed-current compliance and finite-frequency errors are distinguished. Independent numerical review gave scientific acceptance at `7a3b160`; see REVIEW_STATUS for scope and limits.
 
-[Air cohomology and physical T–Ω CLN](docs/15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Scientific candidate review is pending; the conducting-washer extension is a separate task.
+[Air cohomology and physical T–Ω CLN](docs/15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Independent Claude Opus 5.5 scientific review accepted revision `61a8a241f72884a1ab4d09b616a0e17aa7f8b0d5`; publication remains separate; the conducting-washer extension is a separate task.
 
 ## Reproduce
 

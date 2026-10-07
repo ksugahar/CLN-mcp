@@ -160,7 +160,7 @@ outputs. Deep elements, protected-DC identities and coarse FE errors retain
 the stated limits. This status/wording-only update changes no code, data or
 execution outputs and does not assert publication or remote CI success.
 
-## Air cohomology T–Omega — candidate review pending
+## Air cohomology T–Omega — scientific review accepted
 
 Codex implemented a curl-constrained physical T–Omega current pencil with
 Radia absolute air cohomology, a free linked terminal-current channel and a
@@ -183,7 +183,12 @@ count and is explicitly not a refinement claim. Larger native cases are
 stored evidence; original-matrix independent CI reconstruction is limited
 to the small notched cohort. See notebook 15 for reproduction and references.
 
-Independent scientific review and publication are pending. C2 (a conducting
+Independent Claude Opus 5.5 scientific review accepted revision
+`61a8a241f72884a1ab4d09b616a0e17aa7f8b0d5` on 7 October 2026. The reviewer
+independently solved both changed-cocycle scalar systems, checked all eight
+elements at both shifts, and passed all workflow validators. Publication
+and remote CI remain separate checks. This status update changes no producer,
+data or execution outputs. C2 (a conducting
 washer with a loop-current channel and coil-driven Type1 CLN) is not included.
 
 The coax comparison supports low-frequency impedance magnitude only, not
