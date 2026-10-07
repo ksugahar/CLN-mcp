@@ -171,7 +171,7 @@ reconstructs the admissible field space, topology rank, current period,
 physical stage fields, full responses and coefficients q0 through q8.
 Four Taylor corruption controls (q7/q8, both shifts) are rejected.
 
-Different cotree representatives preserve all eight elements. On the
+The two vertex permutations return the same harmonic cochain; their comparison is a reproducibility check. A separate small native control changes the raw cocycle by a gradient with relative size 1.0 before independently assembling and solving each natural scalar equation. All eight elements at both shifts agree. The test covers the 118-tetrahedron notched cohort and does not construct different geometric cut surfaces. On the
 order-1 notched meshes (244, 695, 1748 tetrahedra), full-response differences
 and R2/L3 differences decrease. The finest full T–Omega/A–phi gaps remain
 9.2% at 100 kHz and 14.5% at 1 MHz; shifted T–Omega/A–T R2/L3 gaps remain
@@ -185,3 +185,9 @@ to the small notched cohort. See notebook 15 for reproduction and references.
 
 Independent scientific review and publication are pending. C2 (a conducting
 washer with a loop-current channel and coil-driven Type1 CLN) is not included.
+
+The coax comparison supports low-frequency impedance magnitude only, not
+analytic element-level validation. Order-1 R2/L3 gaps are about 26%/16%,
+deep gaps reach about 1500%, and Re Z at 1 MHz differs by about -32%.
+The Radia-oriented standalone mesh/region API extraction is a separate
+maintenance follow-up; these validation helpers are not a generic Radia API.

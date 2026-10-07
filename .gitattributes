@@ -21,3 +21,4 @@ validation/cln3d/tomega_cross_forms.py text eol=lf
 validation/cln3d/collect_tomega_air.py text eol=lf
 validation/cohomology_matrix_check.py text eol=lf
 validation/validate_tomega_air.py text eol=lf
+validation/cln3d/tomega_representative_controls.py text eol=lf

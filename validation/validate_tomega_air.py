@@ -3,7 +3,7 @@ import hashlib,json,math
 from pathlib import Path
 import numpy as np
 from cohomology_matrix_check import check
-from general_3d_air_matrix_check import series,check_coefficients
+from general_3d_air_matrix_check import series,check_coefficients,dense
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -57,6 +57,31 @@ def main():
   for key in ['Rhat','L']:
    values=[c['element_gaps'][shift][key][1] for c in seq]
    assert values[0]>values[1]>values[2],values
+ control=json.loads((ROOT/'docs/data/tomega_representative_controls.json').read_text())
+ assert control['complete'] and control['mesh']['ne']==118
+ for name,digest in control['source_sha256'].items():
+  if not name.startswith('installed/'):assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
+ original=control['original'];r,l,b,g=map(lambda key:np.array(original[key]) if key!='G' else dense(original[key]),['R','L','b','G'])
+ eta=np.array(original['eta']);free=np.array(original['free_scalar'],bool);period=np.array(original['period']);fields=[]
+ records=control['records'];h0,h1=[np.array(x['generator']) for x in records]
+ assert np.linalg.norm(h1-h0)/np.linalg.norm(h0)>.5
+ assert np.linalg.norm(h1-h0-g@eta)<1e-10*np.linalg.norm(h0)
+ for item in records:
+  h=np.array(item['generator']);S=dense(item['S']);rhs=np.array(item['rhs'])
+  assert abs(period@h-1)<1e-10
+  assert np.linalg.norm(S-g.T@l@g)<1e-10*np.linalg.norm(S)
+  assert np.linalg.norm(rhs+g.T@l@h)<1e-10*np.linalg.norm(rhs)
+  phi=np.zeros(g.shape[1]);phi[free]=np.linalg.solve(S[free][:,free],rhs[free])
+  assert np.linalg.norm(phi-item['Omega'])<1e-9*np.linalg.norm(phi)
+  natural=h+g@phi;fields.append(natural);basis=np.array(item['basis'])
+  assert np.linalg.norm(basis[:,0]-natural)<1e-9*np.linalg.norm(natural)
+  R,L,B=basis.T@r@basis,basis.T@l@basis,basis.T@b
+  for run in item['runs']:
+   full=series(R,L,B,run['s0'],9,4e-7*math.pi*1e6*.01**2)
+   check_coefficients(full,run['full_Z_coefficients'])
+ assert np.linalg.norm(fields[1]-fields[0])/np.linalg.norm(fields[0])<1e-8
+ for left,right in zip(records[0]['runs'],records[1]['runs']):
+  for key in ['Rhat','L']:assert np.max(abs(np.array(left[key])/right[key]-1))<1e-8
  print('PASS cohomology current periods, original small matrices, eight-element contact and disclosed refinement')
 
 
