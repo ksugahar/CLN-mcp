@@ -36,7 +36,7 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 [General 3D CLN with surrounding air](docs/13_general_3d_air.ipynb) extends the terminal field recursion to a perfectly conducting enclosure, using a source-break port and exactly zero conductivity in air. Total magnetic energy determines the ladder elements; conductor and air contributions are reported separately. A coaxial Bessel oracle checks the return-path inductance, and region-marked refinement distinguishes FE error from same-mesh reduction error. A–phi is primary and A–T is a shared-operator cross-check; T–Omega is excluded until its air circulation topology is handled explicitly. Independent Claude Opus 5.5 numerical review gave scientific acceptance at `3ab2b33` on 7 October 2026; see [review scope and limits](docs/REVIEW_STATUS.md).
 
-[Surface modes inside the physical CLN](docs/14_surface_modes_cln.ipynb): exact physical air condensation, nested Steklov trace spaces, total-energy Type2 recursion and matched-mesh K-convergence. Protected DC traces, fixed-current compliance and finite-frequency errors are distinguished. Numerical reciprocal review is pending.
+[Surface modes inside the physical CLN](docs/14_surface_modes_cln.ipynb): exact physical air condensation, nested Steklov trace spaces, total-energy Type2 recursion and matched-mesh K-convergence. Protected DC traces, fixed-current compliance and finite-frequency errors are distinguished. Independent numerical review gave scientific acceptance at `7a3b160`; see REVIEW_STATUS for scope and limits.
 
 ## Reproduce
 

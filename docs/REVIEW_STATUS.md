@@ -142,6 +142,20 @@ This status-only update changes no producer code, numerical data, notebook
 code cells or execution outputs. Scientific acceptance is limited to the
 stated tests and does not assert publication or a remote CI outcome.
 
-## Surface modes in the physical CLN — numerical review pending
+## Surface modes in the physical CLN — scientific review accepted
 
-The B2 design was independently accepted. Notebook 14 implements physical quotient air condensation and nested trace-space restriction; omitted trace modes are clamped. Fixed-current compliance increases from below as the space expands. The DC port trace is protected, so its exact L1 is a construction control, not an independent convergence result. Source-matched full-rank controls, dynamic Z and energy/element convergence are separate tests. No numerical peer acceptance or publication is claimed yet.
+Independent Claude Opus 5.5 numerical review gave SCIENTIFIC ACCEPT at
+`7a3b1606bd2a69e420fdba7b9efad0abb88f0743`, with no P1/P2 findings. Notebook 14 implements physical quotient air condensation and nested trace-space restriction; omitted trace modes are clamped. Fixed-current compliance increases from below as the space expands. The DC port trace is protected, so its exact L1 is a construction control, not an independent convergence result. Source-matched full-rank controls, dynamic Z and energy/element convergence are separate tests. The independent checker reconstructed the physical air Schur with explicit
+gradient constraints, its trace kernel and Steklov spectrum, nested compliance
+and full responses from original small-mesh matrices. It also checked
+continued-fraction elements at three K values and both shifts. All ten gates
+passed on the exact-SHA clean checkout. Coax and notched p2 evidence were
+inspected as stored results; their original matrices were not exported.
+
+The three informational wording notes clarify magnetic compliance versus
+unit-current inductance. The maximum measured
+coax orthogonality defect is about 9.97e-10, and the coax DC Schur residual
+is about 2.25e-13. These pass the existing gates without changed numerical
+outputs. Deep elements, protected-DC identities and coarse FE errors retain
+the stated limits. This status/wording-only update changes no code, data or
+execution outputs and does not assert publication or remote CI success.
