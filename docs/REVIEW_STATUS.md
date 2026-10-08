@@ -210,7 +210,7 @@ Until that Radia API is published, corresponding CLN-mcp validation helpers
 are temporary and do not establish a second maintained API. C2 must use the
 published Radia API once available, with the tested version pinned in README.
 Radia 5.2.3 used for existing runs does not imply availability of the new API.
-The dependency migration and independent C2 numerical validation remain open;
+F2, the dependency migration and independent full T-Omega comparison remain open;
 C2 is not included in the published C1 evidence.
 
 The C2 candidate now has [an executed washer notebook](16_coil_washer_type1.ipynb)
@@ -231,4 +231,8 @@ These results establish same-mesh CLN validation, not continuum accuracy.
 The axisymmetric reference has a separate solid-cylinder Bessel/WLS limit
 check; the washer/coil has no analytic oracle. A-T shares the A magnetic inverse
 and does not establish an independent full T-Omega model. That cross-check
-remains open. Scientific review of this C2 candidate is pending.
+remains open. Claude independently accepted the same-mesh scientific scope at
+`d96b614ad4b308741a8a74fabe26a655ea430207` on 2026-10-08 (C2 r09).
+This acceptance does not establish continuum accuracy. FE convergence of the
+loss, the independent full T-Omega cross-check, and F2/Radia API migration
+(including the tested published version pin) remain open.
