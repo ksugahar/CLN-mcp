@@ -1,6 +1,6 @@
 """Independent NumPy-only C2 matrix, physical recursion and evidence gates."""
 import copy,hashlib,json,math
-from pathlib import Path
+from pathlib import Path,PureWindowsPath
 import numpy as np
 from surface_hybrid.ladder_eval import z_type1
 
@@ -12,7 +12,7 @@ def check_source(name,digest):
     # line endings of the existing shared ladder dependency on checkout;
     # Python itself reads both through universal-newline decoding. Do not
     # accept whitespace edits, changed symbols or any other normalization.
-    raw=(ROOT/name).read_bytes()
+    raw=(ROOT/Path(*PureWindowsPath(name).parts)).read_bytes()
     candidates=[raw]
     if name=='validation/surface_hybrid/ladder_eval.py':
         lf=raw.replace(b'\r\n',b'\n');candidates.extend([lf,lf.replace(b'\n',b'\r\n')])
@@ -144,7 +144,7 @@ def main():
     for name,digest in data['source_sha256'].items():check_source(name,digest)
     matrices=json.loads(path.read_text());verify(data,matrices)
     rep=json.loads((ROOT/'docs/data/c2_representatives.json').read_text());assert rep['complete']
-    for name,digest in rep['source_sha256'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
+    for name,digest in rep['source_sha256'].items():assert hashlib.sha256((ROOT/Path(*PureWindowsPath(name).parts)).read_bytes()).hexdigest()==digest,name
     s,sc=dense(rep['S']),dense(rep['S_changed']);eta=np.array(rep['eta']);free=np.array(rep['free'],bool)
     rhs,rhsc=np.array(rep['rhs']),np.array(rep['rhs_changed'])
     assert np.max(abs(np.array(rep['periods'])@np.array(rep['h_D'])-1))<1e-8
@@ -160,7 +160,7 @@ def main():
         solution=np.zeros(len(b));solution[free]=np.linalg.solve(s[free][:,free],b[free])
         assert np.linalg.norm(solution-rep[key])<1e-8*np.linalg.norm(solution)
     ranks=json.loads((ROOT/'docs/data/c2_rank_controls.json').read_text());assert ranks['complete']
-    for name,digest in ranks['source_sha256'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,name
+    for name,digest in ranks['source_sha256'].items():assert hashlib.sha256((ROOT/Path(*PureWindowsPath(name).parts)).read_bytes()).hexdigest()==digest,name
     assert ranks['ne']==data['primary'][0]['ne']
     reference=ranks['records'][1]
     for record in ranks['records']:
