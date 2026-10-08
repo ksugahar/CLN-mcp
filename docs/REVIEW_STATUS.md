@@ -196,3 +196,39 @@ analytic element-level validation. Order-1 R2/L3 gaps are about 26%/16%,
 deep gaps reach about 1500%, and Re Z at 1 MHz differs by about -32%.
 The Radia-oriented standalone mesh/region API extraction is a separate
 maintenance follow-up; these validation helpers are not a generic Radia API.
+
+### C2 dependency and publication boundary (work in progress)
+
+C2 is planned as a coil-driven washer Type1 CLN: ladders, energy-normalized
+elements, contact and orthogonality evidence, notebook and validator belong
+in CLN-mcp. Generic region cohomology, natural magnetic representatives and
+insulated minimum-Joule loop currents belong in Radia's `cohomology.py` and
+`cohomology_cut.py`, without CLN code. Their publication follows the Radia
+owners' separate process and requires explicit user instruction.
+
+Until that Radia API is published, corresponding CLN-mcp validation helpers
+are temporary and do not establish a second maintained API. C2 must use the
+published Radia API once available, with the tested version pinned in README.
+Radia 5.2.3 used for existing runs does not imply availability of the new API.
+The dependency migration and independent C2 numerical validation remain open;
+C2 is not included in the published C1 evidence.
+
+The C2 candidate now has [an executed washer notebook](16_coil_washer_type1.ipynb)
+and original small-mesh pencils/field stages. Primary A-phi and a current-space
+A-T control use the actual closed-coil excitation and eight Type1 elements at
+zero and positive shifts. Coefficient-wise H=Z/s contact q0..q7, energy/Joule
+orthogonality, full-model power balance, two sampled radial cut fluxes, a
+filled-hole control and omitted-loop responses are checked. A genuinely changed
+representative is separately assembled and solved; its scalar systems, currents
+and element comparisons are exported. The NumPy validator rejects q7/q8
+coefficient corruption.
+
+Native reruns include 1644/4501 tetrahedra and 1648/4860/40722 free A degrees
+of freedom. Magnetic enrichment reduces the coil self-inductance gap to -5.62%
+against the refined axisymmetric reference, but the 1 MHz loss gap remains
++24.0%. The conductor skin layer is unresolved at both 100 kHz and 1 MHz.
+These results establish same-mesh CLN validation, not continuum accuracy.
+The axisymmetric reference has a separate solid-cylinder Bessel/WLS limit
+check; the washer/coil has no analytic oracle. A-T shares the A magnetic inverse
+and does not establish an independent full T-Omega model. That cross-check
+remains open. Scientific review of this C2 candidate is pending.
