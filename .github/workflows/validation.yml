@@ -22,3 +22,4 @@ jobs:
       - run: python validation/validate_surface_air.py
       - run: python validation/validate_tomega_air.py
       - run: python validation/validate_c2_washer.py
+      - run: python validation/validate_ac_axis.py

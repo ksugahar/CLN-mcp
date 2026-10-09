@@ -25,3 +25,4 @@ validation/cln3d/tomega_representative_controls.py text eol=lf
 validation/cln3d/c2_*.py text eol=lf
 validation/cln3d/derive_c2_solid_cylinder.wls text eol=lf
 validation/validate_c2_washer.py text eol=lf
+validation/ac_axis_study.py text eol=lf
