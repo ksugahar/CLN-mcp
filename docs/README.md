@@ -23,6 +23,8 @@ All notebooks contain executed outputs for reading on GitHub. The two introducto
 
 [High-order element curl recovery](18_element_curl_recovery.ipynb) records the Biro/Koster local-recovery construction, a p=2/3 prototype, independent global checks and the remaining CLN integration gates.
 
+[Full A-T CLN integration](19_element_cln_integration.ipynb) compares the original ICCG workflow with trace/local recovery and an uncondensed Cholesky control at p=2/3/4. It retains the rejected actual-CLN one-pass sweeps separately from accepted equation-preserving local recovery.
+
 This public release centers on derivations and reproduction, not distribution of the full MCP application. Analytic continued-fraction examples, field-derived circuit proofs, and finite-element experiments have explicitly different scopes.
 
 The formulation, nonlinear introduction, termination, and multiport notebooks use minimal explanatory examples. They do not implement every general 3D/nonlinear/matrix-CLN extension. The 3D circular-wire reproduction is restricted to linear material, s₀=0, conductor interior, and R0/L1/R2.

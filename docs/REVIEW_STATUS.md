@@ -290,3 +290,40 @@ and measured cost remain open. The paper consulted does not state a p=1-only
 restriction, and cites a 36-edge hexahedral example; identifying the precise
 claimed p=1 theorem remains open. No such theorem is attributed without its
 source. Six native results, source identity and portable gates are saved.
+
+### Full A-T CLN with trace/local recovery (2026-10-11)
+
+[Notebook 19](19_element_cln_integration.ipynb) integrates element-local
+recovery into the unchanged zero-shift A-T field recursion. Four curved-wire
+cohorts (p=2/3/4, maxh 3 mm, plus p=3 at 2 mm) compare original ICCG, a cached
+uncondensed sparsecholesky control, and NGSolve static condensation with local
+harmonic recovery. Each route has one first observed run and three subsequent
+runs; setup and original-equation verification are included in time. All 48
+complete runs pass seven-coefficient, seven-volume-vector-mode and original
+equation checks. The largest condensed/original coefficient difference is
+3.77e-11; the volume field difference is 8.16e-10. The condensed route's largest
+uncondensed original-equation residual is 7.47e-14. Saved field energies and
+78-point vector samples provide independent portable checks.
+
+At p=4, 3 mm, warmed median full-run times are 5.905 s (original ICCG), 3.485 s
+(full Cholesky) and 3.266 s (trace/local). The approximately 1.81x improvement
+against the original workflow includes backend and factor-reuse effects.
+Against the matched Cholesky control the observed p=3/4 time reduction is
+about 3-6%; this is three samples on one host, not a general speed theorem.
+At p=2 there are no internal dofs; p=3/4 eliminate 3/11 per tetrahedron.
+Full original matrices are still assembled for equation verification.
+
+The earlier greedy curl sweep is also inserted before advancing each CLN
+stage. All 16 attempts reject T stage 0 on the actual curved wire; relative
+curl-field errors are approximately 2.01-2.53. These failures are preserved,
+with no silent fallback and no fabricated later coefficients. The affine
+cube prototype therefore does not establish arbitrary-mesh one-pass recovery.
+The accepted integration retains a global trace system; it is distinct from
+Biro/Koster's scalar-potential construction. Positive shifts, nonlinear/air
+models, topology and a generally compatible one-pass algorithm remain open.
+
+LAB/intel11 native evidence, source hashes, complete timings, raw fields and
+five corruption controls are saved. Existing documentation CI executes the
+portable gate. These additions are Codex self-review, without a new external
+scientific acceptance claim. Raw failed-run diagnostics are recovered outside
+Git with SHA256 verification before job-owned remote staging is removed.

@@ -13,6 +13,9 @@ Neither is a universal ranking of fields, terminal impedance or cost.
 [High-order local recovery](18_element_curl_recovery.ipynb) separately tests the
 element-by-element part of vector-potential reconstruction at p=2/3. The
 global scalar corrections and full CLN integration are distinct gates.
+[The integrated A-T study](19_element_cln_integration.ipynb) now verifies
+trace/local recovery in the full zero-shift CLN and records the failed direct
+one-pass extension on the actual curved mesh.
 
 | Question | Evidence | What remains unresolved |
 |---|---|---|

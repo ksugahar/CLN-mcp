@@ -22,7 +22,7 @@ For AC-axis error, termination effects and fair formulation comparisons, see the
 
 [Matched A–phi/T–Omega/A–T accuracy study](docs/17_formulation_ranking.ipynb) reproduces the order-1 ranking and explains its reversal using common 3D meshes, order/stage windows, one-space enrichment controls and independent zero/positive-shift FE pencils. A-T improves deeper-element accuracy in the tested cases; this does not imply universal field or terminal-response superiority.
 
-[High-order element curl recovery](docs/18_element_curl_recovery.ipynb) tests element-local vector-potential reconstruction at p=1/2/3, including shared trace unknowns, independent global references and incompatible-field controls. This is a verified recovery prototype; integration into the full A-T CLN solve remains open.
+[High-order element curl recovery](docs/18_element_curl_recovery.ipynb) tests element-local vector-potential reconstruction at p=1/2/3 on an affine cube. [Full A-T CLN integration](docs/19_element_cln_integration.ipynb) then checks actual curved-wire CLN stages: a global trace solve with element-interior recovery preserves the original equations; the earlier greedy one-pass curl sweep is rejected. Coefficients, volume vector fields, residuals and matched timing controls are saved for p=2/3/4.
 
 ## Actual finite-element experiments
 
