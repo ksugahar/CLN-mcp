@@ -370,3 +370,55 @@ Bíró/Gyimesi journal article whose full text was unavailable; no p=1-only
 theorem is attributed to either. Saved source/coverage/energy/field/residual
 gates include eight corruption controls in documentation CI. This is Codex
 self-review, not a new external scientific acceptance.
+
+### Scalar-global V/Phi CLN replacement (2026-10-11)
+
+[Notebook 21](21_scalar_potential_cln.ipynb) and the
+[scalar formulation note](SCALAR_CLN.md) replace the remaining global physical
+A-T vector solves on the matched internal-wire cases. The Bíró V/Phi scalar
+Poisson equations use a compatible hybrid-mixed discretization, rather than
+the accessible paper's nodal implementation. NGSolve eliminates discontinuous
+HDiv flux and cell scalar unknowns locally, leaving only scalar facet traces
+for the global `sparsecholesky` factor. Repeated element curl projections
+provide the cumulative particular potentials for subsequent CLN stages.
+
+The scalar route receives no A-T reference field or coefficient. Runtime
+guards forbid the original A-T solver and vector-condensation constructor
+during its setup and recursion. Every retained global factor is scalar-sized;
+no global curl-curl matrix is assembled on that route. Original A-T and its
+condensed control execute separately on the same mesh. Scalar gauge fixing
+adds no mass perturbation; a matrix-free uncondensed residual checks all
+original equations, including the pure-Neumann gauge row.
+
+All 48 complete runs and 112 scalar/local steps pass for p=2/3/4 at 3 mm and
+p=3 at 2 mm, geometry order 3, quadrature bonus 8 and three full CLN stages.
+Maximum scalar/original differences are 1.287e-10 for seven coefficients and
+6.519e-9 for seven volume vector modes. The maximum original scalar-system
+residual is 1.549e-14, the original A-T physical weak residual is 7.408e-11,
+and the recovered original physical residual is 4.221e-10. Energy identities,
+78-point vector samples, global factor dimensions and convergence histories
+are retained. The standalone scalar CLI also passes a native smoke run.
+
+Ordinary nodal Phi controls at p=2/3 and geometry orders 1/3 solve their scalar
+systems to below 1.54e-14 but fail strict compatible local recovery. Even
+unconstrained element projection leaves curl-image error lower bounds between
+2.08e-4 and 1.352e-2. These controls motivate the compatible discretization;
+they do not invalidate the published approximate nodal scalar method.
+
+Measured original / condensed / scalar warmed median full-run seconds are
+0.769 / 0.622 / 5.584 (p=2, 3 mm), 2.032 / 1.540 / 10.442 (p=3, 3 mm),
+6.893 / 4.595 / 59.021 (p=3, 2 mm), and 5.760 / 3.212 / 21.299 (p=4, 3 mm).
+NGSolve uses four threads and BLAS one; all routes include setup and residual
+checks. At 2 mm, warmed ranges are 5.914-13.674 / 4.508-10.054 / 39.435-86.135
+seconds, so those timing medians have substantial variability. Every raw
+observation is retained. There is no measured speed advantage; element curl
+iterations and scalar trace dimensions remain costs. A preliminary four-BLAS-
+thread run was stopped after timing variation, with its sources, partial
+results and logs retained outside Git.
+
+The physical vector solve is replaced for these constant-material, simply
+connected zero-shift wire cases. Air, variable material, cohomology, positive
+shifts and nonlinear models remain unverified. The original paper's model and
+speed comparison are not transferred to this discretization. Portable gates
+include eight new corruptions and run in documentation CI. These additions
+are Codex self-review, not a new independent scientific-review acceptance.

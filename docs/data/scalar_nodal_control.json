@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "complete": true,
+  "host": "intel11",
+  "source_sha256_lf": {
+    "validation/element_cln_study.py": "184c3fa20cbef031dcbc8292e3b615a146735199be3524c817b2831ef59ea2f4",
+    "validation/cln3d/element_recovery.py": "e11e119d622dd04bf9f3959748b91cdbaab2b8ef09fb0496d15f4f3aee44e785",
+    "validation/cln3d/CLN_AT.py": "749705b83b5bc3306e6314827854ecaeb081a9ad2fbe2534106b4d8e183d2ed7",
+    "validation/cln3d/_iccg.py": "1ac18b2ebe8d4895174819263574c891e5fc8327e314cca74ee4d2c61b56b7d3",
+    "validation/cln3d/wire_pencils.py": "3ae221cb56e3f1418eddd8c4204d82158666a2d7e4b6adc98ade91c99bc2e7d1",
+    "validation/formulation_ranking.py": "e329c3aa80525dfc775623a59aa4d2873ae2162585ae1cbada15204bac6c7c4b",
+    "validation/scalar_cln_study.py": "a65f28eab314664376835a6c618848c0cbdb1a72345122f5539ed3d85a18323a",
+    "validation/cln3d/scalar_potentials.py": "d862be27166ba14264bbc34cef5f178e0905d1f2360b0cf407c892a48c93d1c3",
+    "validation/cln3d/CLN_VPhi.py": "484dfc186af954bea2b3c137e148517664904ae800a941ebf89ebce0f7911dfe",
+    "validation/cln3d/compatible_curl.py": "a3c48ca1939d39be54b722caf4373ea487fef57221beafdf8eed3df8a72430ea",
+    "validation/scalar_nodal_control.py": "fc392ded8954403f334e8f1fd07a07bec33c6df89e8ed06e96a525add54ae8ca"
+  },
+  "cases": [
+    {
+      "curve": 1,
+      "order": 2,
+      "scalar_residual": 7.38797500041768e-15,
+      "element_projection_lower_bound": 0.01351489460316185,
+      "nodal_hybrid_field_difference": 0.0335381124302014,
+      "strict_recovery_failure": {
+        "reason": "Locally incompatible curl or boundary constraints: 0.02768212511072863",
+        "diagnostics": {}
+      },
+      "hybrid_scalar_residual": 2.7496146098630526e-15
+    },
+    {
+      "curve": 1,
+      "order": 3,
+      "scalar_residual": 1.5391487276434666e-14,
+      "element_projection_lower_bound": 0.011271425875378459,
+      "nodal_hybrid_field_difference": 0.017079624599706626,
+      "strict_recovery_failure": {
+        "reason": "Locally incompatible curl or boundary constraints: 0.010679212411175719",
+        "diagnostics": {}
+      },
+      "hybrid_scalar_residual": 8.772382440629033e-15
+    },
+    {
+      "curve": 3,
+      "order": 2,
+      "scalar_residual": 6.857974431457143e-15,
+      "element_projection_lower_bound": 0.002597545646910472,
+      "nodal_hybrid_field_difference": 0.0035787579864993745,
+      "strict_recovery_failure": {
+        "reason": "Locally incompatible curl or boundary constraints: 0.0016783423503873",
+        "diagnostics": {}
+      },
+      "hybrid_scalar_residual": 2.8641238025756066e-15
+    },
+    {
+      "curve": 3,
+      "order": 3,
+      "scalar_residual": 1.3195953803363352e-14,
+      "element_projection_lower_bound": 0.0002080296022688008,
+      "nodal_hybrid_field_difference": 0.00022375073772945423,
+      "strict_recovery_failure": {
+        "reason": "Locally incompatible curl or boundary constraints: 6.168873979395268e-05",
+        "diagnostics": {}
+      },
+      "hybrid_scalar_residual": 8.638454584937173e-15
+    }
+  ]
+}

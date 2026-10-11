@@ -112,3 +112,10 @@ extends the full CLN integration with shared-DOF correction and checked
 convergence. The causal controls show that curvature is not necessary for the
 old one-pass failure. This is a physical representation-parity study, separate
 from the formulation accuracy ranking; the global A-T trace solve remains.
+
+[V/Phi scalar CLN](21_scalar_potential_cln.ipynb) subsequently replaces that
+global physical vector solve, using a compatible hybrid-mixed discretization
+of the scalar Poisson equations. It preserves the original A-T recursion as
+an independent reference and tests full-stage coefficient/field parity and
+original physical equation residuals. This replacement is separate from the
+A-T versus A-phi/T-Omega accuracy ranking and has no presumed speed advantage.

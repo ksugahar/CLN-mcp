@@ -32,6 +32,12 @@ multiple-sweep p=2/3/4 recovery throughout the complete three-stage CLN. It
 retains the extra cost, failed caps and incompatible-field controls. See the
 [source comparison and derivation](COMPATIBLE_ELEMENT_RECOVERY.md).
 
+[V/Phi scalar CLN](21_scalar_potential_cln.ipynb) replaces the remaining global
+A-T vector solves with scalar facet-potential systems and element-local flux
+and curl reconstruction. It compares complete p=2/3/4 recursions against A-T,
+checks the original physical equations, retains nodal incompatibility controls
+and measures complete-run cost. See the [scalar formulation](SCALAR_CLN.md).
+
 This public release centers on derivations and reproduction, not distribution of the full MCP application. Analytic continued-fraction examples, field-derived circuit proofs, and finite-element experiments have explicitly different scopes.
 
 The formulation, nonlinear introduction, termination, and multiport notebooks use minimal explanatory examples. They do not implement every general 3D/nonlinear/matrix-CLN extension. The 3D circular-wire reproduction is restricted to linear material, s₀=0, conductor interior, and R0/L1/R2.

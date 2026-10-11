@@ -30,6 +30,12 @@ controls, then feeds iterative conforming recovery through every stage of the
 complete p=2/3/4 A-T CLN. This restores compatible physical fields; it retains
 the global physical trace solve and does not establish a speed advantage.
 
+[V/Phi scalar CLN](docs/21_scalar_potential_cln.ipynb) replaces the global
+physical A-T vector solves with compatible hybrid-mixed scalar Poisson solves
+and high-order element curl recovery. The complete three-stage wire study
+compares coefficients, vector fields, true residuals and measured time;
+ordinary nodal-flux incompatibility is retained as a separate control.
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.
