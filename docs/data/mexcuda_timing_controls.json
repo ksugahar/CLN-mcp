@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "complete": true,
+  "host": "A100",
+  "cases": [
+    {
+      "control": "foreign_handle",
+      "rejected": true,
+      "reason": "Stale, foreign or destroyed projection handle"
+    },
+    {
+      "control": "wrong_handle_type",
+      "rejected": true,
+      "reason": "Invalid dense input type"
+    },
+    {
+      "control": "wrong_target_size",
+      "rejected": true,
+      "reason": "Wrong target size"
+    },
+    {
+      "control": "nonfinite_target",
+      "rejected": true,
+      "reason": "Nonfinite target"
+    },
+    {
+      "control": "overlapping_writes",
+      "rejected": true,
+      "reason": "Invalid or overlapping writable support"
+    },
+    {
+      "control": "cross_element_read_write",
+      "rejected": true,
+      "reason": "Cross-element read/write collision"
+    },
+    {
+      "control": "index_overflow",
+      "rejected": true,
+      "reason": "CUDA local index overflow"
+    },
+    {
+      "control": "double_destroy",
+      "rejected": true,
+      "reason": "Stale, foreign or destroyed projection handle"
+    },
+    {
+      "control": "stale_handle_after_recreate",
+      "rejected": true,
+      "reason": "Stale, foreign or destroyed projection handle"
+    },
+    {
+      "control": "stale_handle_after_unload",
+      "rejected": true,
+      "reason": "Stale, foreign or destroyed projection handle"
+    }
+  ],
+  "source_sha256_lf": {
+    "validation/mexcuda_controls.py": "eb51036c6d1ce1642b2428f20c6a9b1ec18b710bd41390e99589fa8b2990e384",
+    "validation/build_mexcuda.py": "0997c0ded3956bb5427ca7f6df132e17d4648a96cbfad3e4c5e2a94b515d39f9",
+    "validation/cln3d/mexcuda/colored_projection.cu": "f20f006f21b1e8dee47da21e4782db7707c8b81653a63eb1fc962450ab90de2c"
+  },
+  "parity": {
+    "value": [
+      2.0,
+      0.0,
+      3.0,
+      0.0
+    ],
+    "history": [
+      [
+        1.0,
+        0.0
+      ]
+    ]
+  }
+}

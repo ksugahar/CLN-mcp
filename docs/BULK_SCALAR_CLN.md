@@ -1,5 +1,10 @@
 # Bulk scalar CLN, memory and CUDA
 
+Formal idle-NGSolve timing is now recorded in [notebook 24](24_mexcuda_timing.ipynb)
+and [its measurement contract](MEXCUDA_TIMING.md). The pending status below
+describes the earlier correctness/memory campaign and is superseded by that
+follow-up; the saved historical numerical evidence is unchanged.
+
 The full comparison is saved in [notebook 23](23_bulk_scalar_cln.ipynb).
 The requested GPU implementation is **MATLAB mexcuda**. CuPy measurements
 are retained as preliminary reference evidence, not the selected GPU route.

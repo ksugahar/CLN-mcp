@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "complete": true,
+  "binary_sha256": "fb9d7a17a337ad23464dc373cc5c58a7c9c7432f58955c557e0ee197faa7c537",
+  "preflight_cpu_busy_fraction": 0.0034965034965035446,
+  "preflight_gpu": {
+    "name": "NVIDIA A100-SXM4-40GB",
+    "driver": "591.59",
+    "total_mib": 40960,
+    "used_mib": 10,
+    "utilization_percent": 0
+  },
+  "foreign_compute_job_samples": [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "source_sha256_lf": {
+    "validation/mexcuda_initialization.py": "40e361789b2d77967ed3b65113ea014ded31e46f0018dca48466a531aac75a35",
+    "validation/mexcuda_host_timing.py": "a15e182d1342e0403dcd2adfcf5b6b4fae0788de03409a1bc53cc91e42ad0808"
+  },
+  "protocol": "Four sequential fresh Engine processes and CUDA contexts; installed MEX, filesystem and driver caches may be warm; Python imports excluded",
+  "runs": [
+    {
+      "repeat": 0,
+      "engine_start_seconds": 5.647006799999872,
+      "matlab": "26.1.0.3203278 (R2026a)",
+      "matlab_pid": 11920,
+      "configuration_seconds": 0.1291187000001628,
+      "device_start_seconds": 0.38470189999998183,
+      "device": "NVIDIA A100-SXM4-40GB",
+      "compute_capability": "8.0",
+      "initialization_seconds": 6.453315499999917,
+      "quit_call_seconds": 0.0041558000002623885,
+      "shutdown_seconds": 2.855799599999955
+    },
+    {
+      "repeat": 1,
+      "engine_start_seconds": 4.551249999999982,
+      "matlab": "26.1.0.3203278 (R2026a)",
+      "matlab_pid": 11848,
+      "configuration_seconds": 0.3954186999999365,
+      "device_start_seconds": 0.4053398000000925,
+      "device": "NVIDIA A100-SXM4-40GB",
+      "compute_capability": "8.0",
+      "initialization_seconds": 5.361628199999814,
+      "quit_call_seconds": 0.0033465999999862106,
+      "shutdown_seconds": 2.5760651000000507
+    },
+    {
+      "repeat": 2,
+      "engine_start_seconds": 4.829453299999841,
+      "matlab": "26.1.0.3203278 (R2026a)",
+      "matlab_pid": 3320,
+      "configuration_seconds": 0.40411549999998897,
+      "device_start_seconds": 0.37256310000020676,
+      "device": "NVIDIA A100-SXM4-40GB",
+      "compute_capability": "8.0",
+      "initialization_seconds": 5.611446899999919,
+      "quit_call_seconds": 0.0032928000000538304,
+      "shutdown_seconds": 2.5727287000004253
+    },
+    {
+      "repeat": 3,
+      "engine_start_seconds": 4.5928993000002265,
+      "matlab": "26.1.0.3203278 (R2026a)",
+      "matlab_pid": 9196,
+      "configuration_seconds": 0.41469009999991613,
+      "device_start_seconds": 0.3773410999997395,
+      "device": "NVIDIA A100-SXM4-40GB",
+      "compute_capability": "8.0",
+      "initialization_seconds": 5.390080799999851,
+      "quit_call_seconds": 0.003143000000363827,
+      "shutdown_seconds": 2.594485700000405
+    }
+  ]
+}
