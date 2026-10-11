@@ -76,3 +76,5 @@ temporary until the proposed Radia API is published.
 [Formal mexcuda timing on NGSolve](24_mexcuda_timing.ipynb) compares both A-T references and CPU/GPU scalar recovery on an idle GPU host, including setup, transfers and all physical checks. Fresh-session initialization and amortization are separate; see the [measurement contract](MEXCUDA_TIMING.md).
 
 [Cached CPU assembly and checks](25_cached_cln.ipynb) compares full three-stage recursions with original/condensed A-T, CPU bulk and mexcuda. Fixed-mesh load and validation operators are reused within each run, with their setup, CSR storage and all precision gates retained; see [the contract](CACHED_CLN.md).
+
+[Compact CLN assembly and memory](26_compact_cln.ipynb) shares identical T/A load/check operators and removes unused scalar-load rows, preserving full-stage checks. [Contract and reproduction](COMPACT_CLN.md).
