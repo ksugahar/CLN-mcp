@@ -18,6 +18,8 @@ Start with [What is CLN?](docs/00_what_is_cln.ipynb), then follow the [notebook 
 | [Multiport models](docs/05_multiport.ipynb) | Coupling, power-preserving coordinates, reciprocity and dissipation |
 | [Foster–Cauer conversion and error](docs/09_foster_cauer_conversion_error.ipynb) | Cited synthesis/error literature, exact round trip, truncation and error budgets |
 
+For AC-axis error, termination effects and fair formulation comparisons, see the [accuracy evidence guide](docs/ACCURACY_REVIEW.md). It separates same-mesh reduction, continuum accuracy and element errors.
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.

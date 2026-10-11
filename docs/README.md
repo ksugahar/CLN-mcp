@@ -1,5 +1,7 @@
 # Notebook reading guide
 
+For interpreting the accuracy plots and short formulation comparisons, start with the [accuracy evidence guide](ACCURACY_REVIEW.md). It maps questions to existing producers, recorded results and validators.
+
 | Order | Notebook | What it explains | Rerun requirements |
 |---|---|---|---|
 | 1 | [What is CLN?](00_what_is_cln.ipynb) | Skin effect, fields/circuits, energy integrals, stages and errors | numpy, matplotlib, mpmath |
@@ -37,13 +39,13 @@ Notebook 10 also records the original two-mode bulk control and second-order ful
 
 [Surface modes inside the physical CLN](14_surface_modes_cln.ipynb): exact physical air condensation, nested Steklov trace spaces, total-energy Type2 recursion and matched-mesh K-convergence. Protected DC traces, fixed-current compliance and finite-frequency errors are distinguished. Independent numerical review gave scientific acceptance at `7a3b160`; see REVIEW_STATUS for scope and limits.
 
-[Air cohomology and physical T–Ω CLN](15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Scientific candidate review is pending; the conducting-washer extension is a separate task.
+[Air cohomology and physical T–Ω CLN](15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Independent scientific review accepted revision `61a8a24` on 2026-10-07; the conducting-washer extension is a separate task.
 
 [Coil-driven Type1 CLN on a conducting washer](16_coil_washer_type1.ipynb)
 is the C2 candidate: physical eight-element field recursion, a unit-flux loop
 plus ordinary curl currents, genuinely changed representatives, filled-hole
 and loop-omission controls, original pencils and separate loss/eddy errors.
 The high-order 3D result still differs from the refined 2D reference by -5.62%
-in coil inductance and +24.0% in 1 MHz loss. Scientific review is pending;
-claims are limited to same-mesh reduction. Generic topology adapters remain
+in coil inductance and +24.0% in 1 MHz loss. Independent scientific review accepted revision `d96b614` on 2026-10-08;
+claims remain limited to same-mesh reduction. Generic topology adapters remain
 temporary until the proposed Radia API is published.
