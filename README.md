@@ -24,6 +24,12 @@ For AC-axis error, termination effects and fair formulation comparisons, see the
 
 [High-order element curl recovery](docs/18_element_curl_recovery.ipynb) tests element-local vector-potential reconstruction at p=1/2/3 on an affine cube. [Full A-T CLN integration](docs/19_element_cln_integration.ipynb) then checks actual curved-wire CLN stages: a global trace solve with element-interior recovery preserves the original equations; the earlier greedy one-pass curl sweep is rejected. Coefficients, volume vector fields, residuals and matched timing controls are saved for p=2/3/4.
 
+[Compatible high-order element recovery](docs/20_compatible_element_recovery.ipynb)
+diagnoses the one-pass wire failure using straight/curved and local-equation
+controls, then feeds iterative conforming recovery through every stage of the
+complete p=2/3/4 A-T CLN. This restores compatible physical fields; it retains
+the global physical trace solve and does not establish a speed advantage.
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.

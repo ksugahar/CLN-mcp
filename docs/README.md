@@ -25,6 +25,13 @@ All notebooks contain executed outputs for reading on GitHub. The two introducto
 
 [Full A-T CLN integration](19_element_cln_integration.ipynb) compares the original ICCG workflow with trace/local recovery and an uncondensed Cholesky control at p=2/3/4. It retains the rejected actual-CLN one-pass sweeps separately from accepted equation-preserving local recovery.
 
+[Compatible element recovery](20_compatible_element_recovery.ipynb) identifies
+the frozen shared-constraint failure on both straight and curved meshes, tests
+the original local K-equations as well as square-root equations, and verifies
+multiple-sweep p=2/3/4 recovery throughout the complete three-stage CLN. It
+retains the extra cost, failed caps and incompatible-field controls. See the
+[source comparison and derivation](COMPATIBLE_ELEMENT_RECOVERY.md).
+
 This public release centers on derivations and reproduction, not distribution of the full MCP application. Analytic continued-fraction examples, field-derived circuit proofs, and finite-element experiments have explicitly different scopes.
 
 The formulation, nonlinear introduction, termination, and multiport notebooks use minimal explanatory examples. They do not implement every general 3D/nonlinear/matrix-CLN extension. The 3D circular-wire reproduction is restricted to linear material, s₀=0, conductor interior, and R0/L1/R2.

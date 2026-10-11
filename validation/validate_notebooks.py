@@ -27,5 +27,5 @@ print('PASS executed notebooks, links, Python syntax and 3D source identities')
 # evidence in the same portable documentation lane (no NGSolve dependency).
 import runpy
 for evidence_gate in ('validate_formulation_ranking.py', 'validate_element_curl_recovery.py',
-                      'validate_element_cln_study.py'):
+                      'validate_element_cln_study.py', 'validate_compatible_recovery.py'):
     runpy.run_path(str(ROOT/'validation'/evidence_gate), run_name='__main__')

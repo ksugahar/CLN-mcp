@@ -327,3 +327,46 @@ five corruption controls are saved. Existing documentation CI executes the
 portable gate. These additions are Codex self-review, without a new external
 scientific acceptance claim. Raw failed-run diagnostics are recovered outside
 Git with SHA256 verification before job-owned remote staging is removed.
+
+### Compatible iterative element recovery (2026-10-11)
+
+[Notebook 20](20_compatible_element_recovery.ipynb) and its
+[source comparison and derivation](COMPATIBLE_ELEMENT_RECOVERY.md) resolve
+the cause of the archived one-pass wire failure. The same mesh topology at
+geometry orders 1 and 3, p=1/2/3, and three traversal orders is tested with
+both local K-equation and square-root-equation least-squares solves. All 36
+frozen-sweep controls fail; integrated relative curl errors range from 1.86
+to 8.42. The forward K-equation first becomes unextendable at visited element
+56 for every order and geometry control. Curvature is therefore not necessary
+for the failure. An arbitrary early local gauge choice is not guaranteed to
+extend once shared coefficients are frozen.
+
+The correction revisits free shared degrees of freedom using element SVD
+projections. NGSolve's full HCurl space preserves tangential conformity at
+higher order. All 18 traversal/geometry/order controls converge in 200 sweeps,
+with physical curl errors below 8.34e-11. Six one-sweep caps and six targets
+with nonzero divergence reject. The local inverse assembles no global matrix;
+there is no silent original-potential fallback. Multiple sweeps are required;
+no exact one-pass or linear-complexity claim is made.
+
+Four curved-wire cohorts (p=2/3/4 at 3 mm, plus p=3 at 2 mm), three stages,
+four runs and three routes give 48 complete accepted CLN runs. All 112 local
+recoveries feed the following recursion stages and pass the original equation
+gate. The largest iterative/original coefficient difference is 1.054e-10;
+the largest volume vector-mode difference is 1.055e-8. The largest recovered
+uncondensed equation residual is 4.256e-10. Each recovery takes 100-360 sweeps.
+Field energies, 78-point vector samples and all convergence histories are saved.
+
+This is not a speed improvement. Original / condensed / iterative warmed
+median full-run seconds are 0.836 / 0.665 / 5.190 (p=2, 3 mm),
+2.022 / 1.551 / 9.205 (p=3, 3 mm), 6.071 / 4.648 / 37.486 (p=3, 2 mm),
+and 5.944 / 3.302 / 18.635 (p=4, 3 mm). Setup and verification are included;
+three warmed observations on LAB/intel11 do not establish general scaling.
+
+The global physical A-T trace solve remains. The full V/Phi scalar route,
+positive shifts, air/material interfaces and nontrivial topology remain open.
+The accessible Bíró/Köster conference source is distinguished from the cited
+Bíró/Gyimesi journal article whose full text was unavailable; no p=1-only
+theorem is attributed to either. Saved source/coverage/energy/field/residual
+gates include eight corruption controls in documentation CI. This is Codex
+self-review, not a new external scientific acceptance.

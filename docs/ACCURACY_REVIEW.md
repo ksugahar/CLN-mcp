@@ -106,3 +106,9 @@ hashes, ladder evaluation, reciprocal/component errors and sampled intervals,
 and rejects a corrupted terminal element. Reading the saved notebook needs
 no solver rerun. Native FE reproduction has separate dependencies documented
 in the notebook reading guide.
+
+[Compatible iterative element recovery](20_compatible_element_recovery.ipynb)
+extends the full CLN integration with shared-DOF correction and checked
+convergence. The causal controls show that curvature is not necessary for the
+old one-pass failure. This is a physical representation-parity study, separate
+from the formulation accuracy ranking; the global A-T trace solve remains.
