@@ -119,3 +119,5 @@ of the scalar Poisson equations. It preserves the original A-T recursion as
 an independent reference and tests full-stage coefficient/field parity and
 original physical equation residuals. This replacement is separate from the
 A-T versus A-phi/T-Omega accuracy ranking and has no presumed speed advantage.
+
+[Colored scalar recovery](22_batched_scalar_cln.ipynb) preserves full-stage A-T parity (coefficient 1.212e-10, volume field 5.350e-09, recovered physical residual 4.200e-10) while measuring the local-inverse speedup separately from total A-T comparison. The optimized scalar route remains slower than A-T in the four saved cohorts.

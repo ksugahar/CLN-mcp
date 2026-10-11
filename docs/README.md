@@ -68,3 +68,5 @@ The high-order 3D result still differs from the refined 2D reference by -5.62%
 in coil inductance and +24.0% in 1 MHz loss. Independent scientific review accepted revision `d96b614` on 2026-10-08;
 claims remain limited to same-mesh reduction. Generic topology adapters remain
 temporary until the proposed Radia API is published.
+
+[Colored local recovery](22_batched_scalar_cln.ipynb) profiles the scalar route and batches disjoint element projections. All three CLN stages are compared against old scalar V/Phi and both A-T routes with unchanged accuracy gates, raw timings and rejection controls. See the [implementation note](BATCHED_SCALAR_CLN.md).

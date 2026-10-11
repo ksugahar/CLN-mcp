@@ -422,3 +422,20 @@ shifts and nonlinear models remain unverified. The original paper's model and
 speed comparison are not transferred to this discretization. Portable gates
 include eight new corruptions and run in documentation CI. These additions
 are Codex self-review, not a new independent scientific-review acceptance.
+
+### Colored scalar CLN recovery (2026-10-11)
+
+[Notebook 22](22_batched_scalar_cln.ipynb) and [the implementation note](BATCHED_SCALAR_CLN.md) retain the original scalar physics and replace element-by-element Python dispatch with colored batched projections. Each color has disjoint free global HCurl coefficients, so its updates commute. NGSolve's curved geometry, orientation and boundary constraints are preserved. Setup, all residual checks and complete recursion are included.
+
+All 64 matched complete runs pass across four cohorts, with 112 optimized scalar/local steps and 112 old scalar/local steps. Maximum optimized/original differences are 1.2117e-10 for coefficients and 5.3505e-09 for volume vector fields; maximum recovered original physical residual is 4.1997e-10. Six native capped/incompatible controls reject, a standalone guarded fast entrypoint completes seven steps, and five new evidence corruptions are rejected.
+
+Warmed medians, with every raw observation and range saved in JSON:
+
+| Cohort | Original A-T [s] | Condensed A-T [s] | Old V/Phi [s] | Colored V/Phi [s] | Old/new scalar |
+|---|---:|---:|---:|---:|---:|
+| p=2, 3 mm | 0.875 | 0.703 | 6.122 | 3.679 | 1.66x |
+| p=3, 3 mm | 2.011 | 1.523 | 10.030 | 8.009 | 1.25x |
+| p=3, 2 mm | 6.060 | 4.494 | 40.061 | 25.952 | 1.54x |
+| p=4, 3 mm | 5.939 | 3.374 | 22.155 | 19.842 | 1.12x |
+
+The local inverse is accelerated, but the optimized scalar route remains slower than both A-T references in these cohorts. The older scalar implementation spends most time in local recovery; profiling and new phase timers distinguish projection iterations, element target assembly, algebraic curl checks, integrated checks, scalar solves and setup. Remaining target assembly and physical checks limit total speedup. No global vector solve or relaxed accuracy gate is introduced. The same internal-wire, constant-material, zero-shift scope applies. These additions are Codex self-review, not independent scientific-review acceptance.

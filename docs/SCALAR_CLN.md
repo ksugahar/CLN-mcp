@@ -120,3 +120,5 @@ Portable saved-evidence gates, without NGSolve:
 
     python validation/validate_scalar_cln.py
     python validation/validate_notebooks.py
+
+The subsequent [colored recovery study](22_batched_scalar_cln.ipynb) profiles and accelerates the local inverse while preserving this archived formulation and evidence. Use the optimized standalone entrypoint `validation.cln3d.CLN_VPhi_fast` for that recovery engine.
