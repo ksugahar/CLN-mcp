@@ -18,6 +18,29 @@ Start with [What is CLN?](docs/00_what_is_cln.ipynb), then follow the [notebook 
 | [Multiport models](docs/05_multiport.ipynb) | Coupling, power-preserving coordinates, reciprocity and dissipation |
 | [Foster–Cauer conversion and error](docs/09_foster_cauer_conversion_error.ipynb) | Cited synthesis/error literature, exact round trip, truncation and error budgets |
 
+For AC-axis error, termination effects and fair formulation comparisons, see the [accuracy evidence guide](docs/ACCURACY_REVIEW.md). It separates same-mesh reduction, continuum accuracy and element errors.
+
+[Matched A–phi/T–Omega/A–T accuracy study](docs/17_formulation_ranking.ipynb) reproduces the order-1 ranking and explains its reversal using common 3D meshes, order/stage windows, one-space enrichment controls and independent zero/positive-shift FE pencils. A-T improves deeper-element accuracy in the tested cases; this does not imply universal field or terminal-response superiority.
+
+[High-order element curl recovery](docs/18_element_curl_recovery.ipynb) tests element-local vector-potential reconstruction at p=1/2/3 on an affine cube. [Full A-T CLN integration](docs/19_element_cln_integration.ipynb) then checks actual curved-wire CLN stages: a global trace solve with element-interior recovery preserves the original equations; the earlier greedy one-pass curl sweep is rejected. Coefficients, volume vector fields, residuals and matched timing controls are saved for p=2/3/4.
+
+[Compatible high-order element recovery](docs/20_compatible_element_recovery.ipynb)
+diagnoses the one-pass wire failure using straight/curved and local-equation
+controls, then feeds iterative conforming recovery through every stage of the
+complete p=2/3/4 A-T CLN. This restores compatible physical fields; it retains
+the global physical trace solve and does not establish a speed advantage.
+
+[V/Phi scalar CLN](docs/21_scalar_potential_cln.ipynb) replaces the global
+physical A-T vector solves with compatible hybrid-mixed scalar Poisson solves
+and high-order element curl recovery. The complete three-stage wire study
+compares coefficients, vector fields, true residuals and measured time;
+ordinary nodal-flux incompatibility is retained as a separate control.
+
+
+[Colored local recovery](docs/22_batched_scalar_cln.ipynb) profiles the scalar route and batches disjoint element projections. All three CLN stages are compared against old scalar V/Phi and both A-T routes with unchanged accuracy gates, raw timings and rejection controls. See the [implementation note](docs/BATCHED_SCALAR_CLN.md).
+
+[Bulk scalar CLN, memory and mexcuda](docs/23_bulk_scalar_cln.ipynb) validates native bulk assembly/checks and the selected CUDA MEX route against both A-T references. Fresh-process memory includes MATLAB itself. Full-CLN mexcuda accuracy passes; formal speed awaits an idle mdx host with a usable GPU runtime. Earlier CuPy/LAB timings remain exploratory reference evidence. See the [measurement and implementation note](docs/BULK_SCALAR_CLN.md).
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.

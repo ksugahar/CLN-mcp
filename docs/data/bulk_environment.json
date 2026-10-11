@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "host": "intel11",
+  "python": "3.12.10",
+  "platform": "Windows-2022Server-10.0.20348-SP0",
+  "ngsolve": "6.2.2607",
+  "ngsolve_gpu_backend": "host",
+  "ngsolve_gpu_device": "GPUDevice CPU reference",
+  "cupy": "14.2.0",
+  "cuda_runtime": 12090,
+  "cuda_driver": 13000,
+  "device": "NVIDIA GeForce GTX 1080",
+  "device_total_bytes": 8589803520,
+  "compute_capability": [
+    6,
+    1
+  ],
+  "fp64_sum_probe": 3.0,
+  "dependencies": {
+    "numpy": "2.5.2",
+    "radia": "5.2.3",
+    "psutil": "7.2.2",
+    "cupy-cuda12x": "14.2.0"
+  },
+  "source_sha256_lf": {
+    "validation/bulk_environment.py": "627f8fb51e5243ee5b6c64a542c5643ad24be1bf3e63c9a12e320528699e6d0e"
+  }
+}

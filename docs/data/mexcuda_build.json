@@ -1,0 +1,12 @@
+{
+  "host": "T7920",
+  "engine_start_seconds": 9.525582099999156,
+  "source_sha256_lf": "f20f006f21b1e8dee47da21e4782db7707c8b81653a63eb1fc962450ab90de2c",
+  "matlab": "26.1.0.3346908 (R2026a) Update 5",
+  "parallel_license": true,
+  "device": "Quadro RTX 5000",
+  "compute_capability": "7.5",
+  "build_seconds": 28.661282900000515,
+  "binary_sha256": "fb9d7a17a337ad23464dc373cc5c58a7c9c7432f58955c557e0ee197faa7c537",
+  "complete": true
+}

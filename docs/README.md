@@ -1,5 +1,9 @@
 # Notebook reading guide
 
+For interpreting the accuracy plots and short formulation comparisons, start with the [accuracy evidence guide](ACCURACY_REVIEW.md). It maps questions to existing producers, recorded results and validators.
+
+[Matched formulation ranking](17_formulation_ranking.ipynb) identifies the order-1, zero-shift R0/L1/R2 plot and tests common meshes at orders 1–3, three coefficient windows, one-space A-T enrichment, and independent positive-shift Type1/Type2 pencils. It distinguishes a measured A-T coefficient advantage from field accuracy and terminal truncation error.
+
 | Order | Notebook | What it explains | Rerun requirements |
 |---|---|---|---|
 | 1 | [What is CLN?](00_what_is_cln.ipynb) | Skin effect, fields/circuits, energy integrals, stages and errors | numpy, matplotlib, mpmath |
@@ -16,6 +20,23 @@
 | 12 | [Foster–Cauer conversion and error](09_foster_cauer_conversion_error.ipynb) | Exact round trip, termination, shifted representations, error measures, cited papers | sympy, numpy, matplotlib |
 
 All notebooks contain executed outputs for reading on GitHub. The two introductory notebooks use analytic solutions and need neither FEM nor Wolfram.
+
+[High-order element curl recovery](18_element_curl_recovery.ipynb) records the Biro/Koster local-recovery construction, a p=2/3 prototype, independent global checks and the remaining CLN integration gates.
+
+[Full A-T CLN integration](19_element_cln_integration.ipynb) compares the original ICCG workflow with trace/local recovery and an uncondensed Cholesky control at p=2/3/4. It retains the rejected actual-CLN one-pass sweeps separately from accepted equation-preserving local recovery.
+
+[Compatible element recovery](20_compatible_element_recovery.ipynb) identifies
+the frozen shared-constraint failure on both straight and curved meshes, tests
+the original local K-equations as well as square-root equations, and verifies
+multiple-sweep p=2/3/4 recovery throughout the complete three-stage CLN. It
+retains the extra cost, failed caps and incompatible-field controls. See the
+[source comparison and derivation](COMPATIBLE_ELEMENT_RECOVERY.md).
+
+[V/Phi scalar CLN](21_scalar_potential_cln.ipynb) replaces the remaining global
+A-T vector solves with scalar facet-potential systems and element-local flux
+and curl reconstruction. It compares complete p=2/3/4 recursions against A-T,
+checks the original physical equations, retains nodal incompatibility controls
+and measures complete-run cost. See the [scalar formulation](SCALAR_CLN.md).
 
 This public release centers on derivations and reproduction, not distribution of the full MCP application. Analytic continued-fraction examples, field-derived circuit proofs, and finite-element experiments have explicitly different scopes.
 
@@ -37,13 +58,17 @@ Notebook 10 also records the original two-mode bulk control and second-order ful
 
 [Surface modes inside the physical CLN](14_surface_modes_cln.ipynb): exact physical air condensation, nested Steklov trace spaces, total-energy Type2 recursion and matched-mesh K-convergence. Protected DC traces, fixed-current compliance and finite-frequency errors are distinguished. Independent numerical review gave scientific acceptance at `7a3b160`; see REVIEW_STATUS for scope and limits.
 
-[Air cohomology and physical T–Ω CLN](15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Scientific candidate review is pending; the conducting-washer extension is a separate task.
+[Air cohomology and physical T–Ω CLN](15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Independent scientific review accepted revision `61a8a24` on 2026-10-07; the conducting-washer extension is a separate task.
 
 [Coil-driven Type1 CLN on a conducting washer](16_coil_washer_type1.ipynb)
 is the C2 candidate: physical eight-element field recursion, a unit-flux loop
 plus ordinary curl currents, genuinely changed representatives, filled-hole
 and loop-omission controls, original pencils and separate loss/eddy errors.
 The high-order 3D result still differs from the refined 2D reference by -5.62%
-in coil inductance and +24.0% in 1 MHz loss. Scientific review is pending;
-claims are limited to same-mesh reduction. Generic topology adapters remain
+in coil inductance and +24.0% in 1 MHz loss. Independent scientific review accepted revision `d96b614` on 2026-10-08;
+claims remain limited to same-mesh reduction. Generic topology adapters remain
 temporary until the proposed Radia API is published.
+
+[Colored local recovery](22_batched_scalar_cln.ipynb) profiles the scalar route and batches disjoint element projections. All three CLN stages are compared against old scalar V/Phi and both A-T routes with unchanged accuracy gates, raw timings and rejection controls. See the [implementation note](BATCHED_SCALAR_CLN.md).
+
+[Bulk scalar CLN, memory and mexcuda](23_bulk_scalar_cln.ipynb) preserves full-stage accuracy with native bulk assembly and the selected CUDA MEX local inverse. Whole-method memory includes the MATLAB process. Formal mexcuda timing remains pending; historical CPU/CuPy observations are distinguished from idle-mdx performance acceptance.
