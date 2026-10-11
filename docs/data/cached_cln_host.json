@@ -1,0 +1,270 @@
+{
+  "schema": 1,
+  "complete": true,
+  "idle_probes": [
+    {
+      "cpu_busy_fraction": 0.002896032435563245,
+      "gpu": {
+        "name": "NVIDIA A100-SXM4-40GB",
+        "driver": "591.59",
+        "total_mib": 40960,
+        "used_mib": 10,
+        "utilization_percent": 0
+      },
+      "foreign_jobs": []
+    }
+  ],
+  "preflight_cpu_busy_fraction": 0.002896032435563245,
+  "preflight_gpu": {
+    "name": "NVIDIA A100-SXM4-40GB",
+    "driver": "591.59",
+    "total_mib": 40960,
+    "used_mib": 10,
+    "utilization_percent": 0
+  },
+  "foreign_compute_job_samples": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "artifact_sha256": {
+    "cln_projection_mex.mexw64": "fb9d7a17a337ad23464dc373cc5c58a7c9c7432f58955c557e0ee197faa7c537",
+    "radia-5.2.3-cp312-cp312-win_amd64.whl": "7b4173eae23618cf93e91af312f21eac8ebb78daeb5d372b7d88d135c00c1dba"
+  },
+  "monitor_interval_seconds": 30,
+  "monitor_scope": "Python/MATLAB/pytest/nvcc processes; own process tree excluded; PID/parent retained",
+  "source_sha256_lf": {
+    "validation/cached_host_timing.py": "8a51567056a76e1f8098524128946e46fc0f603988f0e62afd07995833116bcb",
+    "validation/cached_cln_study.py": "91a5decb61536081019a63e442332ae21c35b8079da06b604cf768cc67ea61bf"
+  },
+  "whole_experiment_seconds": 1100.6418754000006,
+  "returncode": 0,
+  "observed_owned_processes": [
+    {
+      "pid": 484,
+      "creation": "/Date(1791718084575)/"
+    },
+    {
+      "pid": 1452,
+      "creation": "/Date(1791717355243)/"
+    },
+    {
+      "pid": 1756,
+      "creation": "/Date(1791718206136)/"
+    },
+    {
+      "pid": 2496,
+      "creation": "/Date(1791717446422)/"
+    },
+    {
+      "pid": 2500,
+      "creation": "/Date(1791717719951)/"
+    },
+    {
+      "pid": 2556,
+      "creation": "/Date(1791717416017)/"
+    },
+    {
+      "pid": 3192,
+      "creation": "/Date(1791717932658)/"
+    },
+    {
+      "pid": 4124,
+      "creation": "/Date(1791717271265)/"
+    },
+    {
+      "pid": 4180,
+      "creation": "/Date(1791717811116)/"
+    },
+    {
+      "pid": 4372,
+      "creation": "/Date(1791718054185)/"
+    },
+    {
+      "pid": 4468,
+      "creation": "/Date(1791717294443)/"
+    },
+    {
+      "pid": 4724,
+      "creation": "/Date(1791717507192)/"
+    },
+    {
+      "pid": 4784,
+      "creation": "/Date(1791718023811)/"
+    },
+    {
+      "pid": 4820,
+      "creation": "/Date(1791717993427)/"
+    },
+    {
+      "pid": 4836,
+      "creation": "/Date(1791717628756)/"
+    },
+    {
+      "pid": 4872,
+      "creation": "/Date(1791718266933)/"
+    },
+    {
+      "pid": 5636,
+      "creation": "/Date(1791718358113)/"
+    },
+    {
+      "pid": 5700,
+      "creation": "/Date(1791718145367)/"
+    },
+    {
+      "pid": 5908,
+      "creation": "/Date(1791717385617)/"
+    },
+    {
+      "pid": 6280,
+      "creation": "/Date(1791718365075)/"
+    },
+    {
+      "pid": 6744,
+      "creation": "/Date(1791717263994)/"
+    },
+    {
+      "pid": 7448,
+      "creation": "/Date(1791718236533)/"
+    },
+    {
+      "pid": 7596,
+      "creation": "/Date(1791718297312)/"
+    },
+    {
+      "pid": 7716,
+      "creation": "/Date(1791717271271)/"
+    },
+    {
+      "pid": 8060,
+      "creation": "/Date(1791717266170)/"
+    },
+    {
+      "pid": 8348,
+      "creation": "/Date(1791717567981)/"
+    },
+    {
+      "pid": 8428,
+      "creation": "/Date(1791718327719)/"
+    },
+    {
+      "pid": 9204,
+      "creation": "/Date(1791718175756)/"
+    },
+    {
+      "pid": 9772,
+      "creation": "/Date(1791717841500)/"
+    },
+    {
+      "pid": 10084,
+      "creation": "/Date(1791717476797)/"
+    },
+    {
+      "pid": 10136,
+      "creation": "/Date(1791717598357)/"
+    },
+    {
+      "pid": 10364,
+      "creation": "/Date(1791717780740)/"
+    },
+    {
+      "pid": 10368,
+      "creation": "/Date(1791717902281)/"
+    },
+    {
+      "pid": 10476,
+      "creation": "/Date(1791717689558)/"
+    },
+    {
+      "pid": 10616,
+      "creation": "/Date(1791717963046)/"
+    },
+    {
+      "pid": 10672,
+      "creation": "/Date(1791717871882)/"
+    },
+    {
+      "pid": 10788,
+      "creation": "/Date(1791717264433)/"
+    },
+    {
+      "pid": 11120,
+      "creation": "/Date(1791718114982)/"
+    },
+    {
+      "pid": 12180,
+      "creation": "/Date(1791717324854)/"
+    },
+    {
+      "pid": 12244,
+      "creation": "/Date(1791717260863)/"
+    },
+    {
+      "pid": 12412,
+      "creation": "/Date(1791717537593)/"
+    },
+    {
+      "pid": 12424,
+      "creation": "/Date(1791717750341)/"
+    },
+    {
+      "pid": 12664,
+      "creation": "/Date(1791717264443)/"
+    },
+    {
+      "pid": 12676,
+      "creation": "/Date(1791717659161)/"
+    },
+    {
+      "pid": 12700,
+      "creation": "/Date(1791717265447)/"
+    },
+    {
+      "pid": 12900,
+      "creation": "/Date(1791717260853)/"
+    }
+  ],
+  "postflight_gpu": {
+    "name": "NVIDIA A100-SXM4-40GB",
+    "driver": "591.59",
+    "total_mib": 40960,
+    "used_mib": 427,
+    "utilization_percent": 0
+  }
+}
