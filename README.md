@@ -39,6 +39,8 @@ ordinary nodal-flux incompatibility is retained as a separate control.
 
 [Colored local recovery](docs/22_batched_scalar_cln.ipynb) profiles the scalar route and batches disjoint element projections. All three CLN stages are compared against old scalar V/Phi and both A-T routes with unchanged accuracy gates, raw timings and rejection controls. See the [implementation note](docs/BATCHED_SCALAR_CLN.md).
 
+[Bulk scalar CLN, memory and mexcuda](docs/23_bulk_scalar_cln.ipynb) validates native bulk assembly/checks and the selected CUDA MEX route against both A-T references. Fresh-process memory includes MATLAB itself. Full-CLN mexcuda accuracy passes; formal speed awaits an idle mdx host with a usable GPU runtime. Earlier CuPy/LAB timings remain exploratory reference evidence. See the [measurement and implementation note](docs/BULK_SCALAR_CLN.md).
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.

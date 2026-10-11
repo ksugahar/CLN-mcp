@@ -121,3 +121,13 @@ original physical equation residuals. This replacement is separate from the
 A-T versus A-phi/T-Omega accuracy ranking and has no presumed speed advantage.
 
 [Colored scalar recovery](22_batched_scalar_cln.ipynb) preserves full-stage A-T parity (coefficient 1.212e-10, volume field 5.350e-09, recovered physical residual 4.200e-10) while measuring the local-inverse speedup separately from total A-T comparison. The optimized scalar route remains slower than A-T in the four saved cohorts.
+
+### Bulk assembly and mexcuda validation (2026-10-11)
+
+[Notebook 23](23_bulk_scalar_cln.ipynb) and [implementation/evidence](BULK_SCALAR_CLN.md) preserve quadrature order 13 and all scalar, curl, boundary and original physical residual gates. Bulk broken-space assembly and compound checks pass twelve native equivalence controls. The historical LAB block measures a 1.50–1.80x full-recursion improvement over colored recovery, with substantial timing variation; A-T remains faster in that block.
+
+The selected GPU route is mexcuda. Four cohorts (p=2/3/4, curved meshes, three stages) pass complete coefficient and volume-field parity: maximum relative differences 1.21171e-10 and 5.34719e-09. Ten native input/lifecycle rejection controls pass. The standalone CUDA kernel uses checked handles, persistent operators, and a device fit reduction; FE assembly and scalar solves remain on CPU.
+
+Whole-method memory is not automatically reduced by local recovery. At higher orders the CPU scalar route exceeds A-T memory in these cases. With the separate MATLAB process included, sampled simultaneous mexcuda working sets are approximately 2.0–2.4 GiB. Native per-process peaks and sampling limitations are saved separately.
+
+The upgraded 100 host is authorized for CI, tests and numerical/memory validation. Formal performance measurements require an otherwise idle mdx. The current mdx is busy and lacks an NVIDIA runtime, so formal mexcuda speed remains unverified; the saved accuracy runs intentionally contain no timing claims. CuPy and earlier LAB timing data are exploratory evidence only. These results are Codex self-review, not independent scientific acceptance.

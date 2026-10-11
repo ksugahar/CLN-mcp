@@ -1,5 +1,9 @@
 # Faster compatible local curl recovery
 
+The subsequent [bulk assembly, memory and CUDA study](23_bulk_scalar_cln.ipynb)
+retains this archived producer and compares its route with native bulk FE
+operations and actual GPU local kernels. See [its protocol](BULK_SCALAR_CLN.md).
+
 The colored recovery engine uses the same element curl operators and local
 right inverses as the archived compatible sweep. NGSolve supplies oriented
 curved-element operators, free coefficients and physical integration.

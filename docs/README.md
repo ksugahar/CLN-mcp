@@ -70,3 +70,5 @@ claims remain limited to same-mesh reduction. Generic topology adapters remain
 temporary until the proposed Radia API is published.
 
 [Colored local recovery](22_batched_scalar_cln.ipynb) profiles the scalar route and batches disjoint element projections. All three CLN stages are compared against old scalar V/Phi and both A-T routes with unchanged accuracy gates, raw timings and rejection controls. See the [implementation note](BATCHED_SCALAR_CLN.md).
+
+[Bulk scalar CLN, memory and mexcuda](23_bulk_scalar_cln.ipynb) preserves full-stage accuracy with native bulk assembly and the selected CUDA MEX local inverse. Whole-method memory includes the MATLAB process. Formal mexcuda timing remains pending; historical CPU/CuPy observations are distinguished from idle-mdx performance acceptance.

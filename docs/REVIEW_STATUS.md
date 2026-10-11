@@ -439,3 +439,13 @@ Warmed medians, with every raw observation and range saved in JSON:
 | p=4, 3 mm | 5.939 | 3.374 | 22.155 | 19.842 | 1.12x |
 
 The local inverse is accelerated, but the optimized scalar route remains slower than both A-T references in these cohorts. The older scalar implementation spends most time in local recovery; profiling and new phase timers distinguish projection iterations, element target assembly, algebraic curl checks, integrated checks, scalar solves and setup. Remaining target assembly and physical checks limit total speedup. No global vector solve or relaxed accuracy gate is introduced. The same internal-wire, constant-material, zero-shift scope applies. These additions are Codex self-review, not independent scientific-review acceptance.
+
+### Bulk assembly and mexcuda validation (2026-10-11)
+
+[Notebook 23](23_bulk_scalar_cln.ipynb) and [implementation/evidence](BULK_SCALAR_CLN.md) preserve quadrature order 13 and all scalar, curl, boundary and original physical residual gates. Bulk broken-space assembly and compound checks pass twelve native equivalence controls. The historical LAB block measures a 1.50–1.80x full-recursion improvement over colored recovery, with substantial timing variation; A-T remains faster in that block.
+
+The selected GPU route is mexcuda. Four cohorts (p=2/3/4, curved meshes, three stages) pass complete coefficient and volume-field parity: maximum relative differences 1.21171e-10 and 5.34719e-09. Ten native input/lifecycle rejection controls pass. The standalone CUDA kernel uses checked handles, persistent operators, and a device fit reduction; FE assembly and scalar solves remain on CPU.
+
+Whole-method memory is not automatically reduced by local recovery. At higher orders the CPU scalar route exceeds A-T memory in these cases. With the separate MATLAB process included, sampled simultaneous mexcuda working sets are approximately 2.0–2.4 GiB. Native per-process peaks and sampling limitations are saved separately.
+
+The upgraded 100 host is authorized for CI, tests and numerical/memory validation. Formal performance measurements require an otherwise idle mdx. The current mdx is busy and lacks an NVIDIA runtime, so formal mexcuda speed remains unverified; the saved accuracy runs intentionally contain no timing claims. CuPy and earlier LAB timing data are exploratory evidence only. These results are Codex self-review, not independent scientific acceptance.

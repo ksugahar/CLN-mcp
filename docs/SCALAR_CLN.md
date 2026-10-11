@@ -122,3 +122,8 @@ Portable saved-evidence gates, without NGSolve:
     python validation/validate_notebooks.py
 
 The subsequent [colored recovery study](22_batched_scalar_cln.ipynb) profiles and accelerates the local inverse while preserving this archived formulation and evidence. Use the optimized standalone entrypoint `validation.cln3d.CLN_VPhi_fast` for that recovery engine.
+
+The [bulk assembly, memory and actual CUDA study](23_bulk_scalar_cln.ipynb)
+adds native bulk loads/checks, packed storage cleanup, isolated-process peak
+memory and explicit CUDA FP64 local kernels. Its [protocol](BULK_SCALAR_CLN.md)
+distinguishes complete-method measurements from local operator estimates.

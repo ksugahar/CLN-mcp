@@ -3,6 +3,7 @@
 Public documentation release policy:
   P1  Implementations are published only as Python (.py), Mathematica (.wls / .wl) or executed
       Jupyter notebooks (.ipynb, under docs/ only).
+      The explicitly requested CUDA MEX source has one exact-path exception.
   P2  No files of commercial or other-language tool chains (MATLAB, COMSOL, FEMM, JMAG, FreeFEM, Julia).
   P3  No commercial tool names (COMSOL, FEMM, JMAG) in published text or code.
   P4  No absolute local paths (drive letters, user directories) in published files.
@@ -19,13 +20,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", "__pycache__", ".pytest_cache", ".ipynb_checkpoints", "build", "dist", ".venv"}
 CODE_EXT = {".py", ".wls", ".wl", ".ipynb"}
+# User-requested mexcuda experiment (2026-10-11); source only, no MEX binaries.
+CUDA_SOURCE = Path('validation/cln3d/mexcuda/colored_projection.cu')
 FORBIDDEN_EXT = {".m", ".mlx", ".slx", ".mat", ".mex", ".mexw64", ".mph", ".fem", ".ans", ".jmdl", ".jproj",
                  ".jfiles", ".jcf", ".edp", ".idp", ".jl"}
 DATA_FORBIDDEN = {".dat", ".npy", ".npz", ".pkl", ".pickle"}       # .mat is already in FORBIDDEN_EXT
 BINARY_FORBIDDEN = {".pyd", ".dll", ".exe", ".so", ".dylib", ".obj", ".o", ".a", ".lib.bin"}
 PRIVATE = re.compile(r"\bEMPY\b|import\s+empy|from\s+empy|EMPY_Solver", re.I)
 ARCHIVE = re.compile(r"[\"'][A-Za-z]:[\"']|<archive>|lab archive", re.I)
-TEXT_EXT = CODE_EXT | {".md", ".txt", ".json", ".toml", ".cfg", ".yml", ".yaml", ".lib", ".cir", ".svg"}
+TEXT_EXT = CODE_EXT | {".md", ".txt", ".json", ".toml", ".cfg", ".yml", ".yaml", ".lib", ".cir", ".svg", ".cu"}
 COMMERCIAL = re.compile(r"\b(COMSOL|FEMM|JMAG)\b", re.I)
 ABSPATH = re.compile(r"(?<![A-Za-z0-9])[A-Za-z]:[\\\\/][^\s\"'<>|]+|/(?:Users|home)/[A-Za-z0-9_.-]+|\\\\Users\\\\")
 # files whose job is to name the forbidden things (the policy itself and this lint)
@@ -46,6 +49,9 @@ def check(root=None):
     for p in files(base):
         rel = p.relative_to(base)
         ext = p.suffix.lower()
+        if ext == '.cu' and rel != CUDA_SOURCE:
+            problems.append(('P1', str(rel), 'only the requested CUDA MEX source is allowed'))
+            continue
         if ext in FORBIDDEN_EXT:
             problems.append(("P2", str(rel), "forbidden file type"))
             continue
