@@ -20,6 +20,10 @@ Start with [What is CLN?](docs/00_what_is_cln.ipynb), then follow the [notebook 
 
 For AC-axis error, termination effects and fair formulation comparisons, see the [accuracy evidence guide](docs/ACCURACY_REVIEW.md). It separates same-mesh reduction, continuum accuracy and element errors.
 
+[Matched A–phi/T–Omega/A–T accuracy study](docs/17_formulation_ranking.ipynb) reproduces the order-1 ranking and explains its reversal using common 3D meshes, order/stage windows, one-space enrichment controls and independent zero/positive-shift FE pencils. A-T improves deeper-element accuracy in the tested cases; this does not imply universal field or terminal-response superiority.
+
+[High-order element curl recovery](docs/18_element_curl_recovery.ipynb) tests element-local vector-potential reconstruction at p=1/2/3, including shared trace unknowns, independent global references and incompatible-field controls. This is a verified recovery prototype; integration into the full A-T CLN solve remains open.
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.

@@ -236,3 +236,57 @@ remains open. Claude independently accepted the same-mesh scientific scope at
 This acceptance does not establish continuum accuracy. FE convergence of the
 loss, the independent full T-Omega cross-check, and F2/Radia API migration
 (including the tested published version pin) remain open.
+
+### Matched round-wire formulation ranking (2026-10-11)
+
+[Notebook 17](17_formulation_ranking.ipynb) identifies the notebook-06 figure
+as order 1, zero shift and maximum R0/L1/R2 error. Forty native field-recursion
+cases reuse shared 3D meshes at maxh 3/2/1.5 mm, orders 1/2/3 and coefficient
+windows of 3/5/7 elements, with one-space A-T enrichment and profile controls.
+The matched quadrature-8 baseline completes all 27 cases. One quadrature-4
+T-Omega load rejection is intentionally retained; no numerical gate is relaxed.
+
+An independent full FE response/Taylor oracle contributes 36 zero/positive-
+shift Type1/Type2 cases. It uses scalar and magnetic Schur complements with
+NGSolve sparsecholesky subsolves, checked matrix-free CG and exact-gradient
+gauges, without a physical mass perturbation. At zero shift its first-five
+coefficients agree with field recursion within 2e-6 relative; independent
+Taylor Pade evaluation checks the continued fractions. Recorded original-
+system residual maxima are below 5.3e-9 (field study) and 1.5e-13 (outer
+response pencils). Original magnetic subsolve residuals are below 2.9e-13.
+
+The p=1 first-three ranking favors A-phi. A-T is better for the seven-element
+coefficient metric on all nine matched baseline cohorts, and for positive-
+shift first-five coefficients on all four pencil cohorts. At p=3, maxh=1.5 mm,
+s0=2*pi*1e5, Type2 first-five errors are 1.1532% (A-phi), 1.2315% (T-Omega)
+and 0.08909% (A-T), approximately a factor of thirteen advantage. Enriching
+only A or only T changes the A-T error pattern toward the corresponding
+one-potential route. This supports a discretization-space explanation,
+not a universal formulation theorem or guaranteed error cancellation.
+
+No general-shape, equal-cost, all-order, field-accuracy or terminal-response
+superiority follows. The high-order terminal curves approach the same finite
+analytic ladder and are often limited by truncation. Native evidence and
+portable checks are Codex self-review; a new independent external scientific
+review is not claimed. The producer sources, hashes, runtime, raw numerical
+values and five corruption controls are retained in the repository.
+
+### High-order element curl recovery (2026-10-11)
+
+[Notebook 18](18_element_curl_recovery.ipynb) distinguishes local vector-
+potential recovery from the global scalar Poisson problems in Biro and
+Koster's Compumag 2021 paper. On one affine, simply connected 12-tetrahedron
+cube, two compatible discrete fields at each of orders 1/2/3 are recovered
+by local minimum-residual sweeps in forward/reverse/shuffled element order.
+The largest high-order single-sweep curl error is 1.8e-13. An independently
+assembled global pseudoinverse, element-operator LSMR, and integrated curl
+errors check the result. Incompatible element curl data retain residuals
+above 54%, as required; local solves do not repair compatibility.
+
+This is a working high-order local-recovery prototype, not a proof for every
+mesh or a replacement of the A-T CLN implementation. Curved elements, holes,
+material interfaces, actual CLN source compatibility, scalar corrections,
+and measured cost remain open. The paper consulted does not state a p=1-only
+restriction, and cites a 36-edge hexahedral example; identifying the precise
+claimed p=1 theorem remains open. No such theorem is attributed without its
+source. Six native results, source identity and portable gates are saved.

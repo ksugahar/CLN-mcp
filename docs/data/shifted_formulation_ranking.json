@@ -1,0 +1,3154 @@
+{
+  "schema_version": 1,
+  "scope": "Independent full 3D FE response/Taylor oracle; five elements; zero and positive real shifts",
+  "source_sha256_lf": {
+    "validation/shifted_formulation_ranking.py": "55f50797ef851f026dc3f0b098bf9b0c631fcf733dc35c8d61f49469b1157a3d",
+    "validation/formulation_ranking.py": "e329c3aa80525dfc775623a59aa4d2873ae2162585ae1cbada15204bac6c7c4b",
+    "validation/cln3d/wire_pencils.py": "3ae221cb56e3f1418eddd8c4204d82158666a2d7e4b6adc98ade91c99bc2e7d1",
+    "validation/cln3d/_iccg.py": "1ac18b2ebe8d4895174819263574c891e5fc8327e314cca74ee4d2c61b56b7d3",
+    "validation/cln3d/CLN_AT.py": "749705b83b5bc3306e6314827854ecaeb081a9ad2fbe2534106b4d8e183d2ed7"
+  },
+  "runtime": {
+    "host": "intel11",
+    "python": "3.12.10",
+    "ngsolve": "6.2.2607",
+    "radia": "5.2.3",
+    "mpmath": "1.3.0"
+  },
+  "shift_definition": "z0=tau*s0; positive case s0=2*pi*1e5; same conductor as zero-shift field study",
+  "precision_digits": 80,
+  "meshes": [
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "ne": 510,
+      "free_A": 784,
+      "free_compact_A": 392,
+      "free_T": 830,
+      "free_phi": 701,
+      "free_Omega": 1004,
+      "kernel_defects": [
+        5.55739606574193e-18,
+        4.907533817921463e-18,
+        7.801302834570517e-18
+      ],
+      "backend": "NGSolve sparsecholesky subsolves; matrix-free CG Schur solve",
+      "mass_perturbation": 0,
+      "scalar_order": 2,
+      "magnetic_subsolves": {
+        "count": 167,
+        "max_original_residual": 1.4248077552784673e-14
+      }
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "ne": 510,
+      "free_A": 3798,
+      "free_compact_A": 2140,
+      "free_T": 3162,
+      "free_phi": 2351,
+      "free_Omega": 3000,
+      "kernel_defects": [
+        3.685644903495325e-18,
+        5.6233249292734854e-18,
+        8.210883390744251e-18
+      ],
+      "backend": "NGSolve sparsecholesky subsolves; matrix-free CG Schur solve",
+      "mass_perturbation": 0,
+      "scalar_order": 3,
+      "magnetic_subsolves": {
+        "count": 203,
+        "max_original_residual": 1.8003050516061444e-14
+      }
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "ne": 510,
+      "free_A": 10600,
+      "free_compact_A": 6292,
+      "free_T": 8190,
+      "free_phi": 5547,
+      "free_Omega": 6672,
+      "kernel_defects": [
+        2.14216945319136e-18,
+        5.0818246103316914e-18,
+        6.980123054872761e-18
+      ],
+      "backend": "NGSolve sparsecholesky subsolves; matrix-free CG Schur solve",
+      "mass_perturbation": 0,
+      "scalar_order": 4,
+      "magnetic_subsolves": {
+        "count": 242,
+        "max_original_residual": 2.1984874132016804e-14
+      }
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "ne": 5140,
+      "free_A": 118964,
+      "free_compact_A": 69154,
+      "free_T": 76551,
+      "free_phi": 55017,
+      "free_Omega": 59522,
+      "kernel_defects": [
+        7.743985717542315e-19,
+        1.76398932211205e-18,
+        2.0579019347514096e-18
+      ],
+      "backend": "NGSolve sparsecholesky subsolves; matrix-free CG Schur solve",
+      "mass_perturbation": 0,
+      "scalar_order": 4,
+      "magnetic_subsolves": {
+        "count": 178,
+        "max_original_residual": 2.8604506133316663e-13
+      }
+    }
+  ],
+  "cases": [
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.0000064466552712,
+        -0.12249750387796884,
+        0.02025957024108842,
+        -0.003426563866353868,
+        0.0005815086540050441,
+        -9.873921933419296e-05,
+        1.6767254266471573e-05
+      ],
+      "normalized_elements": [
+        0.9999935533862879,
+        0.12249592449488331,
+        2.855988491086801,
+        0.0412478954135875,
+        2.7179818059123675
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -6.44661371206768e-06,
+        -0.020032604040933526,
+        -0.04800383630439962,
+        -0.34003367338260004,
+        -0.4564036388175265
+      ],
+      "max_first3_error": 0.04800383630439962,
+      "max_first5_error": 0.4564036388175265,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.2018535981497667e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.2665601149538281e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.3256651711804245e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.28311569255225e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.4204481999965e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.2942931474859776e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        0.9997534175561229,
+        -0.12527835162592393,
+        0.02012517979915222,
+        -0.0033375045709044602,
+        0.0005560670055808897,
+        -9.271528824365066e-05,
+        1.5460635488946243e-05
+      ],
+      "normalized_elements": [
+        1.0002466432617754,
+        0.1253401573695189,
+        3.547249413146449,
+        0.08375686838562439,
+        13.277876405083196
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        0.00024664326177535134,
+        0.0027212589561512557,
+        0.1824164710488163,
+        0.3401098941699903,
+        1.6555752810166393
+      ],
+      "max_first3_error": 0.1824164710488163,
+      "max_first5_error": 1.6555752810166393,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.343510709351432e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.235968912819156e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1736888081118692e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.0698806179035087e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1663523120627753e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1099143059455862e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.181500577706344e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        0.9997534175561226,
+        -0.12278099644483871,
+        0.019528968777503028,
+        -0.0031820048400278546,
+        0.0005200390032441557,
+        -8.50248413527034e-05,
+        1.3902067768365753e-05
+      ],
+      "normalized_elements": [
+        1.0002466432617756,
+        0.12284157012485707,
+        3.3892916215399898,
+        0.057745489341605755,
+        7.63941100049635
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        0.0002466432617756846,
+        -0.0172674390011435,
+        0.12976387384666324,
+        -0.0760721705343079,
+        0.52788220009927
+      ],
+      "max_first3_error": 0.12976387384666324,
+      "max_first5_error": 0.52788220009927,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.3657922672500448e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1675357879972616e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1199782346997337e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.0191797519312885e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1052919398836958e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.057346425536537e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.0962494159020114e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.2464018421694853,
+        -0.0010625289765388223,
+        1.0320315130941073e-05,
+        -1.0768299674081059e-07,
+        1.1690525661306512e-09,
+        -1.3000986143091731e-11,
+        1.4689584439070665e-13
+      ],
+      "normalized_elements": [
+        4.058411216390821,
+        0.017500597715334135,
+        3.2403753566461195,
+        0.004202327525741989,
+        0.7591739645766452
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        -0.13958431041632585,
+        -0.3741267375155864,
+        -0.6383098362405398,
+        -0.8489011115158488,
+        -0.9160504835081343
+      ],
+      "max_first3_error": 0.6383098362405398,
+      "max_first5_error": 0.9160504835081343,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.759558831883938e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 6.305818115303985e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.0152088177918e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.545567487376668e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.844534058225783e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.001780644946774e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.076063880655349e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.2464018421694853,
+        -0.0010625289765388223,
+        1.0320315130941073e-05,
+        -1.0768299674081059e-07,
+        1.1690525661306512e-09,
+        -1.3000986143091731e-11,
+        1.4689584439070665e-13
+      ],
+      "normalized_elements": [
+        0.05140037851900723,
+        6.153546358201532,
+        0.009378288272599976,
+        1.6123854311659074,
+        0.0022758648830701086
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        -0.13958431041632585,
+        -0.3060402624996792,
+        -0.6675979471793559,
+        -0.8178128081815167,
+        -0.919611517244001
+      ],
+      "max_first3_error": 0.6675979471793559,
+      "max_first5_error": 0.919611517244001,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.759558831883938e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 6.305818115303985e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.0152088177918e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.545567487376668e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.844534058225783e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.001780644946774e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.076063880655349e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.17825113077008697,
+        -0.0013615826720700986,
+        1.2421114334963489e-05,
+        -1.2421649609288776e-07,
+        1.3083936211299983e-09,
+        -1.4235837275841103e-11,
+        1.582996776987848e-13
+      ],
+      "normalized_elements": [
+        5.610062587989001,
+        0.04285282217304405,
+        28.876718360126223,
+        0.15583513523376058,
+        100.5328427784413
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        0.18937821055620047,
+        0.5325439768612737,
+        2.2232145486133246,
+        4.6032081212996605,
+        10.116929632207944
+      ],
+      "max_first3_error": 2.2232145486133246,
+      "max_first5_error": 10.116929632207944,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.021496976197043e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.400816607543685e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 2.2381769133658674e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.799604356155187e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.5508129208194278e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.524251904640767e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.5711682402217532e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.17825113077008697,
+        -0.0013615826720700986,
+        1.2421114334963489e-05,
+        -1.2421649609288776e-07,
+        1.3083936211299983e-09,
+        -1.4235837275841103e-11,
+        1.582996776987848e-13
+      ],
+      "normalized_elements": [
+        0.07105227271533028,
+        14.135300131260978,
+        0.07609654415724812,
+        51.46897537188016,
+        0.27212123491816936
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        0.18937821055620047,
+        0.5940936490230724,
+        1.6971497095400692,
+        4.815599612554841,
+        8.611912097018164
+      ],
+      "max_first3_error": 1.6971497095400692,
+      "max_first5_error": 8.611912097018164,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.021496976197043e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.400816607543685e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 2.2381769133658674e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.799604356155187e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.5508129208194278e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.524251904640767e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.5711682402217532e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.20433946094156474,
+        -0.0012660453299440792,
+        1.1547914896504034e-05,
+        -1.1693413814577628e-07,
+        1.2465465924047748e-09,
+        -1.3700631599514839e-11,
+        1.5365651095318435e-13
+      ],
+      "normalized_elements": [
+        4.893817353692499,
+        0.03032108716393991,
+        10.364572976266434,
+        0.032469003297646466,
+        9.971115586701767
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        0.03752848308420258,
+        0.0843719771206124,
+        0.15689192901490243,
+        0.16745548232735238,
+        0.10260674291552148
+      ],
+      "max_first3_error": 0.15689192901490243,
+      "max_first5_error": 0.16745548232735238,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.272075450230713e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.317577231454128e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0734733803699527e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.678026744676311e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.471332041866407e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0694159157108345e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.1644304773558293e-13
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 1,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.20433946094156474,
+        -0.0012660453299440792,
+        1.1547914896504034e-05,
+        -1.1693413814577628e-07,
+        1.2465465924047748e-09,
+        -1.3700631599514839e-11,
+        1.5365651095318435e-13
+      ],
+      "normalized_elements": [
+        0.06198092085069214,
+        9.580698024446077,
+        0.03251730938829724,
+        10.35187839167452,
+        0.03144826626942138
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        0.03752848308420258,
+        0.08045317270634844,
+        0.15253659076076115,
+        0.1696828920501198,
+        0.11082095844596206
+      ],
+      "max_first3_error": 0.15253659076076115,
+      "max_first5_error": 0.1696828920501198,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.272075450230713e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.317577231454128e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0734733803699527e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.678026744676311e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.471332041866407e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0694159157108345e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.1644304773558293e-13
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.0000064466552712,
+        -0.12499995064403488,
+        0.020833915429669066,
+        -0.0035798853032601202,
+        0.0006181817796190613,
+        -0.00010684279052507927,
+        1.8469047160712885e-05
+      ],
+      "normalized_elements": [
+        0.9999935533862879,
+        0.12499833899643807,
+        2.9995585960773474,
+        0.06188401329628349,
+        4.7901851935679876
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -6.44661371206768e-06,
+        -1.3288028495425605e-05,
+        -0.0001471346408842298,
+        -0.009855787259464076,
+        -0.04196296128640246
+      ],
+      "max_first3_error": 0.0001471346408842298,
+      "max_first5_error": 0.04196296128640246,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.57805684210849e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.6586073232592693e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.7526511854189843e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.6859414918378488e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.7235067346184558e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.7560943423596054e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        0.9999994287878737,
+        -0.12500106445021006,
+        0.020826698246941965,
+        -0.003579071447508052,
+        0.0006180662708795242,
+        -0.00010682555084630204,
+        1.8466495005825828e-05
+      ],
+      "normalized_elements": [
+        1.0000005712124524,
+        0.12500120725458003,
+        3.0040401136024495,
+        0.06300411944366821,
+        5.345747399539824
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        5.712124525492428e-07,
+        9.658036640290314e-06,
+        0.0013467045341498407,
+        0.008065911098691357,
+        0.06914947990796466
+      ],
+      "max_first3_error": 0.0013467045341498407,
+      "max_first5_error": 0.06914947990796466,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.4582751807852905e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.430236658123342e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.448409255838485e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.4060025711167288e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.4304957283482182e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.338891182773834e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.4052669226885946e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        0.9999994287878735,
+        -0.12499946349798749,
+        0.020826880661585633,
+        -0.003578158331051178,
+        0.0006177459095743285,
+        -0.00010674157707619552,
+        1.8446995697302148e-05
+      ],
+      "normalized_elements": [
+        1.0000005712124527,
+        0.12499960630052856,
+        3.0036267048670195,
+        0.06240040303682492,
+        5.12174444184383
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        5.712124527712877e-07,
+        -3.1495957715638096e-06,
+        0.0012089016223399075,
+        -0.0015935514108013063,
+        0.024348888368765854
+      ],
+      "max_first3_error": 0.0012089016223399075,
+      "max_first5_error": 0.024348888368765854,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.5354670947527598e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.5315311264658298e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.552276613918074e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.480074272647394e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.5087172599671403e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.4526865670134228e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.454040188945395e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21477411276405428,
+        -0.0012186581287840729,
+        1.1329977049623432e-05,
+        -1.152572395997366e-07,
+        1.2297851930556964e-09,
+        -1.3505716781781571e-11,
+        1.5117085709883815e-13
+      ],
+      "normalized_elements": [
+        4.656054620039689,
+        0.02641910022465081,
+        7.292144554787535,
+        0.01638639752681694,
+        3.720854367203073
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        -0.01287912115436242,
+        -0.055174644977021174,
+        -0.18605202549477365,
+        -0.4108106906483181,
+        -0.5885476325080051
+      ],
+      "max_first3_error": 0.18605202549477365,
+      "max_first5_error": 0.5885476325080051,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.899697369806382e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2757752996932237e-13
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.4009163892147658e-13
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.1933963231527336e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.287370294743912e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.3124488500023724e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.313561011423029e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21477411276405428,
+        -0.0012186581287840729,
+        1.1329977049623432e-05,
+        -1.152572395997366e-07,
+        1.2297851930556964e-09,
+        -1.3505716781781571e-11,
+        1.5117085709883815e-13
+      ],
+      "normalized_elements": [
+        0.058969620650724565,
+        8.435065586627614,
+        0.023058328120956373,
+        5.561222644567926,
+        0.011661420235783626
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        -0.01287912115436242,
+        -0.04874432407706909,
+        -0.1827255273852882,
+        -0.37162447817544353,
+        -0.5880933501332682
+      ],
+      "max_first3_error": 0.1827255273852882,
+      "max_first5_error": 0.5880933501332682,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.899697369806382e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2757752996932237e-13
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.4009163892147658e-13
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.1933963231527336e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.287370294743912e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.3124488500023724e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.313561011423029e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.20881703110294747,
+        -0.0012978392080955803,
+        1.145029330896513e-05,
+        -1.1501672074912259e-07,
+        1.224054135102592e-09,
+        -1.3444513408938832e-11,
+        1.5060210971088745e-13
+      ],
+      "normalized_elements": [
+        4.788881417948121,
+        0.02976384653256236,
+        11.41521277303662,
+        0.047211577143716744,
+        23.641287877675214
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        0.015281224070390582,
+        0.06444339995872754,
+        0.274164170135552,
+        0.6975394674264008,
+        1.6142554660480166
+      ],
+      "max_first3_error": 0.274164170135552,
+      "max_first5_error": 1.6142554660480166,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.3512066164876635e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2217582816806558e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0030186958545601e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.360531226582351e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.326858077601909e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.463844786705221e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.68708307968287e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.20881703110294747,
+        -0.0012978392080955803,
+        1.145029330896513e-05,
+        -1.1501672074912259e-07,
+        1.224054135102592e-09,
+        -1.3444513408938832e-11,
+        1.5060210971088745e-13
+      ],
+      "normalized_elements": [
+        0.06065189169866256,
+        9.403467119955609,
+        0.03481832964866064,
+        15.050203622960746,
+        0.06802330089569432
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        0.015281224070390582,
+        0.06046614330935291,
+        0.23409346296326616,
+        0.7005576218713963,
+        1.4027304923669326
+      ],
+      "max_first3_error": 0.23409346296326616,
+      "max_first5_error": 1.4027304923669326,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.3512066164876635e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2217582816806558e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0030186958545601e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.360531226582351e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.326858077601909e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.463844786705221e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.68708307968287e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21138090430708778,
+        -0.0012639789602598523,
+        1.1391456834515857e-05,
+        -1.1512030440939224e-07,
+        1.2266423554295146e-09,
+        -1.3471580509326256e-11,
+        1.508463548683868e-13
+      ],
+      "normalized_elements": [
+        4.7307963000632745,
+        0.02828839723321513,
+        9.327634300164606,
+        0.03030957397113396,
+        10.372263539485987
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        0.002966713762121615,
+        0.011676958398639328,
+        0.0411490047272743,
+        0.08981104147941825,
+        0.1469657149684113
+      ],
+      "max_first3_error": 0.0411490047272743,
+      "max_first5_error": 0.1469657149684113,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.644185806175304e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.054228465933928e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.382799325131722e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.50341010205724e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0086403586265825e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0394632427052236e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0568568981224853e-13
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 2,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21138090430708778,
+        -0.0012639789602598523,
+        1.1391456834515857e-05,
+        -1.1512030440939224e-07,
+        1.2266423554295146e-09,
+        -1.3471580509326256e-11,
+        1.508463548683868e-13
+      ],
+      "normalized_elements": [
+        0.05991623508665039,
+        8.96208917521246,
+        0.02927995190633184,
+        9.608153097080628,
+        0.0322863381926497
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        0.002966713762121615,
+        0.01069020845121245,
+        0.03779238142955898,
+        0.085647635784837,
+        0.1404234760865715
+      ],
+      "max_first3_error": 0.03779238142955898,
+      "max_first5_error": 0.1404234760865715,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.644185806175304e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.054228465933928e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.382799325131722e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.50341010205724e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0086403586265825e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0394632427052236e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.0568568981224853e-13
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.0000064466552712,
+        -0.12500160477053116,
+        0.020833734677951358,
+        -0.0035808166057604146,
+        0.0006185082945881013,
+        -0.00010692837551031554,
+        1.848892375714992e-05
+      ],
+      "normalized_elements": [
+        0.9999935533862879,
+        0.12499999310160739,
+        2.9999802422386117,
+        0.062497360871000746,
+        4.997503228893054
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -6.44661371206768e-06,
+        -5.51871409045062e-08,
+        -6.585920462694257e-06,
+        -4.222606398807612e-05,
+        -0.0004993542213892246
+      ],
+      "max_first3_error": 6.585920462694257e-06,
+      "max_first5_error": 0.0004993542213892246,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.0444960000343214e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.180184107579561e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1049578923503432e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.205793417822539e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.2348459244793025e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.1562575952933733e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.000006445906745,
+        -0.12500161234511786,
+        0.020833730414895783,
+        -0.003580821262389372,
+        0.0006185084684051075,
+        -0.00010692832669441083,
+        1.848890293069527e-05
+      ],
+      "normalized_elements": [
+        0.9999935541348044,
+        0.12500000086322677,
+        2.999984163219573,
+        0.06250113841177359,
+        5.00455619263699
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -6.445865195588039e-06,
+        6.905814092728779e-09,
+        -5.278926809050508e-06,
+        1.821458837730864e-05,
+        0.0009112385273980114
+      ],
+      "max_first3_error": 6.445865195588039e-06,
+      "max_first5_error": 0.0009112385273980114,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 2.0048079616963737e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.321939349972039e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.309883459997822e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.252587457954413e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.245326066942943e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.297202327537629e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.248648653512687e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.000006445906745,
+        -0.12500160608699065,
+        0.0208337290447868,
+        -0.0035808164204669582,
+        0.0006185072497646786,
+        -0.00010692801597076497,
+        1.848883018759085e-05
+      ],
+      "normalized_elements": [
+        0.9999935541348044,
+        0.12499999460518023,
+        2.99998375084424,
+        0.06249850153326356,
+        5.002112454403973
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -6.445865195588039e-06,
+        -4.315855817175891e-08,
+        -5.4163852533582095e-06,
+        -2.3975467783032097e-05,
+        0.0004224908807944922
+      ],
+      "max_first3_error": 6.445865195588039e-06,
+      "max_first5_error": 0.0004224908807944922,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.9329302302294276e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.229741153943687e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.230660955179159e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.1986745409635056e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.1904826018268255e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.209470807277801e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 3.1971092872747844e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.2121550128024913,
+        -0.001253326254021637,
+        1.1388010479239623e-05,
+        -1.1516382164952691e-07,
+        1.2272053556401652e-09,
+        -1.3478060855827129e-11,
+        1.5091838928340327e-13
+      ],
+      "normalized_elements": [
+        4.7135346310716875,
+        0.027845661642989777,
+        8.76026264848207,
+        0.025704990130118642,
+        7.45918346492541
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        -0.0006928983463747958,
+        -0.004156578991315741,
+        -0.02218092561200978,
+        -0.07575137507369252,
+        -0.17516290794586753
+      ],
+      "max_first3_error": 0.02218092561200978,
+      "max_first5_error": 0.17516290794586753,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.634355353090594e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.679316616354722e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.474377828510629e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.30030186110947e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.144163882522082e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.970106447125273e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.871271720219347e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-Phi",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.2121550128024913,
+        -0.001253326254021637,
+        1.1388010479239623e-05,
+        -1.1516382164952691e-07,
+        1.2272053556401652e-09,
+        -1.3478060855827129e-11,
+        1.5091838928340327e-13
+      ],
+      "normalized_elements": [
+        0.05969761349491666,
+        8.834208023066559,
+        0.027640180052454544,
+        8.247414038372758,
+        0.023592740067655646
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        -0.0006928983463747958,
+        -0.0037314543767808447,
+        -0.020327343038583925,
+        -0.06810544527869691,
+        -0.16665326127048566
+      ],
+      "max_first3_error": 0.020327343038583925,
+      "max_first5_error": 0.16665326127048566,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.634355353090594e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.679316616354722e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.474377828510629e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.30030186110947e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.144163882522082e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.970106447125273e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.871271720219347e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21183540421117522,
+        -0.0012608560542330077,
+        1.1357515302298588e-05,
+        -1.1501719468440014e-07,
+        1.2267085056594634e-09,
+        -1.3477068820480376e-11,
+        1.509234848640937e-13
+      ],
+      "normalized_elements": [
+        4.720646219284084,
+        0.028097547658006164,
+        9.19504901243863,
+        0.030336128390980044,
+        11.267595363297808
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        0.0008148153251948375,
+        0.004851611732042938,
+        0.026349856742351508,
+        0.09076583219920552,
+        0.24597157820385207
+      ],
+      "max_first3_error": 0.026349856742351508,
+      "max_first5_error": 0.24597157820385207,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.0775160513770485e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.671083859335025e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 6.14270917244176e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.155982116142677e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.006805467878634e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.202626394821038e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.136321845891689e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "T-Omega",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21183540421117522,
+        -0.0012608560542330077,
+        1.1357515302298588e-05,
+        -1.1501719468440014e-07,
+        1.2267085056594634e-09,
+        -1.3477068820480376e-11,
+        1.509234848640937e-13
+      ],
+      "normalized_elements": [
+        0.05978768281182377,
+        8.906131117947972,
+        0.028880315786421765,
+        9.599336784967159,
+        0.03445125796537676
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        0.0008148153251948375,
+        0.004379597224803767,
+        0.02362776388122698,
+        0.08465146010928122,
+        0.2168931369669751
+      ],
+      "max_first3_error": 0.02362776388122698,
+      "max_first5_error": 0.2168931369669751,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.0775160513770485e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.671083859335025e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 6.14270917244176e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 7.155982116142677e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.006805467878634e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.202626394821038e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.136321845891689e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21197697307039984,
+        -0.0012575077427964749,
+        1.1371096258413287e-05,
+        -1.1508423241499607e-07,
+        1.2269332431543486e-09,
+        -1.3477485902192889e-11,
+        1.5092079497975323e-13
+      ],
+      "normalized_elements": [
+        4.717493534865644,
+        0.027985514467723266,
+        8.99774485837586,
+        0.02820500634749607,
+        9.35126249498143
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        0.00014642097250432888,
+        0.0008449726760833029,
+        0.004326799553307694,
+        0.014139208019633642,
+        0.03406333946130996
+      ],
+      "max_first3_error": 0.004326799553307694,
+      "max_first5_error": 0.03406333946130996,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.464497179328906e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 6.10896085695139e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.011142443543507e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.827258245368007e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.364186193816076e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.478148756533696e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.434524911554468e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.003,
+      "order": 3,
+      "mesh_sha256": "536a10934ff91b25f58352cf3092a2186a4b21b40a9fd224dc26d1c8b8d4a6b7",
+      "formulation": "A-T",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21197697307039984,
+        -0.0012575077427964749,
+        1.1371096258413287e-05,
+        -1.1508423241499607e-07,
+        1.2269332431543486e-09,
+        -1.3477485902192889e-11,
+        1.5092079497975323e-13
+      ],
+      "normalized_elements": [
+        0.05974775359720789,
+        8.87404821078643,
+        0.02832449888498233,
+        8.965271787357757,
+        0.029196769365211442
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        0.00014642097250432888,
+        0.000761481014076572,
+        0.0039275079645193205,
+        0.013006976655148559,
+        0.03129320554390624
+      ],
+      "max_first3_error": 0.0039275079645193205,
+      "max_first5_error": 0.03129320554390624,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 9.464497179328906e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 6.10896085695139e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.011142443543507e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.827258245368007e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.364186193816076e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.478148756533696e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 5.434524911554468e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.0000003503814505,
+        -0.1250000875575761,
+        0.020833355224623398,
+        -0.0035807341363144926,
+        0.0006184906578348626,
+        -0.00010692477394208048,
+        1.8488207189450495e-05
+      ],
+      "normalized_elements": [
+        0.9999996496186723,
+        0.12499999996219816,
+        2.9999989459516208,
+        0.06249997263184255,
+        4.9999606584148095
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -3.503813277530141e-07,
+        -3.0241474651854875e-10,
+        -3.513494598000552e-07,
+        -4.3789051921818085e-07,
+        -7.868317038072949e-06
+      ],
+      "max_first3_error": 3.513494598000552e-07,
+      "max_first5_error": 7.868317038072949e-06,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 6.582666935498673e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 7.609698339344782e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 7.420212407054204e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 8.050673429080481e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 7.834823699175732e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 7.827844875142295e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.000000350379282,
+        -0.1250000875984834,
+        0.020833355197745707,
+        -0.0035807341863165667,
+        0.0006184906522341855,
+        -0.00010692477148534308,
+        1.8488206529990494e-05
+      ],
+      "normalized_elements": [
+        0.9999996496208408,
+        0.12500000000364755,
+        2.9999989693198708,
+        0.0625000081805237,
+        5.000060187855872
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -3.5037915926692196e-07,
+        2.918044042223165e-11,
+        -3.435600430875184e-07,
+        1.3088837917418587e-07,
+        1.2037571174403034e-05
+      ],
+      "max_first3_error": 3.5037915926692196e-07,
+      "max_first5_error": 1.2037571174403034e-05,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.1112103714825123e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.782136605553624e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.975823686208158e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.795291938696908e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.875523225277251e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.747159173116631e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.94536634198441e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 0.0,
+      "normalized_admittance_moments": [
+        1.000000350379282,
+        -0.1250000875645974,
+        0.020833355191278432,
+        -0.0035807341377505687,
+        0.0006184906432376221,
+        -0.00010692476914620413,
+        1.8488205967187048e-05
+      ],
+      "normalized_elements": [
+        0.9999996496208408,
+        0.12499999996976158,
+        2.9999989665389095,
+        0.062499980824099986,
+        5.0000226844557005
+      ],
+      "exact_normalized_elements": [
+        1.0,
+        0.125,
+        3.0,
+        0.0625,
+        5.0
+      ],
+      "signed_relative_errors": [
+        -3.5037915926692196e-07,
+        -2.4190741051463475e-10,
+        -3.444870301542959e-07,
+        -3.0681440024277193e-07,
+        4.536891140143231e-06
+      ],
+      "max_first3_error": 3.5037915926692196e-07,
+      "max_first5_error": 4.536891140143231e-06,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 1.1084871241280693e-13
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.6662286495388487e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.728240087918637e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.777907588984183e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.778126591380169e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.816420576653838e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 0.0,
+          "cg_flag": 0,
+          "true_residual": 5.740827918163566e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "A-Phi",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21201241966131257,
+        -0.0012566876586368597,
+        1.1374151928379204e-05,
+        -1.1509684649727613e-07,
+        1.2269777869168999e-09,
+        -1.347760222883605e-11,
+        1.5092053838408519e-13
+      ],
+      "normalized_elements": [
+        4.716704811904362,
+        0.02795791272993486,
+        8.95090480474617,
+        0.027707538945775087,
+        8.938931735605127
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        -2.0794613703673313e-05,
+        -0.00014214730466631252,
+        -0.0009014795203115266,
+        -0.003747729872925689,
+        -0.011532228220818674
+      ],
+      "max_first3_error": 0.0009014795203115266,
+      "max_first5_error": 0.011532228220818674,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.9900507615101886e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.042455515609371e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.005361653257941e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.965372692259102e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.9229446225389576e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.867106281985103e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.8522908163437183e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "A-Phi",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21201241966131257,
+        -0.0012566876586368597,
+        1.1374151928379204e-05,
+        -1.1509684649727613e-07,
+        1.2269777869168999e-09,
+        -1.347760222883605e-11,
+        1.5092053838408519e-13
+      ],
+      "normalized_elements": [
+        0.05973776430420751,
+        8.866164767558798,
+        0.028190764389321728,
+        8.820244638806477,
+        0.02801546062355694
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        -2.0794613703673313e-05,
+        -0.00012756602878090246,
+        -0.000812549026519885,
+        -0.003379979231009515,
+        -0.01043318081339773
+      ],
+      "max_first3_error": 0.000812549026519885,
+      "max_first5_error": 0.01043318081339773,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.9900507615101886e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.042455515609371e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 4.005361653257941e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.965372692259102e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.9229446225389576e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.867106281985103e-14
+        },
+        {
+          "family": "A-Phi",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.8522908163437183e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "T-Omega",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21200318868763138,
+        -0.001256952400802041,
+        1.1372245550159953e-05,
+        -1.1509555338487866e-07,
+        1.2269861508550946e-09,
+        -1.3477676456709757e-11,
+        1.5092104364966845e-13
+      ],
+      "normalized_elements": [
+        4.716910185126578,
+        0.027966237763990553,
+        8.967724062290099,
+        0.027923201531741538,
+        9.154583863788487
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        2.2746154639481903e-05,
+        0.00015558059637350754,
+        0.0009758832373390472,
+        0.004006634066471171,
+        0.012314601012228659
+      ],
+      "max_first3_error": 0.0009758832373390472,
+      "max_first5_error": 0.012314601012228659,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.020500032791323e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.015821001571309e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2583454577951192e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2254326360407934e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2001473115206918e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.1826726568031427e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.1725217525825387e-13
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "T-Omega",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21200318868763138,
+        -0.001256952400802041,
+        1.1372245550159953e-05,
+        -1.1509555338487866e-07,
+        1.2269861508550946e-09,
+        -1.3477676456709757e-11,
+        1.5092104364966845e-13
+      ],
+      "normalized_elements": [
+        0.05974036538645292,
+        8.86853421446368,
+        0.028238495007496235,
+        8.88223350630286,
+        0.028624561032762282
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        2.2746154639481903e-05,
+        0.00013964586114664394,
+        0.0008792048418229905,
+        0.003624287537270428,
+        0.011081566439973087
+      ],
+      "max_first3_error": 0.0008792048418229905,
+      "max_first5_error": 0.011081566439973087,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.020500032791323e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.015821001571309e-14
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2583454577951192e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2254326360407934e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.2001473115206918e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.1826726568031427e-13
+        },
+        {
+          "family": "T-Omega",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 1.1725217525825387e-13
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "A-T",
+      "type": "Type2",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21200749840116548,
+        -0.001256827868266613,
+        1.1373154035829696e-05,
+        -1.1509612682228511e-07,
+        1.2269818918024391e-09,
+        -1.3477639779242635e-11,
+        1.509207964808642e-13
+      ],
+      "normalized_elements": [
+        4.716814299217742,
+        0.027962330131728604,
+        8.959784748136396,
+        0.027820904899778634,
+        9.05127665120993
+      ],
+      "exact_normalized_elements": [
+        4.716802895998501,
+        0.027961887436867394,
+        8.958981142769234,
+        0.027811769946823734,
+        9.043220214975344
+      ],
+      "signed_relative_errors": [
+        2.4175738297777768e-06,
+        1.583208079955885e-05,
+        8.969829876368634e-05,
+        0.000328456368378071,
+        0.0008908813501240311
+      ],
+      "max_first3_error": 8.969829876368634e-05,
+      "max_first5_error": 0.0008908813501240311,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.620317495227633e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.439495507501572e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.276399306879233e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.1240358973734036e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.017840942520869e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 2.949185074622886e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 2.904897323806291e-14
+        }
+      ]
+    },
+    {
+      "maxh": 0.0015,
+      "order": 3,
+      "mesh_sha256": "7cf7a4603d4039278423c3b5d9aa380a5db147fe2a7db3c6d931f185f50f2ff4",
+      "formulation": "A-T",
+      "type": "Type1",
+      "z0": 78.95683520871486,
+      "normalized_admittance_moments": [
+        0.21200749840116548,
+        -0.001256827868266613,
+        1.1373154035829696e-05,
+        -1.1509612682228511e-07,
+        1.2269818918024391e-09,
+        -1.3477639779242635e-11,
+        1.509207964808642e-13
+      ],
+      "normalized_elements": [
+        0.059739150977230704,
+        8.867422040817974,
+        0.02821598041423462,
+        8.852803728060177,
+        0.02833384065605531
+      ],
+      "exact_normalized_elements": [
+        0.059739006553771845,
+        8.867295933287034,
+        0.02821368939517431,
+        8.85015798900045,
+        0.028310832659673154
+      ],
+      "signed_relative_errors": [
+        2.4175738297777768e-06,
+        1.4221644556471662e-05,
+        8.120239179716607e-05,
+        0.0002989482292874223,
+        0.0008126923237735625
+      ],
+      "max_first3_error": 8.120239179716607e-05,
+      "max_first5_error": 0.0008126923237735625,
+      "positive_elements": true,
+      "solve_diagnostics": [
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 8.620317495227633e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.439495507501572e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.276399306879233e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.1240358973734036e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 3.017840942520869e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 2.949185074622886e-14
+        },
+        {
+          "family": "A-T",
+          "s0": 628318.5307179586,
+          "cg_flag": 0,
+          "true_residual": 2.904897323806291e-14
+        }
+      ]
+    }
+  ],
+  "complete": true,
+  "passed": true
+}

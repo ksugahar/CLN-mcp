@@ -22,3 +22,9 @@ for p in (ROOT/'docs').glob('*.ipynb'):
                 if '://' not in link and not link.startswith('#'):
                     assert (p.parent/link.split('#')[0]).exists(),(p.name,link)
 print('PASS executed notebooks, links, Python syntax and 3D source identities')
+
+# These notebooks make new numerical claims; validate their saved native
+# evidence in the same portable documentation lane (no NGSolve dependency).
+import runpy
+for evidence_gate in ('validate_formulation_ranking.py', 'validate_element_curl_recovery.py'):
+    runpy.run_path(str(ROOT/'validation'/evidence_gate), run_name='__main__')

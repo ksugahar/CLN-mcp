@@ -2,6 +2,8 @@
 
 For interpreting the accuracy plots and short formulation comparisons, start with the [accuracy evidence guide](ACCURACY_REVIEW.md). It maps questions to existing producers, recorded results and validators.
 
+[Matched formulation ranking](17_formulation_ranking.ipynb) identifies the order-1, zero-shift R0/L1/R2 plot and tests common meshes at orders 1–3, three coefficient windows, one-space A-T enrichment, and independent positive-shift Type1/Type2 pencils. It distinguishes a measured A-T coefficient advantage from field accuracy and terminal truncation error.
+
 | Order | Notebook | What it explains | Rerun requirements |
 |---|---|---|---|
 | 1 | [What is CLN?](00_what_is_cln.ipynb) | Skin effect, fields/circuits, energy integrals, stages and errors | numpy, matplotlib, mpmath |
@@ -18,6 +20,8 @@ For interpreting the accuracy plots and short formulation comparisons, start wit
 | 12 | [Foster–Cauer conversion and error](09_foster_cauer_conversion_error.ipynb) | Exact round trip, termination, shifted representations, error measures, cited papers | sympy, numpy, matplotlib |
 
 All notebooks contain executed outputs for reading on GitHub. The two introductory notebooks use analytic solutions and need neither FEM nor Wolfram.
+
+[High-order element curl recovery](18_element_curl_recovery.ipynb) records the Biro/Koster local-recovery construction, a p=2/3 prototype, independent global checks and the remaining CLN integration gates.
 
 This public release centers on derivations and reproduction, not distribution of the full MCP application. Analytic continued-fraction examples, field-derived circuit proofs, and finite-element experiments have explicitly different scopes.
 

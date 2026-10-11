@@ -3,6 +3,17 @@
 This guide connects the AC-axis questions to existing reproducible evidence.
 It does not infer polynomial order, normalization or termination from a plot.
 
+The [matched formulation study](17_formulation_ranking.ipynb) now traces the
+public baseline plot to its producer: order 1, zero shift, maximum error of
+R0/L1/R2. It then varies order, coefficient window and real shift separately
+on shared 3D meshes. A-T is better for the tested deeper-element and positive-
+shift comparisons, while A-phi wins the baseline first-three-element metric.
+Neither is a universal ranking of fields, terminal impedance or cost.
+
+[High-order local recovery](18_element_curl_recovery.ipynb) separately tests the
+element-by-element part of vector-potential reconstruction at p=2/3. The
+global scalar corrections and full CLN integration are distinct gates.
+
 | Question | Evidence | What remains unresolved |
 |---|---|---|
 | Does a visually good real/imaginary response imply 1% accuracy? | [Expansion notebook](01_expansion_and_energy.ipynb), [AC producer](../validation/ac_axis_study.py), [recorded samples](data/ac_axis_study.json), [independent evaluator](../validation/validate_ac_axis.py) | Continuous crossing locations between samples; reproduction of a published figure with its precise original conditions |
