@@ -16,11 +16,12 @@ def sources(data,count):
         assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
 
 
-def verify(data,control):
+def verify(data,control,*,same_host=True):
     assert data['schema']==control['schema']==1
     assert data['complete'] is control['complete'] is True
     sources(data,10);sources(control,11)
-    assert data['runtime']['threads']==4 and data['runtime']['host']==control['host']
+    assert data['runtime']['threads']==4
+    if same_host:assert data['runtime']['host']==control['host']
     pools=[p for p in data['runtime']['blas_pools'] if p['user_api']=='blas']
     assert pools and all(p['num_threads']==1 for p in pools)
     assert len(control['cases'])==4
