@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "complete": true,
+  "host": "NGSolve",
+  "source_sha256_lf": {
+    "validation/element_cln_study.py": "184c3fa20cbef031dcbc8292e3b615a146735199be3524c817b2831ef59ea2f4",
+    "validation/cln3d/element_recovery.py": "e11e119d622dd04bf9f3959748b91cdbaab2b8ef09fb0496d15f4f3aee44e785",
+    "validation/cln3d/CLN_AT.py": "749705b83b5bc3306e6314827854ecaeb081a9ad2fbe2534106b4d8e183d2ed7",
+    "validation/cln3d/_iccg.py": "1ac18b2ebe8d4895174819263574c891e5fc8327e314cca74ee4d2c61b56b7d3",
+    "validation/cln3d/wire_pencils.py": "3ae221cb56e3f1418eddd8c4204d82158666a2d7e4b6adc98ade91c99bc2e7d1",
+    "validation/formulation_ranking.py": "e329c3aa80525dfc775623a59aa4d2873ae2162585ae1cbada15204bac6c7c4b",
+    "validation/bulk_cln_study.py": "849703f48ee0837d7a6d7950d126c5368b79486cd301d0925647d605568862b2",
+    "validation/mexcuda_cln_study.py": "00a50befc4a4cbb29098cb37e4aa6347a9d9d7b409a9d1f642ac1579e9607382",
+    "validation/cln3d/mex_curl.py": "b7d486a7ce0ab17ea263715e7e252b2828818eaca67d9fcd150c351cf09ca031",
+    "validation/cln3d/mexcuda/colored_projection.cu": "f20f006f21b1e8dee47da21e4782db7707c8b81653a63eb1fc962450ab90de2c",
+    "validation/build_mexcuda.py": "0997c0ded3956bb5427ca7f6df132e17d4648a96cbfad3e4c5e2a94b515d39f9",
+    "validation/cln3d/bulk_curl.py": "d9360ccadb33dbc78dfc9c324a143ef4dde65313a4719804380dc0e3b4da1de8",
+    "validation/cln3d/bulk_scalar.py": "15fecbe33903bdbe9eb73d3c8b4d48fb6ebdf6cbb5c9a912405ce4202d59805e",
+    "validation/cln3d/CLN_VPhi_bulk.py": "552e251394b507929e168051fae33fe90f34f29a7a448d2a9d8e9ea7682f8859",
+    "validation/scalar_cln_study.py": "a65f28eab314664376835a6c618848c0cbdb1a72345122f5539ed3d85a18323a",
+    "validation/batched_cln_study.py": "1c0963a93fcc36dc631ebdee5919d44e5a79300c9d8b4a4836cc4a4aba910c16",
+    "validation/cln3d/batched_curl.py": "a06190f715daab3743ae641c543c7180f9046b8ed3ed45ccbf9e4b4b27670d78",
+    "validation/cln3d/scalar_potentials.py": "d862be27166ba14264bbc34cef5f178e0905d1f2360b0cf407c892a48c93d1c3",
+    "validation/cln3d/CLN_VPhi.py": "484dfc186af954bea2b3c137e148517664904ae800a941ebf89ebce0f7911dfe",
+    "validation/cln3d/compatible_curl.py": "a3c48ca1939d39be54b722caf4373ea487fef57221beafdf8eed3df8a72430ea",
+    "validation/cached_cln_study.py": "91a5decb61536081019a63e442332ae21c35b8079da06b604cf768cc67ea61bf",
+    "validation/cln3d/cached_checks.py": "99d7254f289b6d876d83652f3932e259ef77329fd6d41145b6f18d751c7f96e2",
+    "validation/cln3d/CLN_VPhi_cached.py": "390f8bfbe633345aa64391888a802e0f18efc57ba3d4f471d32e654a49ee2d8f",
+    "validation/cached_controls.py": "746d2f9ee3d6b8008ebec9da2526950bd739685c68b5b1f7c20599d3d2397301"
+  },
+  "cases": [
+    {
+      "curve": 1,
+      "order": 2,
+      "magnetic": false,
+      "physical_vector_relative_errors": [
+        3.7539216313805656e-16,
+        3.700654700827768e-16,
+        3.7046305114383727e-16
+      ],
+      "scalar_load_relative_errors": [
+        3.8585819619286917e-16,
+        3.923358296218776e-16,
+        3.8585819619286917e-16
+      ],
+      "curl_load_relative_error": 3.566904830987498e-16,
+      "scalar_operator_relative_error": 4.657632991804824e-16
+    },
+    {
+      "curve": 1,
+      "order": 2,
+      "magnetic": true,
+      "physical_vector_relative_errors": [
+        3.684072954236109e-16,
+        3.751549178572925e-16,
+        3.7573099604764777e-16
+      ],
+      "scalar_load_relative_errors": [
+        3.936731081458468e-16,
+        3.8968890341973286e-16,
+        3.936731081458468e-16
+      ],
+      "curl_load_relative_error": 3.632084805351219e-16,
+      "scalar_operator_relative_error": 4.839279951387866e-16
+    },
+    {
+      "curve": 1,
+      "order": 3,
+      "magnetic": false,
+      "physical_vector_relative_errors": [
+        5.024085116184158e-16,
+        5.090651888688084e-16,
+        5.2296884083150555e-16
+      ],
+      "scalar_load_relative_errors": [
+        4.631898420399575e-16,
+        4.526103779199054e-16,
+        4.631898420399575e-16
+      ],
+      "curl_load_relative_error": 4.489766119231448e-16,
+      "scalar_operator_relative_error": 4.836134390536876e-16
+    },
+    {
+      "curve": 1,
+      "order": 3,
+      "magnetic": true,
+      "physical_vector_relative_errors": [
+        5.102378566514336e-16,
+        5.099157100774676e-16,
+        5.242436362767892e-16
+      ],
+      "scalar_load_relative_errors": [
+        4.577085588162031e-16,
+        4.606603449959335e-16,
+        4.577085588162031e-16
+      ],
+      "curl_load_relative_error": 4.3010651419282795e-16,
+      "scalar_operator_relative_error": 4.803173662589507e-16
+    },
+    {
+      "curve": 1,
+      "order": 4,
+      "magnetic": false,
+      "physical_vector_relative_errors": [
+        6.378414402129619e-16,
+        6.51461118531746e-16,
+        6.424705320345793e-16
+      ],
+      "scalar_load_relative_errors": [
+        5.666053021590509e-16,
+        5.642783216845459e-16,
+        5.666053021590509e-16
+      ],
+      "curl_load_relative_error": 5.37794162591622e-16,
+      "scalar_operator_relative_error": 6.105102489205926e-16
+    },
+    {
+      "curve": 1,
+      "order": 4,
+      "magnetic": true,
+      "physical_vector_relative_errors": [
+        6.446649335276057e-16,
+        6.501376595951478e-16,
+        6.632880718075705e-16
+      ],
+      "scalar_load_relative_errors": [
+        5.469800302635945e-16,
+        5.538718843564546e-16,
+        5.469800302635945e-16
+      ],
+      "curl_load_relative_error": 5.486592623023452e-16,
+      "scalar_operator_relative_error": 6.167417240971431e-16
+    },
+    {
+      "curve": 3,
+      "order": 2,
+      "magnetic": false,
+      "physical_vector_relative_errors": [
+        3.7083142408218666e-16,
+        3.5857104585172596e-16,
+        3.663057661475263e-16
+      ],
+      "scalar_load_relative_errors": [
+        3.9097441592781093e-16,
+        3.908340402542961e-16,
+        3.9097441592781093e-16
+      ],
+      "curl_load_relative_error": 3.533671147119934e-16,
+      "scalar_operator_relative_error": 4.865410146300726e-16
+    },
+    {
+      "curve": 3,
+      "order": 2,
+      "magnetic": true,
+      "physical_vector_relative_errors": [
+        3.74498578481865e-16,
+        3.696318734540286e-16,
+        3.8826783998798386e-16
+      ],
+      "scalar_load_relative_errors": [
+        3.8961038668436344e-16,
+        3.9320196720550057e-16,
+        3.8961038668436344e-16
+      ],
+      "curl_load_relative_error": 3.508733484462579e-16,
+      "scalar_operator_relative_error": 4.459838868140542e-16
+    },
+    {
+      "curve": 3,
+      "order": 3,
+      "magnetic": false,
+      "physical_vector_relative_errors": [
+        5.095409303949177e-16,
+        5.077714206446972e-16,
+        5.229162467936302e-16
+      ],
+      "scalar_load_relative_errors": [
+        4.591806172524919e-16,
+        4.702104373289936e-16,
+        4.591806172524919e-16
+      ],
+      "curl_load_relative_error": 4.314375770774124e-16,
+      "scalar_operator_relative_error": 5.0422167773413375e-16
+    },
+    {
+      "curve": 3,
+      "order": 3,
+      "magnetic": true,
+      "physical_vector_relative_errors": [
+        4.895792755679238e-16,
+        5.023539579971833e-16,
+        5.043751388013215e-16
+      ],
+      "scalar_load_relative_errors": [
+        4.618089420646614e-16,
+        4.666325126474567e-16,
+        4.618089420646614e-16
+      ],
+      "curl_load_relative_error": 4.623915025116064e-16,
+      "scalar_operator_relative_error": 4.780008459514532e-16
+    },
+    {
+      "curve": 3,
+      "order": 4,
+      "magnetic": false,
+      "physical_vector_relative_errors": [
+        6.250454922388884e-16,
+        6.307642639650798e-16,
+        6.656994017814012e-16
+      ],
+      "scalar_load_relative_errors": [
+        5.738094527862567e-16,
+        5.564237097373089e-16,
+        5.738094527862567e-16
+      ],
+      "curl_load_relative_error": 5.598323334775488e-16,
+      "scalar_operator_relative_error": 6.192925214793776e-16
+    },
+    {
+      "curve": 3,
+      "order": 4,
+      "magnetic": true,
+      "physical_vector_relative_errors": [
+        6.409807109100271e-16,
+        6.603540234185142e-16,
+        6.60008779001252e-16
+      ],
+      "scalar_load_relative_errors": [
+        5.74461966441072e-16,
+        5.607866779757891e-16,
+        5.74461966441072e-16
+      ],
+      "curl_load_relative_error": 5.570889251778651e-16,
+      "scalar_operator_relative_error": 5.82096333391872e-16
+    }
+  ]
+}
