@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "complete": false,
+  "status": "interrupted_by_user_shutdown",
+  "host": "NGSolve",
+  "reason": "The user shut down the metered NGSolve VM after formal timings completed, during the separate memory lane.",
+  "provenance": "Console observations from the recorded SSH invocation; full worker JSON/logs were not recovered. Planned source hashes describe the staged candidate, not a completed source-verified memory audit.",
+  "planned_source_sha256_lf": {
+    "validation/element_cln_study.py": "184c3fa20cbef031dcbc8292e3b615a146735199be3524c817b2831ef59ea2f4",
+    "validation/cln3d/element_recovery.py": "e11e119d622dd04bf9f3959748b91cdbaab2b8ef09fb0496d15f4f3aee44e785",
+    "validation/cln3d/CLN_AT.py": "749705b83b5bc3306e6314827854ecaeb081a9ad2fbe2534106b4d8e183d2ed7",
+    "validation/cln3d/_iccg.py": "1ac18b2ebe8d4895174819263574c891e5fc8327e314cca74ee4d2c61b56b7d3",
+    "validation/cln3d/wire_pencils.py": "3ae221cb56e3f1418eddd8c4204d82158666a2d7e4b6adc98ade91c99bc2e7d1",
+    "validation/formulation_ranking.py": "e329c3aa80525dfc775623a59aa4d2873ae2162585ae1cbada15204bac6c7c4b",
+    "validation/bulk_cln_study.py": "849703f48ee0837d7a6d7950d126c5368b79486cd301d0925647d605568862b2",
+    "validation/mexcuda_cln_study.py": "00a50befc4a4cbb29098cb37e4aa6347a9d9d7b409a9d1f642ac1579e9607382",
+    "validation/cln3d/mex_curl.py": "b7d486a7ce0ab17ea263715e7e252b2828818eaca67d9fcd150c351cf09ca031",
+    "validation/cln3d/mexcuda/colored_projection.cu": "f20f006f21b1e8dee47da21e4782db7707c8b81653a63eb1fc962450ab90de2c",
+    "validation/build_mexcuda.py": "0997c0ded3956bb5427ca7f6df132e17d4648a96cbfad3e4c5e2a94b515d39f9",
+    "validation/cln3d/bulk_curl.py": "d9360ccadb33dbc78dfc9c324a143ef4dde65313a4719804380dc0e3b4da1de8",
+    "validation/cln3d/bulk_scalar.py": "15fecbe33903bdbe9eb73d3c8b4d48fb6ebdf6cbb5c9a912405ce4202d59805e",
+    "validation/cln3d/CLN_VPhi_bulk.py": "552e251394b507929e168051fae33fe90f34f29a7a448d2a9d8e9ea7682f8859",
+    "validation/scalar_cln_study.py": "a65f28eab314664376835a6c618848c0cbdb1a72345122f5539ed3d85a18323a",
+    "validation/batched_cln_study.py": "1c0963a93fcc36dc631ebdee5919d44e5a79300c9d8b4a4836cc4a4aba910c16",
+    "validation/cln3d/batched_curl.py": "a06190f715daab3743ae641c543c7180f9046b8ed3ed45ccbf9e4b4b27670d78",
+    "validation/cln3d/scalar_potentials.py": "d862be27166ba14264bbc34cef5f178e0905d1f2360b0cf407c892a48c93d1c3",
+    "validation/cln3d/CLN_VPhi.py": "484dfc186af954bea2b3c137e148517664904ae800a941ebf89ebce0f7911dfe",
+    "validation/cln3d/compatible_curl.py": "a3c48ca1939d39be54b722caf4373ea487fef57221beafdf8eed3df8a72430ea",
+    "validation/cached_cln_study.py": "91a5decb61536081019a63e442332ae21c35b8079da06b604cf768cc67ea61bf",
+    "validation/cln3d/cached_checks.py": "99d7254f289b6d876d83652f3932e259ef77329fd6d41145b6f18d751c7f96e2",
+    "validation/cln3d/CLN_VPhi_cached.py": "390f8bfbe633345aa64391888a802e0f18efc57ba3d4f471d32e654a49ee2d8f",
+    "validation/compact_cln_study.py": "9a263080173c573575f35b9d6a1ccc1da0e32008d05082bcf16eddd025987ad2",
+    "validation/cln3d/compact_checks.py": "adc8abd96468b4f34e29aea07abfa9763b1fc2bccdc5dcd977fecad0637e5fa7",
+    "validation/cln3d/CLN_VPhi_compact.py": "d323024a3f67e65bdda73a23db5e68bffadabc651fd06bf37780df838f37a7c8",
+    "validation/compact_memory_study.py": "e3d02376741a7d683a5bd5e608372ec8c0f3fa76a8c796631166a44ddab5ab3a"
+  },
+  "observed_console_peaks": [
+    {
+      "order": 2,
+      "maxh": 0.003,
+      "route": "original",
+      "peak_working_set_mib": 170.71484375
+    },
+    {
+      "order": 2,
+      "maxh": 0.003,
+      "route": "condensed",
+      "peak_working_set_mib": 151.41796875
+    },
+    {
+      "order": 2,
+      "maxh": 0.003,
+      "route": "scalar-cached",
+      "peak_working_set_mib": 193.125
+    },
+    {
+      "order": 2,
+      "maxh": 0.003,
+      "route": "scalar-compact",
+      "peak_working_set_mib": 177.01953125
+    },
+    {
+      "order": 3,
+      "maxh": 0.003,
+      "route": "original",
+      "peak_working_set_mib": 230.53515625
+    },
+    {
+      "order": 3,
+      "maxh": 0.003,
+      "route": "condensed",
+      "peak_working_set_mib": 197.01171875
+    }
+  ],
+  "pending": "Recover remote partial memory records and job-owned scratch when the user next starts the VM. Do not infer p3/p4 or mexcuda whole-method memory advantage."
+}
