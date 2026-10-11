@@ -106,3 +106,5 @@ The [coil-driven washer C2 candidate](docs/16_coil_washer_type1.ipynb) provides 
 [CPU assembly and check reuse](docs/25_cached_cln.ipynb) records the next full-CLN timing comparison on the idle NGSolve mdx GPU machine. The [implementation contract](docs/CACHED_CLN.md) explains the retained precision gates and added sparse validation/load storage.
 
 [Compact CLN operators and native memory](docs/26_compact_cln.ipynb) compare shared within-run assembly with previous cached CPU/mexcuda and both A-T references; see [the contract](docs/COMPACT_CLN.md).
+
+[Whole-method memory on 100](docs/27_whole_memory100.ipynb) includes owned MATLAB subprocesses; time comparisons reuse the saved mdx results. [Measurement contract](docs/WHOLE_MEMORY100.md).

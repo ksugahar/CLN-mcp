@@ -78,3 +78,5 @@ temporary until the proposed Radia API is published.
 [Cached CPU assembly and checks](25_cached_cln.ipynb) compares full three-stage recursions with original/condensed A-T, CPU bulk and mexcuda. Fixed-mesh load and validation operators are reused within each run, with their setup, CSR storage and all precision gates retained; see [the contract](CACHED_CLN.md).
 
 [Compact CLN assembly and memory](26_compact_cln.ipynb) shares identical T/A load/check operators and removes unused scalar-load rows, preserving full-stage checks. [Contract and reproduction](COMPACT_CLN.md).
+
+[Whole-method CLN memory on 100](27_whole_memory100.ipynb) completes the fresh-process CPU/mexcuda memory comparison and reuses saved mdx timings. [Contract](WHOLE_MEMORY100.md).
