@@ -40,37 +40,26 @@ def test_mathematica_package_is_package_data():
     assert diffusion_tools._PKG.resolve() == pathlib.Path(str(res)).resolve()
 
 
-@pytest.mark.skipif(importlib.util.find_spec("hatchling") is None, reason="hatchling not installed: wheel not built")
 def test_wheel_contains_mathematica_package(tmp_path):
-    import ast
-    from email.parser import BytesParser
+    """Guards: Version/resource drift in both artifacts. Assumes: explicit build lane."""
+    import json
+    import os
     import subprocess
     import sys
-    import tarfile
-    import zipfile
+    if importlib.util.find_spec("hatchling") is None:
+        if os.environ.get("CLN_REQUIRE_BUILD") == "1":
+            pytest.fail("required artifact build needs hatchling")
+        pytest.skip("optional local artifact build needs hatchling")
     root = pathlib.Path(__file__).resolve().parents[1]
-    tree = ast.parse((root / "src/cln/_version.py").read_text(encoding="utf-8"))
-    expected = next(ast.literal_eval(node.value) for node in tree.body
-                    if isinstance(node, ast.Assign)
-                    and any(isinstance(t, ast.Name) and t.id == "__version__"
-                            for t in node.targets))
-    subprocess.run([sys.executable, "-m", "hatchling", "build", "-t", "wheel", "-t", "sdist", "-d", str(tmp_path)],
+    retained = os.environ.get("CLN_BUILD_ARTIFACT_DIR")
+    destination = pathlib.Path(retained) if retained else tmp_path / "artifacts"
+    destination.mkdir(parents=True, exist_ok=False)
+    subprocess.run([sys.executable, "-m", "hatchling", "build", "-t", "wheel", "-t", "sdist", "-d", str(destination)],
                    cwd=root, check=True, capture_output=True)
-    with zipfile.ZipFile(next(tmp_path.glob("*.whl"))) as wheel:
-        names = wheel.namelist()
-        assert "cln_mcp_server/resources/DiffusionCLN.wl" in names
-        assert "cln/_version.py" in names
-        assert wheel.read("cln/_version.py") == (root / "src/cln/_version.py").read_bytes()
-        metadata = next(n for n in names if n.endswith(".dist-info/METADATA"))
-        actual = BytesParser().parsebytes(wheel.read(metadata))["Version"]
-        assert actual == expected, (actual, expected)
-    with tarfile.open(next(tmp_path.glob("*.tar.gz"))) as sdist:
-        names = sdist.getnames()
-        source = next(n for n in names if n.endswith("/src/cln/_version.py"))
-        assert sdist.extractfile(source).read() == (root / "src/cln/_version.py").read_bytes()
-        metadata = next(n for n in names if n.count("/") == 1 and n.endswith("/PKG-INFO"))
-        actual = BytesParser().parsebytes(sdist.extractfile(metadata).read())["Version"]
-        assert actual == expected, (actual, expected)
+    subprocess.run([sys.executable, str(root / "tools/verify_package_artifacts.py"),
+                    "--artifact-dir", str(destination)], cwd=root, check=True)
+    manifest = json.loads((destination / "artifact-manifest.json").read_text(encoding="utf-8"))
+    assert {a["kind"] for a in manifest["artifacts"]} == {"wheel", "sdist"}, manifest
 
 
 

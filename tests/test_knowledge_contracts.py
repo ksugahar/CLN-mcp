@@ -103,5 +103,3 @@ def test_surface_topic_identifies_its_basis_without_retired_aliases():
     assert "bulk CLN Krylov modes" in text
     with pytest.raises(ValueError, match="Unknown topic"):
         server.cln_knowledge("basics", "mixed_galerkin")
-
-
