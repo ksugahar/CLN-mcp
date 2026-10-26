@@ -38,4 +38,3 @@ path = "src/cln/_version.py"
 pythonpath = ["src"]
 testpaths = ["tests"]
 markers = ["fe: requires finite-element mesh/solver execution and resource admission"]
-

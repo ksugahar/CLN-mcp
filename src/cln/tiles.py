@@ -188,4 +188,3 @@ def svg(net, width_px=360, title="", labels=True, current=None, z_ref=None):
     out.append(f'<rect x="{pad}" y="{oy}" width="{width_px}" height="{hp:.3f}" fill="none" stroke="black" stroke-width="1.5"/>')
     out.append("</svg>")
     return "\n".join(out)
-
