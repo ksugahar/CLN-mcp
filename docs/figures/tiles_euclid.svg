@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="346" height="274" viewBox="0 0 346.00 274.00" font-family="serif">
+<text x="8" y="20" font-size="12">16/22 ohm: Euclid (22,16) = squares 16, 6, 6, 4, 2, 2</text>
+<rect x="8.000" y="26.000" width="240.000" height="240.000" fill="#F5B041"/>
+<rect x="8.000" y="26.000" width="240.000" height="240.000" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="128.00" y="150.67" font-size="14.0" text-anchor="middle">1</text>
+<rect x="248.000" y="26.000" width="90.000" height="90.000" fill="#F5B041"/>
+<rect x="248.000" y="26.000" width="90.000" height="90.000" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="293.00" y="75.67" font-size="14.0" text-anchor="middle">1</text>
+<rect x="248.000" y="116.000" width="90.000" height="90.000" fill="#F5B041"/>
+<rect x="248.000" y="116.000" width="90.000" height="90.000" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="293.00" y="165.67" font-size="14.0" text-anchor="middle">1</text>
+<rect x="248.000" y="206.000" width="60.000" height="60.000" fill="#F5B041"/>
+<rect x="248.000" y="206.000" width="60.000" height="60.000" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="278.00" y="240.67" font-size="14.0" text-anchor="middle">1</text>
+<rect x="308.000" y="206.000" width="30.000" height="30.000" fill="#F5B041"/>
+<rect x="308.000" y="206.000" width="30.000" height="30.000" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="323.00" y="224.50" font-size="10.5" text-anchor="middle">1</text>
+<rect x="308.000" y="236.000" width="30.000" height="30.000" fill="#F5B041"/>
+<rect x="308.000" y="236.000" width="30.000" height="30.000" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="323.00" y="254.50" font-size="10.5" text-anchor="middle">1</text>
+<rect x="8" y="26" width="330" height="240.000" fill="none" stroke="black" stroke-width="1.5"/>
+</svg>

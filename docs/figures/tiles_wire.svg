@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="346" height="364" viewBox="0 0 346.00 364.00" font-family="serif">
+<text x="8" y="20" font-size="12">round-wire CLN, 9 elements, s = 2 pi 3 kHz</text>
+<rect x="8.000" y="26.000" width="330.000" height="259.719" fill="#F5B041"/>
+<rect x="8.000" y="26.000" width="330.000" height="259.719" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="173.00" y="160.53" font-size="14.0" text-anchor="middle">R0</text>
+<rect x="8.000" y="285.719" width="301.596" height="70.281" fill="#50A7C2"/>
+<rect x="8.000" y="285.719" width="301.596" height="70.281" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="158.80" y="325.53" font-size="14.0" text-anchor="middle">L1</text>
+<rect x="309.596" y="285.719" width="28.404" height="67.065" fill="#F5B041"/>
+<rect x="309.596" y="285.719" width="28.404" height="67.065" fill="none" stroke="black" stroke-width="0.8"/>
+<text x="323.80" y="322.57" font-size="9.9" text-anchor="middle">R2</text>
+<rect x="309.596" y="352.784" width="27.603" height="3.216" fill="#50A7C2"/>
+<rect x="309.596" y="352.784" width="27.603" height="3.216" fill="none" stroke="black" stroke-width="0.8"/>
+<rect x="337.198" y="352.784" width="0.802" height="3.155" fill="#F5B041"/>
+<rect x="337.198" y="352.784" width="0.802" height="3.155" fill="none" stroke="black" stroke-width="0.8"/>
+<rect x="337.198" y="355.939" width="0.791" height="0.061" fill="#50A7C2"/>
+<rect x="337.198" y="355.939" width="0.791" height="0.061" fill="none" stroke="black" stroke-width="0.8"/>
+<rect x="337.989" y="355.939" width="0.011" height="0.061" fill="#F5B041"/>
+<rect x="337.989" y="355.939" width="0.011" height="0.061" fill="none" stroke="black" stroke-width="0.8"/>
+<rect x="337.989" y="355.999" width="0.011" height="0.001" fill="#50A7C2"/>
+<rect x="337.989" y="355.999" width="0.011" height="0.001" fill="none" stroke="black" stroke-width="0.8"/>
+<rect x="338.000" y="355.999" width="0.000" height="0.001" fill="#F5B041"/>
+<rect x="338.000" y="355.999" width="0.000" height="0.001" fill="none" stroke="black" stroke-width="0.8"/>
+<rect x="8" y="26" width="330" height="330.000" fill="none" stroke="black" stroke-width="1.5"/>
+</svg>
