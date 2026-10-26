@@ -38,9 +38,10 @@ jobs:
       OPENBLAS_NUM_THREADS: '1'
       PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
       CLN_REQUIRE_BUILD: '1'
-      CLN_BUILD_ARTIFACT_DIR: ${{ runner.temp }}/cln-artifacts
     steps:
       - uses: actions/checkout@v4
+      - name: Set artifact output directory
+        run: echo "CLN_BUILD_ARTIFACT_DIR=$RUNNER_TEMP/cln-artifacts" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
