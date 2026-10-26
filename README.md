@@ -75,10 +75,13 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 Install from a checkout with `python -m pip install -e .` and run `cln-mcp`
 for the stdio knowledge server. Numerical workflows require the `solver`
-extra. Its pinned numerical runtime targets Windows with CPython 3.12;
-other Python versions may use the knowledge server but are not covered by
-this solver artifact selection. Source integration does not publish a solver release. MCP knowledge
-loads without importing numerical solvers.
+extra. Its pinned numerical runtime targets Windows x64 with CPython 3.12.
+Linux, macOS, and other Python versions are outside the supported solver scope.
+Radia 5.3.3 provides only a `cp312-win_amd64` wheel, so
+`python -m pip install ".[solver]"` intentionally fails in those other environments.
+The knowledge server can be installed without the solver extra.
+Source integration does not publish a solver release. MCP knowledge loads
+without importing numerical solvers.
 
 Use `cln_knowledge(area="input_ports", topic="ports")` for matched B/H input
 ports. Other topics include `boundary_lift`, `homogenization`, `passivity`,
