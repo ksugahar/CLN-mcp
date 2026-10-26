@@ -75,8 +75,9 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 Install from a checkout with `python -m pip install -e .` and run `cln-mcp`
 for the stdio knowledge server. Numerical workflows require the `solver`
-extra and a compatible Radia/NGSolve runtime. Solver artifact pins remain
-deferred; source integration does not qualify a solver release. MCP knowledge
+extra. Its pinned numerical runtime targets Windows with CPython 3.12;
+other Python versions may use the knowledge server but are not covered by
+this solver artifact selection. Source integration does not publish a solver release. MCP knowledge
 loads without importing numerical solvers.
 
 Use `cln_knowledge(area="input_ports", topic="ports")` for matched B/H input
@@ -109,7 +110,7 @@ See [solver selection](docs/positive_shift_backend_proposal.md),
 
 ## Reproduce
 
-Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The current reciprocal-review reruns use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
+Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The historical reciprocal-review records use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
 
 ```text
 wolframscript -file mathematica/derive_type1_same_circuit.wls type1_results.json
