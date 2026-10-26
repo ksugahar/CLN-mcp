@@ -9,8 +9,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install numpy sympy nbformat
+      - run: python -m pip install numpy sympy==1.14.0 nbformat
       - run: python tools/policy_lint.py
+      - run: python validation/input_ports_exact.py --output docs/data/input_ports_exact.json --check
       - run: python validation/validate_notebooks.py
       - run: python validation/validate_foster_cauer.py
       - run: python validation/surface_hybrid/validate_evidence.py

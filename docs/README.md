@@ -38,6 +38,13 @@ and curl reconstruction. It compares complete p=2/3/4 recursions against A-T,
 checks the original physical equations, retains nodal incompatibility controls
 and measures complete-run cost. See the [scalar formulation](SCALAR_CLN.md).
 
+[Input ports, boundary lifts and passivity](16_input_ports_and_passivity.ipynb)
+uses exact small-matrix algebra and independent Bessel-series checks to explain
+matched B/H/E ports, nonzero boundary lifts, positive energy coefficients and
+finite-precision/shifted-synthesis limitations. Requires SymPy; no FE runtime.
+See the [derivation](INPUT_PORTS_AND_PASSIVITY.md) and
+[reviewed mathematical scope](REVIEW_STATUS.md).
+
 This public release centers on derivations and reproduction, not distribution of the full MCP application. Analytic continued-fraction examples, field-derived circuit proofs, and finite-element experiments have explicitly different scopes.
 
 The formulation, nonlinear introduction, termination, and multiport notebooks use minimal explanatory examples. They do not implement every general 3D/nonlinear/matrix-CLN extension. The 3D circular-wire reproduction is restricted to linear material, s₀=0, conductor interior, and R0/L1/R2.

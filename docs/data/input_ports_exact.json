@@ -1,0 +1,214 @@
+{
+  "schema": "cln.input-ports-exact.v1",
+  "sympy_version": "1.14.0",
+  "source_sha256_lf": "0be67e4763e08f4530608234ddf62aae3c73db1fbb73507761bd2b2969041931",
+  "source_hash_convention": "UTF-8 without BOM; universal newlines normalized to LF; final newline preserved",
+  "scope": "exact toy port and normalized round-wire illustration; no FE, shifted synthesis or general theorem",
+  "port": {
+    "K": [
+      [
+        "4",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "3",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "2"
+      ]
+    ],
+    "N": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "3"
+      ]
+    ],
+    "static_lift": [
+      "1",
+      "-1/5",
+      "-2/5"
+    ],
+    "static_energy_c": "17/5",
+    "L_excitation": "5/17",
+    "different_port_L1": "3/5",
+    "Y_B": "(6*s**3 + 37*s**2 + 52*s + 17)/(6*s**3 + 13*s**2 + 5*s)",
+    "Y_E_response": "(30*s**2 + 83*s + 39)/(30*s**2 + 65*s + 25)",
+    "Z_H_same_port": "(6*s**3 + 13*s**2 + 5*s)/(6*s**3 + 37*s**2 + 52*s + 17)",
+    "positive_leading_minors": {
+      "K": [
+        4,
+        11,
+        17
+      ],
+      "N": [
+        1,
+        2,
+        6
+      ]
+    },
+    "matched_index_shift": {
+      "B_labels": [
+        "L_-1",
+        "R_0",
+        "L_1",
+        "R_2",
+        "L_3",
+        "R_4"
+      ],
+      "H_labels": [
+        "L_1",
+        "R_2",
+        "L_3",
+        "R_4",
+        "L_5",
+        "R_6"
+      ],
+      "B_elements": [
+        [
+          "L",
+          "5/17"
+        ],
+        [
+          "R",
+          "25/39"
+        ],
+        [
+          "L",
+          "460/1521"
+        ],
+        [
+          "R",
+          "1058/4251"
+        ],
+        [
+          "L",
+          "828/11881"
+        ],
+        [
+          "R",
+          "12/109"
+        ]
+      ],
+      "H_elements": [
+        [
+          "L",
+          "5/17"
+        ],
+        [
+          "R",
+          "25/39"
+        ],
+        [
+          "L",
+          "460/1521"
+        ],
+        [
+          "R",
+          "1058/4251"
+        ],
+        [
+          "L",
+          "828/11881"
+        ],
+        [
+          "R",
+          "12/109"
+        ]
+      ],
+      "independent_scalar_elements": [
+        [
+          "L",
+          "5/17"
+        ],
+        [
+          "R",
+          "25/39"
+        ],
+        [
+          "L",
+          "460/1521"
+        ],
+        [
+          "R",
+          "1058/4251"
+        ],
+        [
+          "L",
+          "828/11881"
+        ],
+        [
+          "R",
+          "12/109"
+        ]
+      ]
+    },
+    "literal_full_compact_product": "(510*s**2 + 1411*s + 663)/(150*s**3 + 925*s**2 + 1300*s + 425)",
+    "literal_full_minus_response": "(-900*s**5 - 4980*s**4 - 9229*s**3 - 6474*s**2 - 1521*s)/(900*s**5 + 7500*s**4 + 20575*s**3 + 24075*s**2 + 12025*s + 2125)",
+    "identities": [
+      "free residual=0",
+      "lift K-orthogonality=0",
+      "Y_B=c/s+Y_E",
+      "Y_B Z_H=1"
+    ]
+  },
+  "wire": {
+    "normalization": "a=mu=sigma=1; Z per unit length; z=s*mu*sigma*a^2",
+    "E_even": [
+      "1",
+      "2*r**2 - 1",
+      "6*r**4 - 6*r**2 + 1",
+      "20*r**6 - 30*r**4 + 12*r**2 - 1",
+      "70*r**8 - 140*r**6 + 90*r**4 - 20*r**2 + 1"
+    ],
+    "H_odd": [
+      "r/(2*pi)",
+      "3*r**3/(2*pi) - r/pi",
+      "5*r**5/pi - 6*r**3/pi + 3*r/(2*pi)",
+      "35*r**7/(2*pi) - 30*r**5/pi + 15*r**3/pi - 2*r/pi"
+    ],
+    "R_even": [
+      "1/pi",
+      "3/pi",
+      "5/pi",
+      "7/pi",
+      "9/pi"
+    ],
+    "L_odd": [
+      "1/(8*pi)",
+      "1/(16*pi)",
+      "1/(24*pi)",
+      "1/(32*pi)"
+    ],
+    "Z_over_Rdc": "(25*z**4 + 9600*z**3 + 846720*z**2 + 20643840*z + 92897280)/(z**4 + 1200*z**3 + 201600*z**2 + 9031680*z + 92897280)",
+    "Bessel_series_through_z8": "-1133*z**8/2446118092800 + 647*z**7/95126814720 - 11*z**6/110100480 + 13*z**5/8847360 - z**4/46080 + z**3/3072 - z**2/192 + z/8 + 1",
+    "identities": [
+      "energy orthogonality",
+      "A/H and T/E field maps",
+      "Bessel contact through z^8"
+    ]
+  },
+  "caveats": {
+    "regular_Ampere_H": "r/2",
+    "incompatible_adjusted_H": "r/2 - 1/2",
+    "Ampere_defect": "-1/(2*r)",
+    "shifted_branch": "s - 1",
+    "shifted_branch_physical_DC": -1,
+    "Euclidean_remainder": "-2"
+  }
+}

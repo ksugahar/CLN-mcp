@@ -1,5 +1,22 @@
 # Reciprocal review status
 
+## Input-port and passivity clarification
+
+The addition in notebook 16 and `INPUT_PORTS_AND_PASSIVITY.md` is an
+independently authored explanation of the 2024 unit-cell paper's B/H/E port
+definitions. Exact scalar port/lift identities and a nine-element circular-wire
+Maxwell/Bessel-series comparison are self-checked by
+`validation/input_ports_exact.py`. These checks are independent of the supplied
+notebooks' saved outputs. Independent Claude review at
+`75d8ce0213d6a1793ff9ddda28836c676e6e28f6` reproduced the exact port and wire
+computations, the matched B/H index shift, the independent scalar extraction,
+the negative controls and the saved notebook outputs. The stated mathematical
+claims were confirmed within their declared assumptions. Source and evidence
+hashes were independently verified under the explicit blob/worktree convention.
+This conclusion covers the illustrative derivation and its checks. It does
+not establish a general shifted-passivity theorem, homogenization accuracy,
+FE convergence or correctness of the entire MCP server implementation.
+
 The 3D, surface/POD and Foster–Cauer conversion additions were reviewed by Codex and **Claude Opus 5.5** in three rounds, completed on 6 October 2026. The final reviewed code revision is `494f348cb8e76e727fd31128a5e2d560e8167f18`. The subsequent status update changes documentation only.
 
 ## Findings and corrections

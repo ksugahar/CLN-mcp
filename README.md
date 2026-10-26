@@ -41,6 +41,14 @@ ordinary nodal-flux incompatibility is retained as a separate control.
 
 [Bulk scalar CLN, memory and mexcuda](docs/23_bulk_scalar_cln.ipynb) validates native bulk assembly/checks and the selected CUDA MEX route against both A-T references. Fresh-process memory includes MATLAB itself. [Formal NGSolve GPU timings](docs/24_mexcuda_timing.ipynb) now compare complete recursion, transfers and fresh-session initialization. Earlier CuPy/LAB timings remain exploratory reference evidence. See the [measurement contract](docs/MEXCUDA_TIMING.md).
 
+[Input ports, boundary lifts and passivity](docs/16_input_ports_and_passivity.ipynb)
+explains the B/H/E distinctions, static-lift orthogonality, Euclidean and
+shifted-passivity caveats, and circular-wire E–H/A/T correspondence. Exact
+small-matrix identities and an independent Bessel-series check are executed;
+this adds no general FE or shifted-passivity certification. See the
+[detailed note](docs/INPUT_PORTS_AND_PASSIVITY.md) and
+[reviewed mathematical scope](docs/REVIEW_STATUS.md).
+
 ## Actual finite-element experiments
 
 [3D circular wire](docs/06_3d_round_wire.ipynb) reproduces A–φ/T–Ω/A–T from student notebooks. It tests conductor-interior R0/L1/R2 at s₀=0 on two meshes, including terminal normalization, physical fields, load projection, and gauge sensitivity.
