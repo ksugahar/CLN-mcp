@@ -71,6 +71,42 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 [Air cohomology and physical T–Ω CLN](docs/15_air_cohomology_cln.ipynb) adds Gmsh-free Radia air generators, a natural scalar magnetic correction, a genuinely changed-cocycle control on the small mesh and eight-element Type2 recursions. Original small matrices support an independent NumPy checker. Increasing notched mesh counts reduce full A–phi/A–T/T–Omega differences, but deep elements remain different and high-frequency continuum accuracy is not established. Independent Claude Opus 5.5 scientific review accepted revision `61a8a241f72884a1ab4d09b616a0e17aa7f8b0d5`; publication remains separate; the conducting-washer extension is a separate task.
 
+## Python package and MCP server
+
+Install from a checkout with `python -m pip install -e .` and run `cln-mcp`
+for the stdio knowledge server. Numerical workflows require the `solver`
+extra and a compatible Radia/NGSolve runtime. Solver artifact pins remain
+deferred; source integration does not qualify a solver release. MCP knowledge
+loads without importing numerical solvers.
+
+Use `cln_knowledge(area="input_ports", topic="ports")` for matched B/H input
+ports. Other topics include `boundary_lift`, `homogenization`, `passivity`,
+`wire`, `slab`, `radial_modes` and `geometry_ports`. See
+[slab and cylinder ports](docs/slab_and_cylinder_ports.md) for geometry
+measures and Zernike/Legendre modes, and the
+[Mathematica round-wire check](docs/round_wire_maxwell.md) for E–H/A/T
+analytic correspondence. These do not certify general 3D equivalence or
+all-frequency passivity. Symbolic derivation accepts 1 through 8 stages;
+this operational cap has not been timed.
+
+Positive real shifts require explicit `solver="direct"`. Zero-shift ICCG
+never falls back to direct solution. A numerical example is:
+
+```python
+import math
+from cln import TOmegaCLN, cylinder_mesh
+
+a, h, sigma, mu = 0.01, 0.01, 1e6, 4e-7 * math.pi
+model = TOmegaCLN(cylinder_mesh(a, h), sigma, mu, a, h,
+                  s0=2 * math.pi * 1e5, order=3, solver="direct")
+R, L, fields = model.run(nmax=4)
+```
+
+See [solver selection](docs/positive_shift_backend_proposal.md),
+[round-wire tutorial](docs/01_round_wire.ipynb),
+[diffusion tutorial](docs/02_diffusion_rc.ipynb) and
+[expansion-point validation](docs/expansion_point_validation.md).
+
 ## Reproduce
 
 Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The current reciprocal-review reruns use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
@@ -103,7 +139,7 @@ python validation/validate_general_3d_air.py
 - `validation/`: public reproduction code.
 - `docs/data/`: recorded numerical evidence and source identifiers.
 
-This release focuses on documentation and reproduction; the broader MCP application is not distributed here. Four-element continuum results do not prove arbitrary stages or general 3D mixed formulations. A finite shifted ladder is a local approximation, not an exact response at all frequencies. Positive shifted elements alone do not establish passivity in physical s.
+The repository includes the CLN Python package and MCP knowledge server alongside executed derivation and reproduction notebooks. Four-element continuum results do not prove arbitrary stages or general 3D mixed formulations. A finite shifted ladder is a local approximation, not an exact response at all frequencies. Positive shifted elements alone do not establish passivity in physical s.
 
 Type2's underlying derivation received an independent Claude Opus 5.5 review. Type1 was checked by Codex using Wolfram, independent Bessel evaluation, and separate FE formulations. The earlier 3D, surface/POD, and conversion additions received reciprocal Codex and Claude Opus 5.5 review. TEAM 28 received two independent Claude Opus 5.5 review rounds, including native force/root and exact-proof reproduction. See [reviewed revisions, corrections and limits](docs/REVIEW_STATUS.md). Stored JSON `review` fields record producer-time status; the linked review note gives the current verdict.
 

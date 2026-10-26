@@ -77,7 +77,8 @@ Use this guidance when interpreting B/H/E-input CLN, the unit-cell paper,
 positive-energy element arguments or the E-H/A/T round-wire derivation.
 The matched B/H case has an exact two-index coefficient shift. The question
 is which conjugate port, spaces and normalization are being held fixed.
-Topics ports, wire, slab and radial_modes return structured JSON; the other topics explain the
+Topics ports, wire, slab and radial_modes return structured JSON. The geometry_ports topic explains
+geometry measures; the other topics explain the
 assumptions and failure modes. This knowledge server does not run those
 derivations or certify a solver merely by returning this text.
 References: Kameari et al. (2018), doi:10.1109/TMAG.2017.2743224;

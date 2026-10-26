@@ -24,3 +24,5 @@ In Japanese (日本語):
 - 非公開のコード(EMPY など)とバイナリ(.pyd、.dll、.exe など)は置かない。
 - 違反があればテストが失敗する。ただし lint は必要条件であり、内部フォルダ名や未公開の出所を書いた文章はレビューで取り除く。
 
+
+The sole CUDA source exception is the existing `validation/cln3d/mexcuda/colored_projection.cu`; this permits no compiled MEX or other CUDA source.

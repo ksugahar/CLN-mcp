@@ -494,3 +494,13 @@ The user shut down the metered VM after formal timing completed, during the sepa
 Compared with previous cached V/Phi, compact CPU simultaneous sampled peak RSS falls 8.1–28.7%, and compact mexcuda 0.8–9.1%. Compact CPU uses 171–660 MiB versus original A-T 164–317 MiB: original A-T is lower in every cohort. Compact mexcuda uses 2,178–2,665 MiB including owned MATLAB processes. Extra CSR arrays still fall 55.8–57.0%, but whole-method memory savings are smaller. Local projection arrays, scalar factors and runtime overhead remain; element-local recovery alone does not establish a global memory advantage. Known owned GPU operator bytes are separate from unmeasured whole-device VRAM peak.
 
 Time comparisons exclusively reuse the accepted, unchanged mdx NGSolve JSON. No 100-host speed measurements are published. The interrupted mdx audit remains historical; remote raw-log recovery and scratch cleanup still await the next user-started VM session. C2 independent T–Omega, loss FEM convergence and F2/Radia API migration remain open. This is Codex self-review, not independent scientific acceptance.
+
+## Reviewed Python/MCP and analytic additions
+
+- `76f94a4`: input/error contracts independently approved.
+- `49f30117`: terminology correction independently approved; numerical data unchanged.
+- `4e0710c`: explicit positive-shift backend selection independently accepted on four round-wire FE cases. Saved-mesh reload with Curve(3) and an observation wrapper were used; the production in-memory OCC mesh path and performance were outside scope. R/L, true residuals and iteration records matched the earlier control bit-for-bit on their common stages. The positive direct two-stage case uses the prefix of the four-stage positive-shift control.
+- `48b6ec6`: Mathematica round-wire analytic self-check independently accepted. The E–H/A/T fields, energy coefficients, traces, orthogonality and Bessel-series contact were independently re-derived. General 3D, positive-shift FE, slab execution, built-in Zernike comparison and stage-cap timing were outside scope.
+- `0e2ba88`: slab/cylinder port normalization and Legendre/Zernike knowledge independently approved; this is not a new FE or timing qualification.
+
+Solver artifact pins remain deferred. These scoped reviews do not qualify a solver release.
