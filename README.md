@@ -113,7 +113,7 @@ See [solver selection](docs/positive_shift_backend_proposal.md),
 
 ## Reproduce
 
-Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `sympy`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The historical reciprocal-review records use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
+Install `ngsolve`, `numpy`, `scipy`, `matplotlib`, `mpmath`, `nbformat`, `nbclient`, and `ipykernel` for Python. Symbolic derivation cells require `wolframscript` on PATH (or `WOLFRAMSCRIPT`). Stored notebook outputs are readable on GitHub. The 3D circular-wire scripts additionally require a Radia build that provides `radia.sparsesolv_ngsolve` with NGSolve interoperability enabled; see [Radia](https://github.com/ksugahar/Radia). Installing NGSolve alone does not provide this solver. The historical reciprocal-review records use Radia 5.2.3; singular-system breakdown behavior differs across Radia versions, so record the installed version when reproducing.
 
 ```text
 wolframscript -file mathematica/derive_type1_same_circuit.wls type1_results.json
@@ -156,3 +156,10 @@ The [coil-driven washer C2 candidate](docs/16_coil_washer_type1.ipynb) provides 
 [Compact CLN operators and native memory](docs/26_compact_cln.ipynb) compare shared within-run assembly with previous cached CPU/mexcuda and both A-T references; see [the contract](docs/COMPACT_CLN.md).
 
 [Whole-method memory on 100](docs/27_whole_memory100.ipynb) includes owned MATLAB subprocesses; time comparisons reuse the saved mdx results. [Measurement contract](docs/WHOLE_MEMORY100.md).
+
+Symbolic reference generation uses Mathematica only. Run
+`wolframscript -file validation/symbolic_cln.wls symbolic_raw.json`, then
+`python validation/prepare_symbolic_record.py --raw symbolic_raw.json --output docs/data/symbolic_cln.json`.
+Portable CI checks source-bound saved records and independent numerical oracles;
+it does not silently replace Mathematica with another CAS. Float inputs are
+rejected; the former optional rationalization path is deliberately omitted.

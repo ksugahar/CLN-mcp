@@ -4,27 +4,11 @@ import json
 from pathlib import Path
 
 import numpy as np
-import sympy as sy
+from reference_records import symbolic_record, historical
+from reference_oracles import truncated_energy
 from surface_hybrid.ladder_eval import z_type1
 
 ROOT = Path(__file__).resolve().parents[1]
-
-
-def symbolic_crosscheck():
-    """Independent CAS reconstruction of the two-state Wolfram identity."""
-    a,b,c,l,s = sy.symbols('a b c l s', nonzero=True)
-    k = sy.eye(2); m = sy.Matrix([[a,b],[b,c]])
-    f = sy.Matrix([sy.sqrt(l),0]); magnetic = f; electric = sy.zeros(2,1)
-    elements = []
-    for _ in range(2):
-        inductance = sy.simplify((magnetic.T*k*magnetic)[0])
-        electric = sy.simplify(electric+magnetic/inductance)
-        resistance = sy.simplify(1/(electric.T*m*electric)[0])
-        elements.extend([inductance,resistance])
-        magnetic = sy.simplify(magnetic-resistance*m*electric)
-    field = s*(f.T*(k+s*m).inv()*f)[0]
-    assert sy.simplify(z_type1(elements,0,s)-field) == 0
-    assert magnetic == sy.zeros(2,1)
 
 
 def equilibrium(rows, key, weight):
@@ -63,7 +47,7 @@ def check_row(row, count, frequency, current):
 
 
 def main():
-    symbolic_crosscheck()
+    symbolic_record()
     data = json.loads((ROOT/'docs/data/team28_cln.json').read_text())
     assert data['complete'] is True and data['stages'] == 6 and data['element_count'] == 12
     assert data['expansion_point'] == 0 and data['frequency_hz'] == 50 and data['peak_current_A'] == 20
@@ -87,7 +71,7 @@ def main():
     assert set(data['source_sha256_lf']) == {'validation/team28_cln.py','validation/surface_hybrid/ladder_eval.py'}
     for name,digest in data['source_sha256_lf'].items():
         assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest() == digest,name
-    proof = json.loads((ROOT/'docs/data/energy_recursion.json').read_text())
+    proof = historical('energy_recursion.json')
     assert set(proof['checks']) == {'ladder_equals_field','magnetic_energy_orthogonality',
                                   'electric_loss_orthogonality','positive_elements','expected_elements','termination',
                                   'peak_phasor_force_average'}
@@ -95,23 +79,10 @@ def main():
     assert hashlib.sha256((ROOT/'mathematica/derive_energy_recursion.wls').read_text().encode()).hexdigest() == proof['source_sha256']
     assert len(proof['truncated_instances']) == 2
     for case in proof['truncated_instances']:
-        k=sy.diag(*case['K_diagonal']); m=sy.diag(*case['M_diagonal'])
-        f=sy.Matrix(case['source']); s=sy.Symbol('s'); count=case['states']
-        assert count < len(f) and 0 in case['M_diagonal'] and all(v>=0 for v in case['M_diagonal'])
+        count=case['states']
+        assert count < len(case['source']) and 0 in case['M_diagonal'] and all(v>=0 for v in case['M_diagonal'])
         assert all(v is True for v in case['checks'].values())
-        a=k.inv()*f; e=sy.zeros(len(f),1); modes=[]; elements=[]
-        for _ in range(count):
-            l=(a.T*k*a)[0]; e=e+a/l; r=1/(e.T*m*e)[0]
-            modes.append(a); elements.extend([l,r]); a=a-r*k.inv()*m*e
-        assert all(v > 0 for v in elements)
-        assert elements == [sy.sympify(v.replace('^','**')) for v in case['elements_LR']]
-        q=sy.Matrix.hstack(*modes); fr=q.T*f
-        gal=s*(fr.T*(q.T*(k+s*m)*q).inv()*fr)[0]
-        full=s*(f.T*(k+s*m).inv()*f)[0]
-        assert sy.cancel(z_type1(elements,0,s)-gal) == 0
-        error=sy.series(sy.cancel(full-gal),s,0,2*count+2).removeO()
-        assert all(error.coeff(s,j)==0 for j in range(2*count+1))
-        assert error.coeff(s,2*count+1)!=0 and case['first_error_power']==2*count+1
+        truncated_energy(case)  # Independent exact rational numerical moments; unchanged contact order.
     root=json.loads((ROOT/'docs/data/team28_equilibrium.json').read_text(encoding='utf-8'))
     assert root['complete'] and 0 < root['bracket_width_mm'] < .002
     assert abs(root['weight_N']-weight)<1e-14

@@ -8,16 +8,16 @@ For interpreting the accuracy plots and short formulation comparisons, start wit
 |---|---|---|---|
 | 1 | [What is CLN?](00_what_is_cln.ipynb) | Skin effect, fields/circuits, energy integrals, stages and errors | numpy, matplotlib, mpmath |
 | 2 | [Expansion points and energy](01_expansion_and_energy.ipynb) | Types, shifts, normalization, passivity, stored FEM results | Same as above |
-| 3 | [Formulations, gauges, and boundaries](02_formulations_gauge_boundary.ipynb) | A–φ/T–Ω/A–T, reconstruction, gauge identities | sympy |
+| 3 | [Formulations, gauges, and boundaries](02_formulations_gauge_boundary.ipynb) | A–φ/T–Ω/A–T, reconstruction, gauge identities | Mathematica record |
 | 4 | [Nonlinear FP-CLN and surface modes](03_nonlinear_fp_surface_modes.ipynb) | Fixed-point correction, surface reduction, convergence versus model error | numpy, matplotlib |
-| 5 | [Termination, conversion, and tiles](04_termination_conversion_tiles.ipynb) | Termination inversion, exact/approximate conversion, circuit tiles | sympy, matplotlib |
+| 5 | [Termination, conversion, and tiles](04_termination_conversion_tiles.ipynb) | Termination inversion, exact/approximate conversion, circuit tiles | Mathematica record, matplotlib |
 | 6 | [Multiport models](05_multiport.ipynb) | Coupling, port work, reciprocity, dissipation | numpy |
 | 7 | [Type2 derivation](type2_same_circuit.ipynb) | A/T field and boundary correspondence, same four elements | Python, Wolfram |
 | 8 | [Type1 derivation and FEM](type1_same_circuit.ipynb) | Same four elements, separate A/T finite elements | Python, Wolfram, NGSolve |
 | 9 | [3D circular wire](06_3d_round_wire.ipynb) | Initial A–φ/T–Ω/A–T stages, field/element convergence, gauge sensitivity | Plots: numpy/matplotlib; FEM: NGSolve/scipy/Radia |
 | 10 | [Surface enrichment and Foster](07_surface_hybrid_foster.ipynb) | Band/DC factors, 3D reduction, nonlinear 2D enrichment, ranks and Joule loss | Plots: numpy/matplotlib; solves: NGSolve/scipy/mpmath |
 | 11 | [Common-excitation CLN and POD](08_3d_surface_pod_foster.ipynb) | Single/multipoint CLN, boundary-response POD, Steklov distinction, Foster equivalence | Plots: numpy/matplotlib; solves: NGSolve/scipy |
-| 12 | [Foster–Cauer conversion and error](09_foster_cauer_conversion_error.ipynb) | Exact round trip, termination, shifted representations, error measures, cited papers | sympy, numpy, matplotlib |
+| 12 | [Foster–Cauer conversion and error](09_foster_cauer_conversion_error.ipynb) | Exact round trip, termination, shifted representations, error measures, cited papers | Mathematica record, numpy, matplotlib |
 
 All notebooks contain executed outputs for reading on GitHub. The two introductory notebooks use analytic solutions and need neither FEM nor Wolfram.
 
@@ -57,7 +57,7 @@ These additions received reciprocal Codex and Claude Opus 5.5 review. See [revie
 
 Notebook 10 also records the original two-mode bulk control and second-order full-model mesh refinement at four representative frequencies. These tests distinguish adding modes from reallocating a fixed rank, and intermesh agreement from certified continuum accuracy.
 
-[TEAM 28 force](11_team28_force.ipynb): actual coil-driven Type1 energy recursion, physical L/R elements, conjugate phasor lift, 25-height same-mesh full-FEM comparison, static equilibrium and settings probes. Reading needs numpy/matplotlib/sympy; native recomputation needs NGSolve/scipy. [Implementation knowledge](CLN_FIELD_RECURSION.md) explains energy normalization, saved-field storage, boundary design and diagnostic limits.
+[TEAM 28 force](11_team28_force.ipynb): actual coil-driven Type1 energy recursion, physical L/R elements, conjugate phasor lift, 25-height same-mesh full-FEM comparison, static equilibrium and settings probes. Reading needs numpy/matplotlib (Mathematica for symbolic regeneration); native recomputation needs NGSolve/scipy. [Implementation knowledge](CLN_FIELD_RECURSION.md) explains energy normalization, saved-field storage, boundary design and diagnostic limits.
 
 [General 3D terminal CLN](12_general_3d_cln.ipynb): a notched conductor with non-trivial phi, physical eight-element Type2 recursions at zero/positive real shifts, equivalent current-port T formulations, same-mesh full references, contact order and h/p comparisons. Shared DC port lifts and unresolved skin layers are explicit limitations. Reading needs numpy/matplotlib; native recomputation needs NGSolve/scipy. Independent numerical review gave scientific acceptance at c18840a; see REVIEW_STATUS for the precise scope.
 

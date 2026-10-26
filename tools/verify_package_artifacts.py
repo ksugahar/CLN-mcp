@@ -12,7 +12,8 @@ import tarfile
 import zipfile
 
 RESOURCES = ('cln/_version.py', 'cln_mcp_server/resources/DiffusionCLN.wl',
-             'cln_mcp_server/resources/RoundWireMaxwell.wl')
+             'cln_mcp_server/resources/RoundWireMaxwell.wl',
+             'cln_mcp_server/resources/SymbolicCLN.wl')
 
 
 def digest(path):
