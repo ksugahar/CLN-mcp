@@ -22,7 +22,7 @@ dependencies = ["mcp>=1.27,<2"]
 
 [project.optional-dependencies]
 energy = ["numpy"]
-solver = ["ngsolve", "numpy", "scipy", "radia"]
+solver = ["ngsolve==6.2.2608", "numpy", "scipy", "radia==5.3.3"]
 test = ["pytest", "tomli>=2; python_version < '3.11'"]
 
 [project.scripts]
