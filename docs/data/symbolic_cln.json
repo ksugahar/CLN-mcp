@@ -1,0 +1,205 @@
+{
+  "schema": "cln.symbolic-migration.v1",
+  "passed": true,
+  "checks": {
+    "all input-port identities": true,
+    "port: free residual": true,
+    "port: static lift orthogonality": true,
+    "port: lift decomposition": true,
+    "port: matched conjugate duality": true,
+    "port: B positive L 1": true,
+    "port: B positive L 2": true,
+    "port: scalar extraction terminates": true,
+    "port: B/H two-index shift": true,
+    "port: recurrence vs rational extraction": true,
+    "port: different port is different": true,
+    "port: full compact-product counterexample": true,
+    "port: SPD leading minors": true,
+    "all caveat identities": true,
+    "caveat: regular Ampere solution": true,
+    "caveat: incompatible arbitrary magnetic boundary": true,
+    "caveat: negative physical DC of shifted branch": true,
+    "caveat: Euclidean quotient": true,
+    "caveat: Euclidean remainder need not be positive": true,
+    "five-element exact termination": true,
+    "exact input round trip": true,
+    "invalid budget 0": true,
+    "invalid budget 4": true,
+    "invalid budget 9/2": true,
+    "approximate coefficients rejected": true,
+    "zero terminal resistance": true,
+    "Foster structure 7": true,
+    "exact Foster reconstruction 7": true,
+    "Foster structure 9": true,
+    "exact Foster reconstruction 9": true,
+    "two-element termination": true,
+    "gauge: A-phi E": true,
+    "gauge: A-phi B": true,
+    "gauge: T-Omega H": true,
+    "gauge: T-Omega J": true,
+    "termination inversion": true,
+    "parallel identity": true,
+    "base concrete round trip": true,
+    "inductive-tail exact round trip": true
+  },
+  "scope": "exact scalar RL synthesis and fixed SPD conjugate-port example; no FE/general passivity certification",
+  "kernel": "14.2.1 for Microsoft Windows (64-bit) (March 17, 2025)",
+  "package_sha256": "55e745269ed99cf30940d56d7b6422a1dafe5abc9254fe76437e0e8a87a81b9c",
+  "producer_sha256": "e7c0f3b364a160d757d10188dae5a1feb513c067458fa2d08d336de72185ac46",
+  "conversion_examples": [
+    {
+      "cauer": [
+        [
+          "R",
+          "1"
+        ],
+        [
+          "L",
+          "5"
+        ],
+        [
+          "R",
+          "25/2"
+        ],
+        [
+          "L",
+          "5/24"
+        ],
+        [
+          "R",
+          "1/2"
+        ]
+      ],
+      "dc": "1",
+      "tail": "0",
+      "branches": [
+        [
+          "2",
+          "4"
+        ],
+        [
+          "3",
+          "9"
+        ]
+      ]
+    },
+    {
+      "cauer": [
+        [
+          "R",
+          "1"
+        ],
+        [
+          "L",
+          "26/5"
+        ],
+        [
+          "R",
+          "338/25"
+        ],
+        [
+          "L",
+          "13/30"
+        ],
+        [
+          "R",
+          "2"
+        ],
+        [
+          "L",
+          "2/5"
+        ]
+      ],
+      "dc": "1",
+      "tail": "1/5",
+      "branches": [
+        [
+          "2",
+          "4"
+        ],
+        [
+          "3",
+          "9"
+        ]
+      ]
+    }
+  ],
+  "foster_numeric_models": [
+    {
+      "cauer_values": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "dc": 1.0,
+      "tail": 0,
+      "branches": [
+        [
+          5.048917339522306,
+          2.7422384797270314
+        ],
+        [
+          0.6431041321077906,
+          0.22463093263302317
+        ],
+        [
+          0.30797852836990414,
+          0.03313058763994522
+        ]
+      ]
+    },
+    {
+      "cauer_values": [
+        "1",
+        "2",
+        "3",
+        "1",
+        "2",
+        "3",
+        "1",
+        "1",
+        "5"
+      ],
+      "dc": 1.0,
+      "tail": 0,
+      "branches": [
+        [
+          17.627130053326262,
+          8.983723230170291
+        ],
+        [
+          1.870883751168114,
+          1.4194834390200386
+        ],
+        [
+          0.8162379005743722,
+          0.5966798034317741
+        ],
+        [
+          0.1857482949312531,
+          0.0001135273778954539
+        ]
+      ]
+    }
+  ],
+  "notebook_expressions": {
+    "required_termination": "-((r0*r2 + l1*r0*s11 + l1*r2*s11 - r2*target - l1*s11*target)/(r0 + l1*s11 - target))"
+  },
+  "port_elements": [
+    "5/17",
+    "25/39",
+    "460/1521",
+    "1058/4251",
+    "828/11881",
+    "12/109"
+  ],
+  "source_sha256_lf": {
+    "src/cln_mcp_server/resources/SymbolicCLN.wl": "30e054d8ecc9581aab07fc913239fa2214ba34c45da17bb9ab6b30041465aa07",
+    "validation/symbolic_cln.wls": "fc11362c45507ba576874e68b19115363e5c33fcb93523ad9d4d2a8c11c7760b"
+  },
+  "source_hash_convention": "UTF-8 without BOM, universal newlines to LF; raw CAS hashes retained separately"
+}

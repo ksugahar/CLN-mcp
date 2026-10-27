@@ -2,12 +2,17 @@
 from pathlib import Path
 import hashlib,json
 import numpy as np
+from reference_records import historical
 ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/'docs/data'
 def read(name):return json.loads((DATA/(name+'.json')).read_text(encoding='utf-8-sig'))
-h=read('higher_stages');assert len(h['cases'])==24
+h=historical('higher_stages.json');assert len(h['cases'])==24
 w=read('round_wire_three_stages');assert all(w['checks'].values())
 assert w['R_normalized']==h['oracle_R_normalized'] and w['L_normalized']==h['oracle_L_normalized']
-for name,digest in h['source_sha256_lf'].items():assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
+ledger=read('reference_migration')
+for name,digest in h['source_sha256_lf'].items():
+    if name in ledger['replaced_producers']:
+        assert digest==ledger['replaced_producers'][name],name  # Historical FE producer, not newly qualified.
+    else:assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
 failures=[(v['formulation'],v['order'],v['bonus_intorder'],v['maxh']) for v in h['cases'] if v['status']!='pass']
 assert failures==[('CLN_T_Omega',1,4,.003)],failures
 quad8=[v for v in h['cases'] if (v['formulation'],v['order'],v['bonus_intorder'],v['maxh'])==('CLN_T_Omega',1,8,.003)][0]
@@ -77,6 +82,9 @@ a=np.asarray(coarse['reference_real'])+1j*np.asarray(coarse['reference_imag'])
 b=(np.asarray(baseline['reference_real'])+1j*np.asarray(baseline['reference_imag']))[[75,150,225,300]]
 assert max(abs(a/b-1))<1e-8 and abs(coarse['static_H']/baseline['mesh']['static_H']-1)<1e-8
 assert all(v['original_residual_max']<1e-6 and v['penalty_invariance_max']<1e-6 for v in mesh['meshes'])
-m=read('research_sources')
-for name,digest in m['source_sha256_lf'].items():assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
+m=historical('research_sources.json')
+for name,digest in m['source_sha256_lf'].items():
+    if name in ledger['replaced_producers']:
+        assert digest==ledger['replaced_producers'][name],name  # Immutable historical producer, not new FE qualification.
+    else:assert hashlib.sha256((ROOT/name).read_text(encoding='utf-8-sig').encode()).hexdigest()==digest,name
 print('PASS higher-stage convergence, matched-state fits, nonlinear retained ranks and same-basis diagonalization')

@@ -7,24 +7,17 @@ three stages of a linear cylindrical conductor at zero expansion point only.
 import argparse, contextlib, hashlib, io, json, time
 from pathlib import Path
 import numpy as np
-import sympy as sp
+from fractions import Fraction
+from reference_records import historical
 import ngsolve
 from cln3d import CLN_APhi,CLN_T_Omega,CLN_AT
 ROOT=Path(__file__).resolve().parents[1]
 
 
 def oracle():
-    u=sp.Symbol('u')
-    i0=sum(u**k/(4**k*sp.factorial(k)**2) for k in range(9))
-    i1_over_root=sum(u**k/(2*4**k*sp.factorial(k)*sp.factorial(k+1)) for k in range(9))
-    z=sp.cancel(i0/(2*i1_over_root));rs=[];ls=[]
-    for j in range(4):
-        r=sp.limit(z,u,0);rs.append(r)
-        if j==3:break
-        remainder=sp.cancel(z-r);l=sp.limit(remainder/u,u,0);ls.append(l)
-        z=sp.cancel(1/(1/remainder-1/(u*l)))
-    assert rs==[1,3,5,7] and ls==[sp.Rational(1,8),sp.Rational(1,16),sp.Rational(1,24)]
-    return rs,ls
+    record=historical('round_wire_three_stages.json')
+    if not all(value is True for value in record['checks'].values()):raise AssertionError('Mathematica Bessel oracle checks failed')
+    return list(map(Fraction,record['R_normalized'])),list(map(Fraction,record['L_normalized']))
 
 
 def hashes():

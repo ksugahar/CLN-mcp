@@ -1,0 +1,310 @@
+{
+  "schema": "cln.round-wire-maxwell.v1",
+  "passed": true,
+  "checks": [
+    {
+      "name": "E-H construction index 0",
+      "passed": true
+    },
+    {
+      "name": "E-H resistance termination",
+      "passed": true
+    },
+    {
+      "name": "E-H construction index 1",
+      "passed": true
+    },
+    {
+      "name": "E-H inductance termination",
+      "passed": true
+    },
+    {
+      "name": "E-H construction index 8",
+      "passed": true
+    },
+    {
+      "name": "A construction index 0",
+      "passed": true
+    },
+    {
+      "name": "A resistance termination",
+      "passed": true
+    },
+    {
+      "name": "A construction index 1",
+      "passed": true
+    },
+    {
+      "name": "A inductance termination",
+      "passed": true
+    },
+    {
+      "name": "A construction index 8",
+      "passed": true
+    },
+    {
+      "name": "T construction index 0",
+      "passed": true
+    },
+    {
+      "name": "T resistance termination",
+      "passed": true
+    },
+    {
+      "name": "T construction index 1",
+      "passed": true
+    },
+    {
+      "name": "T inductance termination",
+      "passed": true
+    },
+    {
+      "name": "T construction index 8",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H R",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H L",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H E",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H H",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H A",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H T",
+      "passed": true
+    },
+    {
+      "name": "A vs E-H Z",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H R",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H L",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H E",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H H",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H A",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H T",
+      "passed": true
+    },
+    {
+      "name": "T vs E-H Z",
+      "passed": true
+    },
+    {
+      "name": "normalized R coefficients",
+      "passed": true
+    },
+    {
+      "name": "normalized L coefficients",
+      "passed": true
+    },
+    {
+      "name": "A/H differential map 1",
+      "passed": true
+    },
+    {
+      "name": "T/E differential map 1",
+      "passed": true
+    },
+    {
+      "name": "regular axis 1",
+      "passed": true
+    },
+    {
+      "name": "A boundary trace 1",
+      "passed": true
+    },
+    {
+      "name": "A/H differential map 2",
+      "passed": true
+    },
+    {
+      "name": "T/E differential map 2",
+      "passed": true
+    },
+    {
+      "name": "regular axis 2",
+      "passed": true
+    },
+    {
+      "name": "A boundary trace 2",
+      "passed": true
+    },
+    {
+      "name": "A/H differential map 3",
+      "passed": true
+    },
+    {
+      "name": "T/E differential map 3",
+      "passed": true
+    },
+    {
+      "name": "regular axis 3",
+      "passed": true
+    },
+    {
+      "name": "A boundary trace 3",
+      "passed": true
+    },
+    {
+      "name": "A/H differential map 4",
+      "passed": true
+    },
+    {
+      "name": "T/E differential map 4",
+      "passed": true
+    },
+    {
+      "name": "regular axis 4",
+      "passed": true
+    },
+    {
+      "name": "A boundary trace 4",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {2, 1}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {3, 1}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {3, 2}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {4, 1}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {4, 2}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {4, 3}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {5, 1}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {5, 2}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {5, 3}",
+      "passed": true
+    },
+    {
+      "name": "E orthogonality {5, 4}",
+      "passed": true
+    },
+    {
+      "name": "H orthogonality {2, 1}",
+      "passed": true
+    },
+    {
+      "name": "H orthogonality {3, 1}",
+      "passed": true
+    },
+    {
+      "name": "H orthogonality {3, 2}",
+      "passed": true
+    },
+    {
+      "name": "H orthogonality {4, 1}",
+      "passed": true
+    },
+    {
+      "name": "H orthogonality {4, 2}",
+      "passed": true
+    },
+    {
+      "name": "H orthogonality {4, 3}",
+      "passed": true
+    },
+    {
+      "name": "analytic Bessel contact through degree 8",
+      "passed": true
+    },
+    {
+      "name": "unknown route rejected",
+      "passed": true
+    },
+    {
+      "name": "noninteger index rejected",
+      "passed": true
+    },
+    {
+      "name": "oversized index rejected",
+      "passed": true
+    }
+  ],
+  "normalization": "x=r/a; a=mu=sigma=1; per unit axial length",
+  "expressions": {
+    "E-H": {
+      "R": "{Pi^(-1), 3/Pi, 5/Pi, 7/Pi, 9/Pi}",
+      "L": "{1/(8*Pi), 1/(16*Pi), 1/(24*Pi), 1/(32*Pi)}",
+      "E": "{1, -1 + 2*x^2, 1 - 6*x^2 + 6*x^4, -1 + 12*x^2 - 30*x^4 + 20*x^6, 1 - 20*x^2 + 90*x^4 - 140*x^6 + 70*x^8}",
+      "H": "{x/(2*Pi), -(x/Pi) + (3*x^3)/(2*Pi), (3*x)/(2*Pi) - (6*x^3)/Pi + (5*x^5)/Pi, (-2*x)/Pi + (15*x^3)/Pi - (30*x^5)/Pi + (35*x^7)/(2*Pi)}",
+      "A": "{1/(4*Pi) - x^2/(4*Pi), -1/8*1/Pi + x^2/(2*Pi) - (3*x^4)/(8*Pi), 1/(12*Pi) - (3*x^2)/(4*Pi) + (3*x^4)/(2*Pi) - (5*x^6)/(6*Pi), -1/16*1/Pi + x^2/Pi - (15*x^4)/(4*Pi) + (5*x^6)/Pi - (35*x^8)/(16*Pi)}",
+      "T": "{x/2, (-x + x^3)/2, (x - 3*x^3 + 2*x^5)/2, (-x + 6*x^3 - 10*x^5 + 5*x^7)/2}",
+      "Z": "(5*(18579456 + 4128768*s + 169344*s^2 + 1920*s^3 + 5*s^4))/(Pi*(92897280 + 9031680*s + 201600*s^2 + 1200*s^3 + s^4))"
+    },
+    "A": {
+      "R": "{Pi^(-1), 3/Pi, 5/Pi, 7/Pi, 9/Pi}",
+      "L": "{1/(8*Pi), 1/(16*Pi), 1/(24*Pi), 1/(32*Pi)}",
+      "E": "{1, -1 + 2*x^2, 1 - 6*x^2 + 6*x^4, -1 + 12*x^2 - 30*x^4 + 20*x^6, 1 - 20*x^2 + 90*x^4 - 140*x^6 + 70*x^8}",
+      "H": "{x/(2*Pi), -(x/Pi) + (3*x^3)/(2*Pi), (3*x)/(2*Pi) - (6*x^3)/Pi + (5*x^5)/Pi, (-2*x)/Pi + (15*x^3)/Pi - (30*x^5)/Pi + (35*x^7)/(2*Pi)}",
+      "A": "{1/(4*Pi) - x^2/(4*Pi), -1/8*1/Pi + x^2/(2*Pi) - (3*x^4)/(8*Pi), 1/(12*Pi) - (3*x^2)/(4*Pi) + (3*x^4)/(2*Pi) - (5*x^6)/(6*Pi), -1/16*1/Pi + x^2/Pi - (15*x^4)/(4*Pi) + (5*x^6)/Pi - (35*x^8)/(16*Pi)}",
+      "T": "{x/2, (-x + x^3)/2, (x - 3*x^3 + 2*x^5)/2, (-x + 6*x^3 - 10*x^5 + 5*x^7)/2}",
+      "Z": "(5*(18579456 + 4128768*s + 169344*s^2 + 1920*s^3 + 5*s^4))/(Pi*(92897280 + 9031680*s + 201600*s^2 + 1200*s^3 + s^4))"
+    },
+    "T": {
+      "R": "{Pi^(-1), 3/Pi, 5/Pi, 7/Pi, 9/Pi}",
+      "L": "{1/(8*Pi), 1/(16*Pi), 1/(24*Pi), 1/(32*Pi)}",
+      "E": "{1, -1 + 2*x^2, 1 - 6*x^2 + 6*x^4, -1 + 12*x^2 - 30*x^4 + 20*x^6, 1 - 20*x^2 + 90*x^4 - 140*x^6 + 70*x^8}",
+      "H": "{x/(2*Pi), -(x/Pi) + (3*x^3)/(2*Pi), (3*x)/(2*Pi) - (6*x^3)/Pi + (5*x^5)/Pi, (-2*x)/Pi + (15*x^3)/Pi - (30*x^5)/Pi + (35*x^7)/(2*Pi)}",
+      "A": "{1/(4*Pi) - x^2/(4*Pi), -1/8*1/Pi + x^2/(2*Pi) - (3*x^4)/(8*Pi), 1/(12*Pi) - (3*x^2)/(4*Pi) + (3*x^4)/(2*Pi) - (5*x^6)/(6*Pi), -1/16*1/Pi + x^2/Pi - (15*x^4)/(4*Pi) + (5*x^6)/Pi - (35*x^8)/(16*Pi)}",
+      "T": "{x/2, (-x + x^3)/2, (x - 3*x^3 + 2*x^5)/2, (-x + 6*x^3 - 10*x^5 + 5*x^7)/2}",
+      "Z": "(5*(18579456 + 4128768*s + 169344*s^2 + 1920*s^3 + 5*s^4))/(Pi*(92897280 + 9031680*s + 201600*s^2 + 1200*s^3 + s^4))"
+    }
+  },
+  "series_contact_degree": 8,
+  "source_sha256_lf": {
+    "src/cln_mcp_server/resources/RoundWireMaxwell.wl": "304aa423755f232849183c99f034b0fe315956bf637ca81419511d8d7dde03c9",
+    "validation/round_wire_maxwell.wls": "775113244fc92cddd7802789f2ba855f4a09cb3376dd5788d2e2bd743a4318e8"
+  },
+  "source_hash_convention": "UTF-8 without BOM; universal newlines to LF; retained expressions from the independently accepted round-wire result"
+}

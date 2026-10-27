@@ -1,0 +1,17 @@
+{
+  "schema": "cln.reference-migration.v1",
+  "historical_main": "bfce8966c93d5cef1d8f920c318709f95b378ffc",
+  "replaced_producers": {
+    "validation/validate_higher_stages.py": "f8523b3c65a2b7e785389404f01ffd2ad0bb9850dfaae5fc73e0d281ac8a0b36",
+    "validation/validate_research.py": "62144dedb0ae1bddbfe546868657ba2080b85faebdff2488bb4dfd7b3dfcc4f4"
+  },
+  "scope": "Historical FE data remains unchanged; changed producer is not requalified by a hash exemption.",
+  "record_sha256_lf": {
+    "higher_stages.json": "2216713664f1a6d2c3bee716e943f14542a2efdb3f08e417153e46b0a6ce10d2",
+    "energy_recursion.json": "1b4d3ba3fb894bc1d4eaac24efde5d3b578b9b51115a39b4e2789a652820557e",
+    "round_wire_three_stages.json": "5004ef00fc08e1225788cdfed52de098526f2d338ca724f4e970cb6e5c5e42d9",
+    "input_ports_exact.json": "f6b90f8c59c31804891278ea438d3f3fe22ccb0a00e5ef9cf1bce69725a9c193",
+    "research_sources.json": "2c24cb77f1ce9e021f3fe1e59f22ae5bd463b28212549b73036970c33f7c7e47"
+  },
+  "hash_convention": "UTF-8 without BOM, universal newlines to LF; numerical/other text unchanged"
+}

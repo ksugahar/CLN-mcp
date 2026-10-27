@@ -47,7 +47,7 @@ def test_artifact_manifest_matches_actual_bytes(tmp_path):
         data = (tmp_path / item['name']).read_bytes()
         assert item['bytes'] == len(data), item
         assert item['sha256'] == hashlib.sha256(data).hexdigest(), item
-    assert len(result['resources']) == 3, result
+    assert len(result['resources']) == 4, result
 
 
 @pytest.mark.parametrize('kind', ['wheel', 'sdist'])
