@@ -73,15 +73,29 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 
 ## Python package and MCP server
 
-Install from a checkout with `python -m pip install -e .` and run `cln-mcp`
-for the stdio knowledge server. Numerical workflows require the `solver`
-extra. Its pinned numerical runtime targets Windows x64 with CPython 3.12.
+Install the released wheel from [GitHub Releases](https://github.com/ksugahar/CLN-mcp/releases).
+CLN-mcp release packages are not published to PyPI. For version 0.1.0:
+
+```text
+python -m pip install "https://github.com/ksugahar/CLN-mcp/releases/download/v0.1.0/cln_mcp-0.1.0-py3-none-any.whl"
+cln-mcp
+```
+
+For development, clone the repository and run `python -m pip install -e .`
+from the checkout, then run `cln-mcp` for the stdio knowledge server.
+Numerical workflows require the `solver` extra. Install it from a checkout
+with `python -m pip install -e ".[solver]"`, or select the Release wheel directly:
+
+```text
+python -m pip install "CLN-mcp[solver] @ https://github.com/ksugahar/CLN-mcp/releases/download/v0.1.0/cln_mcp-0.1.0-py3-none-any.whl"
+```
+
+The pinned numerical runtime targets Windows x64 with CPython 3.12.
 Linux, macOS, and other Python versions are outside the supported solver scope.
-Radia 5.3.3 provides only a `cp312-win_amd64` wheel, so
-`python -m pip install ".[solver]"` intentionally fails in those other environments.
-The knowledge server can be installed without the solver extra.
-Source integration does not publish a solver release. MCP knowledge loads
-without importing numerical solvers.
+Radia 5.3.3 provides only a `cp312-win_amd64` wheel, so installing the `solver`
+extra intentionally fails in those other environments. The knowledge server
+can be installed without the solver extra. MCP knowledge loads without
+importing numerical solvers.
 
 Use `cln_knowledge(area="input_ports", topic="ports")` for matched B/H input
 ports. Other topics include `boundary_lift`, `homogenization`, `passivity`,
