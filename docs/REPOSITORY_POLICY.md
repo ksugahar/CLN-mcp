@@ -15,6 +15,14 @@ The tests enforce this policy: `tests/test_policy.py` runs `tools/policy_lint.py
 
 The lint is a necessary gate, not proof of absence: text that names internal archive folders, private files or unpublished provenance violates P7 even when no rule matches, and is removed in review.
 
+## Distribution
+
+CLN-mcp release packages are distributed only as wheel (`.whl`) and source
+distribution (`.tar.gz`) assets in [GitHub Releases](https://github.com/ksugahar/CLN-mcp/releases).
+CLN-mcp must never be published to PyPI. Development installations from a
+repository checkout remain supported; release artifacts are not checked into
+the repository.
+
 In Japanese (日本語):
 - 実装の公開形式は `.py`、`.wls`・`.wl`、実行済みの `docs/*.ipynb` に限る。
 - MATLAB・COMSOL・FEMM・JMAG・FreeFEM・Julia のファイルは置かない。
@@ -22,6 +30,7 @@ In Japanese (日本語):
 - データは JSON を優先し、大きな配列は HDF5 にする(.mat、.dat などは置かない)。参照データは、リポジトリのスクリプトで再計算して作る。
 - 研究アーカイブ(元の MATLAB の結果ファイルなど)には依存しない。スクリプトは単体で動く。
 - 非公開のコード(EMPY など)とバイナリ(.pyd、.dll、.exe など)は置かない。
+- 配布パッケージ（wheel / sdist）は GitHub Release のみに置き、PyPI へは公開しない。開発時は checkout からインストールできる。
 - 違反があればテストが失敗する。ただし lint は必要条件であり、内部フォルダ名や未公開の出所を書いた文章はレビューで取り除く。
 
 
