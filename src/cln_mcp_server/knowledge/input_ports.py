@@ -67,7 +67,20 @@ _SLAB = {
     "mode_normalization": "a=mu=sigma=1; E_(2k)=P_(2k)(x), H_(2k+1)=P_(2k+1)(x)/2; full thickness integral dx",
     "energy_argument": "integral_-1^1 P_n(x)^2 dx=2/(2*n+1), hence R_(2k)=(4*k+1)/2 and L_(2k+1)=1/(2*(4*k+3))",
     "potential_maps": "H=-A' with A(1)=A(-1)=0; T'=E with odd T; retain history terms when forming total H",
-    "verification_status": "analytic definition and Legendre derivation; new Mathematica/FE execution not performed; no all-band accuracy or timing claim",
+    "verification_status": "Mathematica finite eight-stage Legendre conversion and J/A/H reconstruction executed; independent high-precision numerical comparison; see docs/slab_cauer_transform.md",
+    "finite_conversion": {
+        "parent_stages": 8,
+        "normalization": "half-thickness Legendre model x=z/a, tau=mu*sigma*a^2, omega_tau=omega*tau; impedances are Z/R_dc with R_dc=1/(2*a*sigma) and unit sheet current, so circuit elements are R_k=4*k+1 and L_k=1/(4*k+3), matching R_even_over_Rdc and twice the a=mu=sigma=1 energy_argument values",
+        "full_order":"exact rational impedance equality; full reconstructed fields agree",
+        "three_stage_impedance_1_percent_omega_tau": {
+            "low_frequency": [0.0001, 35.51257356054595],
+            "high_frequency": [571.1014893390537, 1353.9024787551991],
+        },
+        "scan": "1801 log points, omega*tau in [1e-4,1e5]; detected crossings refined by bisection",
+        "scan_lower_limit": "a band edge of 0.0001 is the scan's lower limit, not a 1 percent crossing; the band may extend lower",
+        "field_limit": "1 percent impedance does not bound local J/A/H errors; at omega*tau=1000 the three-stage high-frequency field errors are about 7 percent",
+        "reproduce": "mathematica/verify_slab_cauer_transform.wls",
+    },
     "references": {"Legendre_norm": "https://dlmf.nist.gov/18.3", "polynomial_relations": "https://dlmf.nist.gov/18.9", "field_recursion": _REFERENCES["field_recursion"]},
 }
 

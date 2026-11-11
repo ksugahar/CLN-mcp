@@ -177,3 +177,5 @@ Symbolic reference generation uses Mathematica only. Run
 Portable CI checks source-bound saved records and independent numerical oracles;
 it does not silently replace Mathematica with another CAS. Float inputs are
 rejected; the former optional rationalization path is deliberately omitted.
+
+The [slab Cauer conversion study](docs/slab_cauer_transform.md) verifies finite full-order equivalence, AC-axis truncation bands and reconstructed J/A/H fields.
