@@ -85,7 +85,9 @@ mode construction, instead of maintaining another production implementation.
 ## Verification boundary
 
 The formulas above are analytic derivations and definitions. New Mathematica
-execution of the slab and built-in Zernike comparisons has not been performed.
+execution of the built-in Zernike comparison has not been performed.
+The [slab conversion study](slab_cauer_transform.md) records an executed
+Mathematica Legendre model, finite Cauer conversion, AC-axis bands and fields.
 They do not imply an all-frequency finite-ladder error bound, a timing result,
 or finite-element convergence. Any future symbolic run must report the
 normalization, actual runtime, exact identities checked and failure outcomes.
