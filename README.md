@@ -74,10 +74,10 @@ The notched-3D full responses differ by about 3.46% between meshes. Small reduct
 ## Python package and MCP server
 
 Install the released wheel from [GitHub Releases](https://github.com/ksugahar/CLN-mcp/releases).
-CLN-mcp release packages are not published to PyPI. For version 0.1.0:
+CLN-mcp release packages are not published to PyPI. For version 0.1.1:
 
 ```text
-python -m pip install "https://github.com/ksugahar/CLN-mcp/releases/download/v0.1.0/cln_mcp-0.1.0-py3-none-any.whl"
+python -m pip install "https://github.com/ksugahar/CLN-mcp/releases/download/v0.1.1/cln_mcp-0.1.1-py3-none-any.whl"
 cln-mcp
 ```
 
@@ -87,7 +87,7 @@ Numerical workflows require the `solver` extra. Install it from a checkout
 with `python -m pip install -e ".[solver]"`, or select the Release wheel directly:
 
 ```text
-python -m pip install "CLN-mcp[solver] @ https://github.com/ksugahar/CLN-mcp/releases/download/v0.1.0/cln_mcp-0.1.0-py3-none-any.whl"
+python -m pip install "CLN-mcp[solver] @ https://github.com/ksugahar/CLN-mcp/releases/download/v0.1.1/cln_mcp-0.1.1-py3-none-any.whl"
 ```
 
 The pinned numerical runtime targets Windows x64 with CPython 3.12.
